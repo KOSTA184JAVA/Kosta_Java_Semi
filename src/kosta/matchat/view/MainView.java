@@ -11,7 +11,8 @@ public class MainView {
 		UserController uCon = new UserController();
 		AdminController aCon = new AdminController();
 		
-		System.out.println("¹é½ÂÇö");
+		System.out.println("Â¹Ã©Â½Ã‚Ã‡Ã¶");
+		System.out.println("helloWorld");
 	}
 
 }
