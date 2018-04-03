@@ -12,18 +12,20 @@ public class Restaurant {
 	private String resName;  //맛집이름
 	private String resAddr;  //맛집주소
 	private String resPhone; //맛집연락처
+	private String resDeliv; 
 	private String resSp;    //맛집별점
 	
 	private List<Menu> list = new ArrayList<>();  //식당에 해당하는 메뉴 리스트
 
 	
-	public Restaurant(String resKind, String resName, String resAddr, String resPhone, String resSp, int resId) {
+	public Restaurant(String resKind, String resName, String resAddr, String resPhone, String resDeliv,String resSp, int resId) {
 		this.resKind = resKind;
 		this.resName = resName;
 		this.resAddr = resAddr;
 		this.resPhone = resPhone;
 		this.resSp = resSp;
 		this.resId = resId;
+		this.resDeliv = resDeliv;
 	}
 	
 	public List<Menu> getList() {
@@ -72,6 +74,12 @@ public class Restaurant {
 	public void setResId(int resId) {
 		this.resId = resId;
 	}
-	
+	public String getResDeliv() {
+		return resDeliv;
+	}
+
+	public void setResDeliv(String resDeliv) {
+		this.resDeliv = resDeliv;
+	}
 	
 }

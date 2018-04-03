@@ -1,10 +1,16 @@
 package kosta.matchat.controller;
 
+import java.sql.SQLException;
+
 import kosta.matchat.model.dto.Member;
+import kosta.matchat.model.service.UserService;
+import kosta.matchat.model.service.UserServiceImpl;
 /**
  * 맛챗 사용자 기능 컨트롤러
  */
 public class UserController {
+	private UserService uService = UserServiceImpl.getInstance();
+	
 	public void joinMember(Member member) {
 		
 	}
@@ -26,7 +32,11 @@ public class UserController {
 	}
 
 	public void searchByStoreKind(String StoreKind) {
-		
+		try {
+			uService.searchByStoreKind(StoreKind);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void searchByOrderStoreSP(String StoreKind) {

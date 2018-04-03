@@ -1,10 +1,15 @@
 package kosta.matchat.model.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import kosta.matchat.model.dto.Member;
 import kosta.matchat.model.dto.Restaurant;
+import kosta.matchat.model.util.DBUtil;
 
 public class UserDAOImpl implements UserDAO {
 	
@@ -42,8 +47,30 @@ public class UserDAOImpl implements UserDAO {
 	}
 	@Override
 	public List<Restaurant> searchByStoreKind(String StoreKind) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<Restaurant> list = new ArrayList<>();
+		
+		try {
+			con = DBUtil.getConnection();
+			ps = con.prepareStatement("select * from restaurant where restaur_kind = ?");
+			ps.setString(1, StoreKind);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				int resID = rs.getInt("seq_restaur_id");
+				String resKind = rs.getString("restaur_kind");
+				String resName = rs.getString("restaur_name");
+				String resAddr = rs.getString("restaur_address");
+				String resPhone = rs.getString("restaur_phone");
+				String resDeliv = rs.getString("restaur_deliver");
+				int resSP = rs.getInt("restaur_point");
+				list.add(new Restaurant(resKind, resName, resAddr, resPhone, resDeliv, resSP+"", resID));
+			}
+		}finally {
+			DBUtil.dbClose(con, ps, rs);
+		}
+		return list;
 	}
 	@Override
 	public List<Restaurant> searchByOrderStoreSP(String StoreKind) throws SQLException {
