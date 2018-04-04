@@ -43,7 +43,7 @@ public class MainView {
 //		AdminController.deleteMenu(180, 1242);  //StoreId는 있고 menuId가 없는 경우 (180식당의 메뉴 1242 미존재)
 		
 //		AdminController.searchTotalList();
-		System.out.println("");
+		System.out.println("sad");
 
 	}
 
