@@ -47,6 +47,7 @@ public class UserServiceImpl implements UserService {
 	public List<Restaurant> searchByStoreKind(String StoreKind) throws SQLException {
 		List<Restaurant> list = uDao.searchByStoreKind(StoreKind);
 		if(list != null && !list.isEmpty()) {
+			
 			return list;
 		}else {
 			throw new SQLException("검색 결과가 없습니다.");
