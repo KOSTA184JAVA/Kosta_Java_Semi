@@ -8,6 +8,7 @@ public class MainView {
 	public static void main(String[] args) {
 
 		System.out.println("시연");
+		System.out.println("되라");
 		
 		// 현수
 //		UserController.joinMember(new Member("test1", "test", "test", "test", "test")); //회원가입
