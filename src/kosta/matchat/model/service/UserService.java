@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import kosta.matchat.model.dto.Member;
+import kosta.matchat.model.dto.Menu;
 import kosta.matchat.model.dto.Restaurant;
 
 public interface UserService {
@@ -42,7 +43,7 @@ public interface UserService {
 	 * @param stroeName 검색할 맛집 이름
 	 * @return 검색된 맛집 DTO List
 	 */
-	public List<Restaurant> searchByStoreName(String stroeName) throws SQLException;
+	public List<Restaurant> searchByStoreName(String storeName) throws SQLException;
 	
 	
 	/**
@@ -92,4 +93,11 @@ public interface UserService {
 	 * @param score 별점(1~5 사이 정수)
 	 */
 	public void insertStarPoint(int storeId, int score) throws SQLException;
+	
+	/**
+	 * 해당 맛집 메뉴리스트 조회
+	 * @param storeId 메뉴를 조회할 해당 맛집
+	 * @return 해당 맛집이 갖고있는 메뉴 리스트
+	 */
+	public List<Menu> searchMenuList(int storeId) throws SQLException;
 }

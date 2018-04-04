@@ -12,28 +12,36 @@ public class Restaurant {
 	private String resName;  //맛집이름
 	private String resAddr;  //맛집주소
 	private String resPhone; //맛집연락처
-	private String resDeliv; 
-	private String resSp;    //맛집별점
+	private String resDeliv; //배달여부
+	private int resSp;    //맛집별점
 	
 	private List<Menu> list = new ArrayList<>();  //식당에 해당하는 메뉴 리스트
 
 	
-	public Restaurant(String resKind, String resName, String resAddr, String resPhone, String resDeliv,String resSp, int resId) {
+	public Restaurant(int resId, String resKind, String resName, String resAddr, String resPhone, String resDeliv, int resSp) {
+		this.resId = resId;
 		this.resKind = resKind;
 		this.resName = resName;
 		this.resAddr = resAddr;
 		this.resPhone = resPhone;
-		this.resSp = resSp;
-		this.resId = resId;
 		this.resDeliv = resDeliv;
+		this.resSp = resSp;
 	}
 	
+	public Restaurant(String resKind, String resName, String resAddr, String resPhone, String resDeliv, int resSp) {
+		this.resKind = resKind;
+		this.resName = resName;
+		this.resAddr = resAddr;
+		this.resPhone = resPhone;
+		this.resDeliv = resDeliv;
+		this.resSp = resSp;
+	}
 	public List<Menu> getList() {
 		return list;
 	}
 	
-	public void setList(List<Menu> list) {
-		this.list = list;
+	public void addMenu(Menu menu) {
+		list.add(menu);
 	}
 	
 	public String getResKind() {
@@ -60,10 +68,10 @@ public class Restaurant {
 	public void setResPhone(String resPhone) {
 		this.resPhone = resPhone;
 	}
-	public String getResSp() {
+	public int getResSp() {
 		return resSp;
 	}
-	public void setResSp(String resSp) {
+	public void setResSp(int resSp) {
 		this.resSp = resSp;
 	}
 
@@ -74,6 +82,7 @@ public class Restaurant {
 	public void setResId(int resId) {
 		this.resId = resId;
 	}
+
 	public String getResDeliv() {
 		return resDeliv;
 	}
@@ -81,5 +90,7 @@ public class Restaurant {
 	public void setResDeliv(String resDeliv) {
 		this.resDeliv = resDeliv;
 	}
+	
+	
 	
 }

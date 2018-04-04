@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import kosta.matchat.model.dto.Member;
+import kosta.matchat.model.dto.Menu;
 import kosta.matchat.model.dto.Restaurant;
 /**
  * 사용자 기능 DAO 인터페이스
@@ -14,7 +15,7 @@ public interface UserDAO {
 	 * @param member 회원가입할 회원
 	 * @return 성공여부
 	 */
-	public int joinMember(Member member) throws SQLException;;
+	public int joinMember(Member member) throws SQLException;
 	
 	
 	/**
@@ -23,7 +24,7 @@ public interface UserDAO {
 	 * @param memberPassword 탈퇴할 회원 Password
 	 * @return 성공여부
 	 */
-	public int quitMember(String memberId, String memberPassword) throws SQLException;;
+	public int quitMember(String memberId, String memberPassword) throws SQLException;
 	
 	
 	/**
@@ -32,7 +33,7 @@ public interface UserDAO {
 	 * @param memberPassword 로그인할 회원 Password
 	 * @return 성공여부
 	 */
-	public int loginMember(String memberId, String memberPassword) throws SQLException;;
+	public int loginMember(String memberId, String memberPassword) throws SQLException;
 	
 	
 	/**
@@ -46,14 +47,10 @@ public interface UserDAO {
 	/**
 	 * 식당이름 검색
 	 * sql exam) 조인과 서브쿼리이용
-	 *     select restaur_id, restaur_kind, restaur_name, restaur_address, restaur_phone, restaur_deliver, restaur_point,
-	 *            menu_id, menu_name, menu_price, menu_desc, menu_kcal, menu_source
-	 *     from restaurant r, menu m
-	 *     where m.restaur_id IN (select restuar_id from restaurant where r.restaur_name like %stroeName%) 
 	 * @param stroeName 검색할 맛집 이름
 	 * @return 검색된 맛집 DTO List
 	 */
-	public List<Restaurant> searchByStoreName(String stroeName) throws SQLException;;
+	public List<Restaurant> searchByStoreName(String storeName) throws SQLException;
 	
 	
 	/**
@@ -63,7 +60,7 @@ public interface UserDAO {
 	 * @param Storekind 식당 종류
 	 * @return 식당 종류에 해당하는 맛집리스트
 	 */
-	public List<Restaurant> searchByStoreKind(String StoreKind) throws SQLException;;
+	public List<Restaurant> searchByStoreKind(String StoreKind) throws SQLException;
 	
 	
 	/**
@@ -73,7 +70,7 @@ public interface UserDAO {
 	 * @param StoreKind 식당종류
 	 * @return 별점순으로 정렬된 식당종류에 해당하는 맛집리스트
 	 */
-	public List<Restaurant> searchByOrderStoreSP(String StoreKind) throws SQLException;;
+	public List<Restaurant> searchByOrderStoreSP(String StoreKind) throws SQLException;
 	
 	
 	/**
@@ -83,7 +80,7 @@ public interface UserDAO {
 	 * @param StoreKind 식당종류
 	 * @return 배달가능업체만 포함된 식당종류에 해당하는 맛집리스트
 	 */
-	public List<Restaurant> searchByDeliv(String StoreKind) throws SQLException;;
+	public List<Restaurant> searchByDeliv(String StoreKind) throws SQLException;
 	
 
 	/**
@@ -95,7 +92,7 @@ public interface UserDAO {
 	 * @param memberId 자신의 회원 ID
 	 * @return 성공여부
 	 */
-	public int insertFavorite(int storeId, String memberId) throws SQLException;;
+	public int insertFavorite(int storeId, String memberId) throws SQLException;
 	
 	
 	/**
@@ -106,7 +103,7 @@ public interface UserDAO {
 	 * @param memeberId 즐겨찾기 목록을 조회할 회원 ID
 	 * @return 해당 회원ID가 갖고있는 즐겨찾기 리스트
 	 */
-	public List<Restaurant> searchFavorites(String memberId) throws SQLException;;
+	public List<Restaurant> searchFavorites(String memberId) throws SQLException;
 	
 	
 	/**
@@ -118,6 +115,13 @@ public interface UserDAO {
 	 * @param score 별점(1~5 사이 정수)
 	 * @return 성공여부
 	 */
-	public int insertStarPoint(int storeId, int score) throws SQLException;;
+	public int insertStarPoint(int storeId, int score) throws SQLException;
+	
+	/**
+	 * 해당 맛집 메뉴리스트 조회
+	 * @param storeId 메뉴를 조회할 해당 맛집
+	 * @return 해당 맛집이 갖고있는 메뉴 리스트
+	 */
+	public List<Menu> searchMenuList(int storeId) throws SQLException;
 	
 }

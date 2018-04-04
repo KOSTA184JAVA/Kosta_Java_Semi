@@ -12,13 +12,21 @@ public class Menu {
 	private String source;	//원재료명
 	
 	
-	public Menu(String name, int price, String desc, int kcal, String source, int menuId) {
+	public Menu( int menuId, String name, int price, String desc, int kcal, String source) {
 		this.name = name;
 		this.price = price;
 		this.desc = desc;
 		this.kcal = kcal;
 		this.source = source;
 		this.menuId = menuId;
+	}
+	
+	public Menu(String name, int price, String desc, int kcal, String source) {
+		this.name = name;
+		this.price = price;
+		this.desc = desc;
+		this.kcal = kcal;
+		this.source = source;
 	}
 
 

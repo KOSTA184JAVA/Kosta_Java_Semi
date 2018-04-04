@@ -22,7 +22,7 @@ public interface AdminDAO {
 	 * @param storeId 삭제할 맛집 ID
 	 * @return 성공여부
 	 */
-	public int deleteStore(int storeId) throws SQLException;;
+	public int deleteStore(int storeId) throws SQLException;
 	
 	
 	/**
@@ -30,7 +30,7 @@ public interface AdminDAO {
 	 * @param restaurant 수정할 맛집 DTO
 	 * @return 성공여부
 	 */
-	public int updateStore(Restaurant restaurant) throws SQLException;;
+	public int updateStore(Restaurant restaurant) throws SQLException;
 	
 	
 	/**
@@ -39,7 +39,7 @@ public interface AdminDAO {
 	 * @param menu 추가할 메뉴 DTO
 	 * @return 성공여부
 	 */
-	public int insertMenu(int storeId, Menu menu) throws SQLException;;
+	public int insertMenu(int storeId, Menu menu) throws SQLException;
 	
 	
 	/**
@@ -48,13 +48,13 @@ public interface AdminDAO {
 	 * @param menuId 삭제할 메뉴 ID
 	 * @return 성공여부
 	 */
-	public int deleteMenu(int storeId, int menuId) throws SQLException;;
+	public int deleteMenu(int storeId, int menuId) throws SQLException;
 	
 	
 	/**
 	 * 맛집 전체리스트 검색
 	 * @return List<Restaurant> 맛집 전체 리스트
 	 */
-	public List<Restaurant> searchTotalList() throws SQLException;;
+	public List<Restaurant> searchTotalList() throws SQLException;
 	
 }
