@@ -74,13 +74,57 @@ public class UserDAOImpl implements UserDAO {
 	}
 	@Override
 	public List<Restaurant> searchByOrderStoreSP(String StoreKind) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<Restaurant> list = new ArrayList<>();
+		
+		try {
+			con = DBUtil.getConnection();
+			ps = con.prepareStatement("select * from restaurant where restaur_kind = ? order by restaur_point DESC");
+			ps.setString(1, StoreKind);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				int resID = rs.getInt("seq_restaur_id");
+				String resKind = rs.getString("restaur_kind");
+				String resName = rs.getString("restaur_name");
+				String resAddr = rs.getString("restaur_address");
+				String resPhone = rs.getString("restaur_phone");
+				String resDeliv = rs.getString("restaur_deliver");
+				int resSP = rs.getInt("restaur_point");
+				list.add(new Restaurant(resKind, resName, resAddr, resPhone, resDeliv, resSP+"", resID));
+			}
+		}finally {
+			DBUtil.dbClose(con, ps, rs);
+		}
+		return list;
 	}
 	@Override
 	public List<Restaurant> searchByDeliv(String StoreKind) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<Restaurant> list = new ArrayList<>();
+		
+		try {
+			con = DBUtil.getConnection();
+			ps = con.prepareStatement("select * from restaurant where restaur_kind = ? AND restaur_deliver = 'O'");
+			ps.setString(1, StoreKind);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				int resID = rs.getInt("seq_restaur_id");
+				String resKind = rs.getString("restaur_kind");
+				String resName = rs.getString("restaur_name");
+				String resAddr = rs.getString("restaur_address");
+				String resPhone = rs.getString("restaur_phone");
+				String resDeliv = rs.getString("restaur_deliver");
+				int resSP = rs.getInt("restaur_point");
+				list.add(new Restaurant(resKind, resName, resAddr, resPhone, resDeliv, resSP+"", resID));
+			}
+		}finally {
+			DBUtil.dbClose(con, ps, rs);
+		}
+		return list;
 	}
 	@Override
 	public int insertFavorite(int storeId, String memberId) throws SQLException {

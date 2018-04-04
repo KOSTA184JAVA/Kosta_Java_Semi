@@ -40,11 +40,19 @@ public class UserController {
 	}
 
 	public void searchByOrderStoreSP(String StoreKind) {
-		
+		try {
+			uService.searchByOrderStoreSP(StoreKind);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void searchByDeliv(String StoreKind) {
-		
+		try {
+			uService.searchByDeliv(StoreKind);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void insertFavorite(int storeId, String memberId) {

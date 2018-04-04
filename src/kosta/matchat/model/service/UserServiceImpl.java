@@ -54,13 +54,21 @@ public class UserServiceImpl implements UserService {
 	}
 	@Override
 	public List<Restaurant> searchByOrderStoreSP(String StoreKind) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		List<Restaurant> list = uDao.searchByOrderStoreSP(StoreKind);
+		if(list != null && !list.isEmpty()) {
+			return list;
+		}else {
+			throw new SQLException("검색 결과가 없습니다.");
+		}
 	}
 	@Override
 	public List<Restaurant> searchByDeliv(String StoreKind) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		List<Restaurant> list = uDao.searchByDeliv(StoreKind);
+		if(list != null && !list.isEmpty()) {
+			return list;
+		}else {
+			throw new SQLException("검색 결과가 없습니다.");
+		}
 	}
 	@Override
 	public void insertFavorite(int storeId, String memberId) throws SQLException {
