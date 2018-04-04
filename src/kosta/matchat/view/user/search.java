@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
 import kosta.matchat.view.start.LoginView;
+import javax.swing.ListSelectionModel;
 
 public class search extends JPanel {
 
@@ -64,17 +65,24 @@ public class search extends JPanel {
 		preIcon.setBounds(6, 6, 54, 35);
 		panel.add(preIcon);
 		userColumn.addElement("no");
-		userColumn.addElement("ï§Žï¿½ï¿½ï¿½ ï¿½ë?ï¿?");
-		userColumn.addElement("åª›ï¿½ å¯ƒï¿½");
-		userColumn.addElement("ç§»ì‡°ï¿½ç”±ï¿?");
-		userColumn.addElement("ï¿½ã…»ï¿?");
-		model = new DefaultTableModel(userColumn, 0);
+		userColumn.addElement("¸ÀÁýÁ¾·ù");
+		userColumn.addElement("¸ÀÁýÀÌ¸§");
+		userColumn.addElement("¸ÀÁýÁÖ¼Ò");
+		userColumn.addElement("¿¬¶ôÃ³");
+		model = new DefaultTableModel(userColumn, 0){
+			public boolean isCellEditable(int row, int column) {
+				return false;
+			};
+		};
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(16, 53, 353, 436);
 		panel.add(scrollPane);
 		
 		table = new JTable(model);
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table.getTableHeader().setReorderingAllowed(false);
+		table.getTableHeader().setResizingAllowed(false);
 		scrollPane.setViewportView(table);
 		
 		userRow= new Vector<String>();

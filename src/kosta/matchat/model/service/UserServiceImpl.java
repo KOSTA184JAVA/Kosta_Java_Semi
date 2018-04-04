@@ -45,6 +45,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void loginMember(String memberId, String memberPassword) throws SQLException {
+		if(memberId == null || memberPassword == null) {
+			throw new SQLException("빈칸을 모두 채워주세요.");
+		}
 		int i = uDao.loginMember(memberId, memberPassword);
 		if (i > 0) {
 			// 로그인성공

@@ -33,13 +33,15 @@ public class UserController {
 		}
 	}
 
-	public static void loginMember(String memberId, String memberPassword) {
+	public static boolean loginMember(String memberId, String memberPassword) {
 		try {
 			uService.loginMember(memberId, memberPassword);
 			System.out.println(memberId+"님 환영합니다.");
+			return true;
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		return false;
 	}
 
 	public static void checkDuplicateId(String memberId) {

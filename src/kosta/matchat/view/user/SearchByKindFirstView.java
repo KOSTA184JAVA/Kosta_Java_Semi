@@ -17,7 +17,6 @@ public class SearchByKindFirstView extends JPanel {
 	 * Create the panel.
 	 */
 	public SearchByKindFirstView() {
-
 		setBounds(0, 0, 394, 600);
 		
 		searchbykindfirst.setLayout(null);
@@ -25,8 +24,8 @@ public class SearchByKindFirstView extends JPanel {
 		LoginView.contentPane.add(searchbykindfirst);
 		
 		
-		JButton uKindBtn = new JButton("\uC885   \uB958");
-		uKindBtn.addMouseListener(new MouseAdapter() {
+		JButton btnKind = new JButton("\uC885   \uB958");
+		btnKind.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				LoginView.contentPane.removeAll();
@@ -37,12 +36,12 @@ public class SearchByKindFirstView extends JPanel {
 			}
 		});
 		
-		uKindBtn.setBounds(70, 72, 185, 85);
-		uKindBtn.setFont(new Font("?†«ï¿?   ?‘œï¿? ", Font.PLAIN, 25));
-		searchbykindfirst.add(uKindBtn);
+		btnKind.setBounds(33, 52, 185, 85);
+		btnKind.setFont(new Font("?†«ï¿?   ?‘œï¿? ", Font.PLAIN, 25));
+		searchbykindfirst.add(btnKind);
 		
-		JButton uNameBtn = new JButton("\uC774   \uB984");
-		uNameBtn.addMouseListener(new MouseAdapter() {
+		JButton btnName = new JButton("\uC774   \uB984");
+		btnName.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				LoginView.contentPane.removeAll();
@@ -52,9 +51,9 @@ public class SearchByKindFirstView extends JPanel {
 				LoginView.cards.next(LoginView.contentPane);
 			}
 		});
-		uNameBtn.setBounds(70, 217, 185, 85);
-		uNameBtn.setFont(new Font("ï¿½ï¿½   ?”±ï¿? ", Font.PLAIN, 25));
-		searchbykindfirst.add(uNameBtn);
+		btnName.setBounds(33, 238, 185, 85);
+		btnName.setFont(new Font("ï¿½ï¿½   ?”±ï¿? ", Font.PLAIN, 25));
+		searchbykindfirst.add(btnName);
 		
 		JButton uFravoriteList = new JButton("\uC990\uACA8\uCC3E\uAE30 \uBAA9\uB85D");
 		uFravoriteList.addMouseListener(new MouseAdapter() {
@@ -65,12 +64,12 @@ public class SearchByKindFirstView extends JPanel {
 				LoginView.cards.next(LoginView.contentPane);
 			}
 		});
-		uFravoriteList.setBounds(70, 369, 185, 85);
+		uFravoriteList.setBounds(325, 51, 185, 87);
 		uFravoriteList.setFont(new Font("ï¿½ï¿½   ?”±ï¿? ", Font.PLAIN, 25));
 		searchbykindfirst.add(uFravoriteList);
 		
 		JLabel logo = new JLabel("New label");
-		logo.setBounds(289, 492, 79, 60);
+		logo.setBounds(437, 319, 79, 60);
 		logo.setIcon(new ImageIcon(SearchByKindFirstView.class.getResource("/images/logo.png")));
 		searchbykindfirst.add(logo);
 		
@@ -84,7 +83,9 @@ public class SearchByKindFirstView extends JPanel {
 			}
 		});
 		preIcon.setIcon(new ImageIcon(SearchByKindFirstView.class.getResource("/images/previousIcon.png")));
-		preIcon.setBounds(12, 10, 76, 52);
+		preIcon.setBounds(0, 0, 76, 52);
 		searchbykindfirst.add(preIcon);
+	
+		setVisible(true);
 	}
 }
