@@ -44,7 +44,7 @@ public class MainView {
 		
 		AdminController.searchTotalList();
 		
-		
+		System.out.println("다영수정중");
 
 	}
 
