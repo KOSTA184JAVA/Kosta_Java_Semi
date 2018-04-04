@@ -3,7 +3,7 @@ package kosta.matchat.view.start;
 public class MainView {
 	public static void main(String[] args) {
 
-		System.out.println("login test");
+		System.out.println("git test");
 			LoginView logV = new LoginView();
 			logV.setVisible(true);
 		// Çö¼ö
