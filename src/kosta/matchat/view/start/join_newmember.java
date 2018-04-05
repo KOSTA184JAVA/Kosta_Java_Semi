@@ -13,6 +13,16 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import com.sun.org.apache.bcel.internal.generic.GETFIELD;
+import com.sun.xml.internal.bind.v2.model.core.ID;
+
+import javafx.scene.control.TextInputDialog;
+import kosta.matchat.controller.UserController;
+import kosta.matchat.model.dto.Member;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 public class join_newmember extends JDialog {
 
 	private JPanel pan_content;
@@ -28,7 +38,7 @@ public class join_newmember extends JDialog {
 	private JButton btnJoin;
 	private JPasswordField fieldPass;
 	private JPasswordField fieldPassCheck;
-
+	boolean check;
 	/**
 	 * Launch the application.
 	 */
@@ -111,19 +121,29 @@ public class join_newmember extends JDialog {
 		pan_content.add(labelAddr);
 
 		// 회원가입 버튼
-		btnJoin = new JButton("회원가입");
-		btnJoin.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-
-				if (txtId.equals("") && fieldPass.equals(fieldPassCheck) == false) {
-					btnJoin.setEnabled(false);
-				} else if (isValidate() == true) {
-					JOptionPane.showMessageDialog(null, "회원가입에 성공하였습니다.");
-					dispose();
-				}
-			}
-		});
+				btnJoin = new JButton("회원가입");
+				btnJoin.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+					}
+				});
+				btnJoin = new JButton("회원가입");
+				btnJoin.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						if(isValidate()) {
+							if(check!=true) {
+								FailView.errorMessage("중복 확인을 해주세요");
+								txtId.requestFocus();
+							}else {
+								UserController.joinMember(new Member(txtId.getText(),fieldPass.getText(),txtName.getText(), txtPhone.getText(), txtAddr.getText()));
+								JOptionPane.showMessageDialog(null,"회원가입되었습니다.");                                              
+								
+								dispose();
+							}
+						}
+						}
+					
+				});
 		btnJoin.setFont(new Font("나눔고딕코딩", Font.BOLD, 15));
 
 		txtAddr = new JTextField();
@@ -133,7 +153,29 @@ public class join_newmember extends JDialog {
 		btnJoin.setBounds(124, 260, 135, 32);
 		pan_content.add(btnJoin);
 
-		JButton btnNewButton = new JButton("중복체크");
+		
+		//중복버튼
+		JButton btnNewButton = new JButton("중복확인");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("클릭");
+				int i=UserController.checkDuplicateId(txtId.getText());
+				System.out.println(i);
+				if(i!=0) {
+					JOptionPane.showMessageDialog(null,"중복이 되었습니다.");
+					txtId.requestFocus();
+					txtId.setText("");
+				check=false;
+				
+				}else {
+					JOptionPane.showMessageDialog(null,"사용가능한 아이디입니다.");
+					check=true;
+					
+			}
+				
+			}
+		});
 		btnNewButton.setFont(new Font("나눔고딕코딩", Font.BOLD, 11));
 
 		btnNewButton.setBounds(280, 44, 85, 32);
@@ -145,17 +187,17 @@ public class join_newmember extends JDialog {
 			FailView.errorMessage("아이디를 입력해주세요.");
 			txtId.requestFocus();
 			return false;
-		}
+	}
 
 		if (fieldPass.getText().trim().equals("") && fieldPassCheck.getText().trim().equals("")) {
 			FailView.errorMessage("비밀번호를 입력해주세요.");
-			txtName.requestFocus();
+			fieldPass.requestFocus();
 			return false;
 		}
 		
 		if (!fieldPass.getText().trim().equals(fieldPassCheck.getText().trim())) {
 			FailView.errorMessage("입력하신 두 비밀번호가 다릅니다. 다시 입력해주세요.");
-			txtName.requestFocus();
+			fieldPassCheck.requestFocus();
 			return false;
 		}
 
@@ -167,9 +209,14 @@ public class join_newmember extends JDialog {
 
 		if (txtPhone.getText().trim().equals("")) {
 			FailView.errorMessage("연락처를 입력해주세요");
-			txtName.requestFocus();
+			txtPhone.requestFocus();
 			return false;
 		}
+//		if(!check) {
+//			FailView.errorMessage("중복 확인을 해주세요");
+//			txtId.requestFocus();
+//			return false;
+//		}
 
 		
 		return true;

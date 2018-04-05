@@ -24,9 +24,9 @@ public class UserController {
 
 	}
 
-	public static void quitMember(String memberId, String memberPassword) {
+	public static void quitMember(String memberId) {
 		try {
-			uService.quitMember(memberId, memberPassword);
+			uService.quitMember(memberId);
 			System.out.println(memberId + "님 성공적으로 회원탈퇴되었습니다.");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -44,13 +44,15 @@ public class UserController {
 		return false;
 	}
 
-	public static void checkDuplicateId(String memberId) {
+	public static int checkDuplicateId(String memberId) {
+		int i=1;
 		try {
-			uService.checkDuplicateId(memberId);
-			System.out.println(memberId+"는 사용가능한 아이디입니다.");
+			i=uService.checkDuplicateId(memberId);
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		System.out.println("con"+i);
+		return i;
 	}
 
 	public static List<Restaurant> searchByStoreName(String storeName) {

@@ -24,7 +24,7 @@ public interface UserDAO {
 	 * @param memberPassword Å»ÅðÇÒ È¸¿ø Password
 	 * @return ¼º°ø¿©ºÎ
 	 */
-	public int quitMember(String memberId, String memberPassword) throws SQLException;
+	public int quitMember(String memberId) throws SQLException;
 	
 	
 	/**

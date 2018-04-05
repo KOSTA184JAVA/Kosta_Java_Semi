@@ -8,7 +8,10 @@ public interface DBProperty {
 	public static final String DRIVER_NAME = "oracle.jdbc.driver.OracleDriver";
 	public static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
 	//public static final String URL = "jdbc:oracle:thin:@192.168.0.106:1521:xe";
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
 	public static final String USER_NAME = "project";
 	public static final String USER_PASS = "project";
 
