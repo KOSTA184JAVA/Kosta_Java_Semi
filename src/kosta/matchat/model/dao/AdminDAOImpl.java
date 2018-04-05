@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 import kosta.matchat.model.dto.Menu;
 import kosta.matchat.model.dto.Restaurant;
@@ -45,17 +44,32 @@ public class AdminDAOImpl implements AdminDAO {
 		}
 	}
 	@Override
-	public int deleteStore(int storeId) throws SQLException {
+	public int deleteStore(int[] StoreIds) throws SQLException {
 		Connection con=null;
 		PreparedStatement ps = null;
+		int result=0;
+		String sql="DELETE FROM RESTAURANT WHERE SEQ_RESTAUR_ID IN (";  //다영 : 매개변수 StoreId -> String[] ids 변경
 		try {
+			for(int i=0; i<StoreIds.length; i++) {
+				if(i==(StoreIds.length-1)) {
+					sql+="?)";
+				}else {
+					sql+="?,";  //sql구문 추가
+				}
+			}	
 			con=DBUtil.getConnection();
-			ps=con.prepareStatement("DELETE FROM RESTAURANT WHERE SEQ_RESTAUR_ID=?");
-			ps.setInt(1, storeId);
-			return ps.executeUpdate();
+			ps=con.prepareStatement(sql);
+				for(int u=0; u<StoreIds.length; u++) {
+					ps.setInt(u+1, StoreIds[u]);
+				}
+		result = ps.executeUpdate();
 		}finally {
+			if(result == StoreIds.length) con.commit();  //모두 삭제되었다면 삭제 확정 진행
+			else con.rollback();
+			
 			DBUtil.dbClose(con, ps);
 		}
+	return result;	
 	}
 	@Override
 	public int updateStore(Restaurant restaurant) throws SQLException {

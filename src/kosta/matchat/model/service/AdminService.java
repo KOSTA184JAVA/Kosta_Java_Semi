@@ -21,8 +21,9 @@ public interface AdminService {
 	/**
 	 * 맛집 삭제
 	 * @param storeId 삭제할 맛집 ID
+	 * @return 
 	 */
-	public void deleteStore(int storeId) throws SQLException;
+	public int deleteStore(int[] StoreIds) throws SQLException;
 	
 	
 	/**
@@ -53,4 +54,5 @@ public interface AdminService {
 	 * @return List<Restaurant> 맛집 전체 리스트
 	 */
 	public List<Restaurant> searchTotalList() throws SQLException;
+
 }

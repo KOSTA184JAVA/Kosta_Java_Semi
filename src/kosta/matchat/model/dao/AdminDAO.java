@@ -26,7 +26,7 @@ public interface AdminDAO {
 	 * @param storeId 삭제할 맛집 ID
 	 * @return 성공여부
 	 */
-	public int deleteStore(int storeId) throws SQLException;
+	public int deleteStore(int[] StoreIds) throws SQLException;
 	
 	
 	/**
@@ -60,5 +60,6 @@ public interface AdminDAO {
 	 * @return List<Restaurant> 맛집 전체 리스트
 	 */
 	public List<Restaurant> searchTotalList() throws SQLException;
+
 	
 }

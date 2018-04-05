@@ -22,6 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import kosta.matchat.controller.AdminController;
+import kosta.matchat.controller.UserController;
 import kosta.matchat.model.dto.Restaurant;
 
 public class ManagerJTableView extends JPanel implements ActionListener {
@@ -32,7 +33,7 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 	JMenuItem  delete=new JMenuItem("삭제");
 	JMenuBar mb=new JMenuBar();
 		
-	String [] name={"kind","name","addr","phone","deliver","point"};
+	String [] name={"StoreId","kind","name","addr","phone","deliver","point"};  //다영:컬럼추가(StoreId)
 	
 	DefaultTableModel dt= new DefaultTableModel(name,0);
 	JTable jt=new JTable(dt);
@@ -47,8 +48,6 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 	JComboBox combo = new JComboBox(comboName); //콤보박스
 	JTextField jtf = new JTextField(20);
 	JButton search = new JButton("검색");
-
-
 	
 /**
 	화면구성 및 이벤트등록
@@ -118,6 +117,7 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 	      List<Vector<Object>> vList = new ArrayList<>();
 	      for(Restaurant r : resList) {
 		     Vector<Object> v = new Vector<>();
+		     	 v.add(r.getResId());
 		         v.add(r.getResKind());
 		         v.add(r.getResName());
 		         v.add(r.getResAddr());
@@ -133,11 +133,30 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Object obj = e.getSource();//이벤트발생시키는 주체
 		if(obj==insert) {//가입
-				new ManagerJDialogView(this, "추가");
+			new ManagerJDialogView(this, "추가");
 		}else if(obj==update) {//수정
-				new ManagerJDialogView(this, "수정");
+			new ManagerJDialogView(this, "수정");
 		}else if(obj==delete) {//삭제
-				int re=JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?");					
+			int re=JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?");		
+			//yes를 클릭했을 경우
+			//resId와 연결된 menuId도 삭제되게끔 menu테이블의 SEQ_RESTAUR_ID에 제약조건 주기
+			//FOREIGN KEY (SEQ_RESTAUR_ID) REFERENCES RESTAURANT(SEQ_RESTAUR_ID) on delete cascade;
+			if(re==JOptionPane.YES_OPTION) {
+				//선택된 행 번호 가져오기
+				int row [] = jt.getSelectedRows();
+				int StoreIds [] = new int[row.length];
+				for(int i=0; i<row.length; i++) {
+					StoreIds[i] = (int) jt.getValueAt(row[i], 0); //StoreId 배열로 받음
+				}
+				re = AdminController.deleteStore(StoreIds);
+				if(re>0) {
+					List<Restaurant> list = AdminController.searchTotalList();
+					if(list!=null && list.size()>0) {
+						addRowTable(list);
+						jt.setRowSelectionInterval(0, 0); // 1행에 커서 올림
+					}
+				}
+			}
 		}else if(obj==search) {  //검색
 			String keyField = combo.getSelectedItem().toString(); //object return > toString으로 문자로변경
 			if(keyField.trim().equals("ALL")) {  //전체 검색창
