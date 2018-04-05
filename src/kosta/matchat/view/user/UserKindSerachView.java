@@ -81,6 +81,8 @@ public class UserKindSerachView extends JPanel {
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);
+						
+					
 					}
 					
 				});

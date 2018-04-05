@@ -59,9 +59,13 @@ public class UserMainView extends JPanel {
 		uFravoriteList.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//LoginView.contentPane.removeAll();
-				LoginView.contentPane.add(new search_Favorite(),"Favorsearch");
+				LoginView.contentPane.removeAll();
+				LoginView.contentPane.add("Favorsearch",new UserFavoritesList());
+				revalidate();
+				repaint();
+				
 				LoginView.cards.next(LoginView.contentPane);
+
 			}
 		});
 		uFravoriteList.setBounds(275, 400, 250, 85);
