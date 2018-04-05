@@ -29,7 +29,7 @@ public class UserMainView extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				LoginView.contentPane.removeAll();
-				LoginView.contentPane.add("searchbykindsecond",new UserKindSerach());
+				LoginView.contentPane.add("searchbykindsecond",new UserKindSerachView());
 				revalidate();
 				repaint();
 				LoginView.cards.last(LoginView.contentPane);
@@ -45,7 +45,7 @@ public class UserMainView extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				LoginView.contentPane.removeAll();
-				LoginView.contentPane.add(new SearchStoreName());
+				LoginView.contentPane.add(new UserNameSearchListView());
 				revalidate();
 				repaint();
 				LoginView.cards.next(LoginView.contentPane);

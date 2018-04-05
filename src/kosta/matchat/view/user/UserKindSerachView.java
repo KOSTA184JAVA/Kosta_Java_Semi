@@ -14,13 +14,13 @@ import javax.swing.border.EmptyBorder;
 
 import kosta.matchat.view.start.LoginView;
 
-public class UserKindSerach extends JPanel {
+public class UserKindSerachView extends JPanel {
 //	private CardLayout cards = new CardLayout();
 
 	/**
 	 * Create the panel.
 	 */
-	public UserKindSerach() {
+	public UserKindSerachView() {
 				setLayout(null);
 				setBounds(0, 0, 394, 600);
 				JPanel panel = new JPanel();
@@ -35,7 +35,7 @@ public class UserKindSerach extends JPanel {
 					@Override
 					public void mouseClicked(MouseEvent e) {
 						removeAll();
-						LoginView.contentPane.add("search",new search());
+						LoginView.contentPane.add("search",new UserKindSearchListView());
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);
@@ -49,7 +49,7 @@ public class UserKindSerach extends JPanel {
 				engBtn.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
-						LoginView.contentPane.add("search",new search());
+						LoginView.contentPane.add("search",new UserKindSearchListView());
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);
@@ -63,7 +63,7 @@ public class UserKindSerach extends JPanel {
 				japanBtn.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
-						LoginView.contentPane.add("search",new search());
+						LoginView.contentPane.add("search",new UserKindSearchListView());
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);
@@ -77,7 +77,7 @@ public class UserKindSerach extends JPanel {
 				chinaBtn.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
-						LoginView.contentPane.add("search",new search());
+						LoginView.contentPane.add("search",new UserKindSearchListView());
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);
@@ -89,7 +89,7 @@ public class UserKindSerach extends JPanel {
 				panel.add(chinaBtn);
 				
 				JLabel logo = new JLabel("New label");
-				logo.setIcon(new ImageIcon(UserKindSerach.class.getResource("/images/logo.png")));
+				logo.setIcon(new ImageIcon(UserKindSerachView.class.getResource("/images/logo.png")));
 				logo.setBounds(650, 500, 79, 60);
 				panel.add(logo);
 				
@@ -101,7 +101,7 @@ public class UserKindSerach extends JPanel {
 						LoginView.cards.next(LoginView.contentPane);
 					}
 				});
-				preIcon.setIcon(new ImageIcon(UserKindSerach.class.getResource("/images/previousIcon.png")));
+				preIcon.setIcon(new ImageIcon(UserKindSerachView.class.getResource("/images/previousIcon.png")));
 				preIcon.setBounds(12, 10, 76, 52);
 				panel.add(preIcon);
 
