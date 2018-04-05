@@ -35,7 +35,7 @@ public class UserKindSerachView extends JPanel {
 					@Override
 					public void mouseClicked(MouseEvent e) {
 						removeAll();
-						LoginView.contentPane.add("search",new UserKindSearchListView("한식"));
+						LoginView.contentPane.add("searchK",new UserKindSearchListView("한식"));
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);
@@ -49,7 +49,7 @@ public class UserKindSerachView extends JPanel {
 				engBtn.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
-						LoginView.contentPane.add("search",new UserKindSearchListView("양식"));
+						LoginView.contentPane.add("searchE",new UserKindSearchListView("양식"));
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);
@@ -63,7 +63,7 @@ public class UserKindSerachView extends JPanel {
 				japanBtn.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
-						LoginView.contentPane.add("search",new UserKindSearchListView("일식"));
+						LoginView.contentPane.add("searchJ",new UserKindSearchListView("일식"));
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);
@@ -77,7 +77,7 @@ public class UserKindSerachView extends JPanel {
 				chinaBtn.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
-						LoginView.contentPane.add("search",new UserKindSearchListView("중식"));
+						LoginView.contentPane.add("searchC",new UserKindSearchListView("중식"));
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);

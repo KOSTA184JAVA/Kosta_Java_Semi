@@ -1,23 +1,21 @@
 package kosta.matchat.view.manager;
 
-	import java.awt.Font;
+	import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import kosta.matchat.controller.AdminController;
-import kosta.matchat.model.dto.Menu;
-import kosta.matchat.model.dto.Restaurant;
-
-public class ManagerJDialogView extends JDialog implements ActionListener{
+public class ManagerUpDeleteView extends JDialog implements ActionListener{
 		private JPanel contentPane;
 		private JTextField AMatchatKind;
 		private JTextField AMatchatPhone;
@@ -26,7 +24,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 		private JTextField AMatchatDeliver;
 		private JTextField AMatchatAddr;
 		private JTextField AMenuPrice1;
-		private JTextField AMenuKcal1;
+		private JTextField AMenuKcal;
 		private JTextField AMenuSp1;
 		private JTextField AMenuSource1;
 		private JTextField AMenuName2;
@@ -44,10 +42,10 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 		/**
 		 * Create the frame.
 		 */
-		public ManagerJDialogView(ManagerJTableView managerJTableView2, String string, Restaurant restaurant) {
+		public ManagerUpDeleteView(ManagerJTableView managerJTableView2, String string) {
 			setTitle("\uB9DB\uC9D1\uC815\uBCF4 \uCD94\uAC00");
 			//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			setBounds(100, 100, 340,470);
+			setBounds(100, 100, 393,470);
 			contentPane = new JPanel();
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			setContentPane(contentPane);
@@ -115,6 +113,11 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			label_5.setBounds(48, 134, 110, 20);
 			panel.add(label_5);
 			
+			JButton btnUpdate = new JButton("\uC218    \uC815");
+			btnUpdate.setFont(new Font("나눔고딕코딩", Font.BOLD, 14));
+			btnUpdate.setBounds(112, 375, 100, 40);
+			panel.add(btnUpdate);
+			
 			JLabel label_6 = new JLabel("\uB9DB\uC9D1 \uC8FC\uC18C  : ");
 			label_6.setFont(new Font("나눔고딕코딩", Font.PLAIN, 14));
 			label_6.setBounds(48, 84, 110, 20);
@@ -145,10 +148,10 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			label_9.setBounds(223, 190, 50, 20);
 			panel.add(label_9);
 			
-			AMenuKcal1 = new JTextField();
-			AMenuKcal1.setColumns(10);
-			AMenuKcal1.setBounds(265, 190, 55, 20);
-			panel.add(AMenuKcal1);
+			AMenuKcal = new JTextField();
+			AMenuKcal.setColumns(10);
+			AMenuKcal.setBounds(265, 190, 55, 20);
+			panel.add(AMenuKcal);
 			
 			JLabel label_10 = new JLabel("\uBA54\uB274\uC124\uBA85 :");
 			label_10.setFont(new Font("나눔고딕코딩", Font.PLAIN, 10));
@@ -171,7 +174,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(AMenuSource1);
 			
 			JLabel label_12 = new JLabel("New label");
-			label_12.setIcon(new ImageIcon("C:\\Users\\Xiyeon\\Desktop\\Edu\\JavaWorkSpace\\GUI\\src\\\uC774\uBBF8\uC9C0.png"));
+			label_12.setIcon(new ImageIcon(ManagerUpDeleteView.class.getResource("/images/logo.png")));
 			label_12.setBounds(239, 369, 81, 52);
 			panel.add(label_12);
 			
@@ -275,91 +278,23 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			AMenuSource3.setBounds(265, 343, 55, 20);
 			panel.add(AMenuSource3);
 			
-			//JButton button = new JButton("\uCD94  \uAC00");
+			JButton btnMenuDelete1 = new JButton("\uC0AD\uC81C");
+			btnMenuDelete1.setHorizontalAlignment(SwingConstants.LEFT);
+			btnMenuDelete1.setFont(new Font("나눔고딕코딩", Font.PLAIN, 7));
+			btnMenuDelete1.setBounds(327, 205, 47, 29);
+			contentPane.add(btnMenuDelete1);
 			
-			JButton button;
-			if(string.equals("추가")) {
-				 button = new JButton("추   가");
-			}else{
-				 button = new JButton("수   정");
-				 System.out.println("id="+ restaurant.getResId()+"addr= "+restaurant.getResAddr()+"name= "+restaurant.getResName());
-					
-				 AMatchatKind.setText(restaurant.getResKind());
-				 AMatchatName.setText(restaurant.getResName());
-				 AMatchatAddr.setText(restaurant.getResAddr());
-				 AMatchatPhone.setText(restaurant.getResPhone());
-				 AMatchatDeliver.setText(restaurant.getResDeliv());
-				 
-			}
-			button.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					String labelText = e.getActionCommand(); //버튼의 글씨
-					if(labelText.equals("추   가")) {
-						
-						String matKind = AMatchatKind.getText();
-						String matName = AMatchatName.getText();
-						String matAddr = AMatchatAddr.getText();
-						String matPhone = AMatchatPhone.getText();
-						String matDeliver = AMatchatDeliver.getText();
-						//System.out.println(matKind +matName+matAddr+matPhone+matDeliver+0);
-						Restaurant restaurant = new Restaurant(matKind,matName,matAddr,matPhone,matDeliver,5);
-						
-						AdminController.insertStore(restaurant);
-						
-						
-						String menuName = AMenuName1.getText();
-						int menuPrice = Integer.parseInt(AMenuPrice1.getText());
-						String menuDesc = AMenuSp1.getText();
-						int menuKcal = Integer.parseInt(AMenuKcal1.getText());
-						String menuSource = AMenuSource1.getText();
-						
-						String menuName2 = AMenuName2.getText();
-						int menuPrice2 = Integer.parseInt(AMenuPrice2.getText());
-						String menuDesc2 = AMenuSp2.getText();
-						int menuKcal2 = Integer.parseInt(AMenuKcal2.getText());
-						String menuSource2 = AMenuSource2.getText();
-						
-						String menuName3 = AMenuName3.getText();
-						int menuPrice3 = Integer.parseInt(AMenuPrice3.getText());
-						String menuDesc3 = AMenuSp3.getText();
-						int menuKcal3 = Integer.parseInt(AMenuKcal3.getText());
-						String menuSource3 = AMenuSource3.getText();
-						
-						Menu menu = new Menu(menuName,menuPrice,menuDesc,menuKcal,menuSource);
-						int StoreId = AdminController.SearchStoreId();
-						AdminController.insertMenu(StoreId, menu);
-						
-						Menu menu2 = new Menu(menuName2,menuPrice2,menuDesc2,menuKcal2,menuSource2);
-						StoreId = AdminController.SearchStoreId();
-						AdminController.insertMenu(StoreId, menu2);
-						
-						Menu menu3 = new Menu(menuName3,menuPrice3,menuDesc3,menuKcal3,menuSource3);
-						StoreId = AdminController.SearchStoreId();
-						AdminController.insertMenu(StoreId, menu3);
-						
-						
-					}else if(labelText.equals("수   정")) {
-						String matKind = AMatchatKind.getText();
-						String matName = AMatchatName.getText();
-						String matAddr = AMatchatAddr.getText();
-						String matPhone = AMatchatPhone.getText();
-						String matDeliver = AMatchatDeliver.getText();
-						
-						Restaurant resDto = new Restaurant(restaurant.getResId(),matKind,matName,matAddr,matPhone,matDeliver,5);
-						
-						AdminController.updateStore(resDto);
-						
-						dispose();
-						
-					}else if(labelText.equals("취소")) {
-						dispose();//다이어로그 창 닫기
-					}
-				}
-			});
-			button.setBounds(112, 375, 100, 40);
-			panel.add(button);
+			JButton btnMenuDelete2 = new JButton("\uC0AD\uC81C");
+			btnMenuDelete2.setHorizontalAlignment(SwingConstants.LEFT);
+			btnMenuDelete2.setFont(new Font("나눔고딕코딩", Font.PLAIN, 7));
+			btnMenuDelete2.setBounds(327, 265, 47, 29);
+			contentPane.add(btnMenuDelete2);
 			
-			
+			JButton btnMenuDelete3 = new JButton("\uC0AD\uC81C");
+			btnMenuDelete3.setHorizontalAlignment(SwingConstants.LEFT);
+			btnMenuDelete3.setFont(new Font("나눔고딕코딩", Font.PLAIN, 7));
+			btnMenuDelete3.setBounds(327, 332, 47, 29);
+			contentPane.add(btnMenuDelete3);
 			
 			setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			 setVisible(true);//창보이기
@@ -368,6 +303,13 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		String labelText = e.getActionCommand(); //버튼의 글씨
+		if(labelText.equals("추가")) {
+			System.out.println("a");
+		}else if(labelText.equals("수정")) {
+			System.out.println("b");
+		}else if(labelText.equals("취소")) {
+			dispose();//다이어로그 창 닫기
+		}
 	}//생성자끝
 }

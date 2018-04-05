@@ -22,6 +22,16 @@ public class AdminController {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	public static int SearchStoreId() {
+		int re=0;
+		try {
+			re= aService.SearchStoreId();
+		}catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return re;
+	}
 
 	public static void deleteStore(int storeId) {
 		try {

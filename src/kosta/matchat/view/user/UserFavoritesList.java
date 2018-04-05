@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -13,10 +14,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+import kosta.matchat.controller.AdminController;
+import kosta.matchat.controller.UserController;
+import kosta.matchat.model.dto.Restaurant;
 import kosta.matchat.view.start.LoginView;
 
 public class UserFavoritesList extends JPanel {
@@ -47,30 +52,7 @@ public class UserFavoritesList extends JPanel {
 		panel.add(jsp, "Center");
 
 		add(panel);
-		// 레코드 더블클릭 시 수행되는 메소드
-		jt.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseReleased(MouseEvent arg0) {
-				JTable t = (JTable) arg0.getSource();
-				if (arg0.getClickCount() == 2) {
-					TableModel m = t.getModel();
-					Point pt = arg0.getPoint();
-					int i = t.rowAtPoint(pt);
-					if (i >= 0) {
-						int row = t.convertRowIndexToModel(i);
-						removeAll();
-						LoginView.contentPane.add(new StoreInformation());
-						revalidate();
-						repaint();
-						LoginView.cards.next(LoginView.contentPane);
-						// String s = String.format("%s (%s)", m.getValueAt(row, 0), m.getValueAt(row,
-						// 1));
-						// JOptionPane.showMessageDialog(t, s, "title",
-						// JOptionPane.INFORMATION_MESSAGE);
-					}
-				}
-			}
-		});
+		
 
 		JLabel logo = new JLabel("New label");
 		logo.setIcon(new ImageIcon(UserKindSerachView.class.getResource("/images/logo.png")));
@@ -89,27 +71,46 @@ public class UserFavoritesList extends JPanel {
 		preIcon.setBounds(12, 10, 76, 52);
 		add(preIcon);
 
-		// Jtable위에 레코드 추가
+		//jtable 위에 레코드(테이블) 추가
+		String id = LoginView.id;
+		List<Restaurant> list = UserController.searchFavorites(id);
+		if(list!=null && list.size()!=0) {
+			this.addRowTable(list);
+			
+			//첫번째 행을 우선 선택해둠. 
+			jt.setRowSelectionInterval(0, 0);
+		}			
+	}//생성자끝
 
-		// DAO에서 리턴타입 벡터로 바꾼다음 실행 하세요!! , 매개변수도 하드코딩이 아닌 선택된 것으로 교체!
-		// List<Vector<Object>> list = UserController.searchByStoreKind("한식");
-		// if(list!=null && list.size()!=0) {
-		// this.addRowTable(list);
-		// }
-
-		// 첫번째 행을 선택!!
-		jt.setColumnSelectionInterval(0, 0);
-
-	}
-	
-	public void addRowTable(List<Vector<Object>> list) {
-		// 기존 레코드 삭제
-		for(int i=0; i<dt.getRowCount(); i++) {
-			dt.removeRow(0);
-		}
+	/**
+	 * 검색된 레코드(List<Restaurant>)를 defaultTableModel에 추가하는 메소드
+	 */
+	public void addRowTable(List<Restaurant> list) {
+		//DB에서 가져온 List<Restaurant>을 List<Vector<Object>>으로 변환
+		List<Vector<Object>> vList = this.convertRestaurantToVector(list);
 		
-		for (Vector<Object> v : list) {
-			dt.addRow(v);// 끝에 추가
+		//기존 레코드 리셋 후 신규추가
+		dt.setNumRows(0);  //lowcount(행의 수)를 0으로 만든다 (모두삭제)
+		for(Vector<Object> v :vList) {
+			dt.addRow(v);  //끝에 추가 (누적됨)
 		}
-	}
+	}//addRowTable 끝  
+	
+	/**
+	 * 검색된 레코드(List<Restaurant>)를 List<Vector<Object>>로 변환하는 메소드 (이유 : dt.addRow() 할 때 매개변수로 배열 혹은 Vector<>만 들어가기 때문)
+	 */
+	public List<Vector<Object>> convertRestaurantToVector(List<Restaurant> resList){
+	      List<Vector<Object>> vList = new ArrayList<>();
+	      for(Restaurant r : resList) {
+		     Vector<Object> v = new Vector<>();
+		         v.add(r.getResKind());
+		         v.add(r.getResName());
+		         v.add(r.getResAddr());
+		         v.add(r.getResPhone());
+		         v.add(r.getResDeliv());
+		         v.add(r.getResSp());
+		         vList.add(v);
+	      }
+	      return vList;
+	   }
 }

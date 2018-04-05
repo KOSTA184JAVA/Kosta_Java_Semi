@@ -64,7 +64,7 @@ public class UserKindSearchListView extends JPanel {
                     if(i>=0) {
                         int row = t.convertRowIndexToModel(i);
                         removeAll();
-        			LoginView.contentPane.add(new StoreInformation());
+        			LoginView.contentPane.add(new StoreInformation(kind));
         				revalidate();
         				repaint();
         				LoginView.cards.next(LoginView.contentPane);
@@ -110,8 +110,7 @@ public class UserKindSearchListView extends JPanel {
                     if(i>=0) {
                         int row = t.convertRowIndexToModel(i);
                         removeAll();
-        			LoginView.contentPane.add(new StoreInformation());
-        				revalidate();
+        			LoginView.contentPane.add(new StoreInformation(kind));
         				repaint();
         				LoginView.cards.next(LoginView.contentPane);
 //                        String s = String.format("%s (%s)", m.getValueAt(row, 0), m.getValueAt(row, 1));
@@ -127,7 +126,7 @@ public class UserKindSearchListView extends JPanel {
 	 * 검색된 레코드(List<Vector<Object>>)를 DefaultTableModel에 추가하는 메소드
 	 */
 	public void viewRowTable(String resKind) {
-		List<Restaurant> rList = UserController.searchByStoreKind(resKind);
+		List<Restaurant> rList = UserController.searchByStoreKind(resKind);//필
 		List<Vector<Object>>vlist = convertRestaurantToVector(rList);
 		if(vlist != null && !vlist.isEmpty()) {
 			this.addRowTable(vlist);

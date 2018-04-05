@@ -6,10 +6,10 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -21,11 +21,13 @@ import kosta.matchat.view.user.UserMainView;
 
 public class LoginView extends JFrame {
 	public static String id;
+	
 	public static JPanel contentPane;
 	private JTextField txtId;
 	private JPasswordField txtPwd;
 
-	public static CardLayout cards = new CardLayout();// ?™”ë©´ì„ ? „?™”?•˜ê¸°ì— ?•„?š”?•œ layout!
+	public static CardLayout cards = new CardLayout();
+	public static String id =null;
 
 	public LoginView() {
 		setTitle("·Î±×ÀÎ");

@@ -90,4 +90,15 @@ public class AdminServiceImpl implements AdminService {
 	return list;
 	}
 
+	@Override
+	public int SearchStoreId() throws SQLException {
+		int re = aDao.SearchStoreId();
+		if (re > 0) {
+			//아이디 검색 성공
+		} else {
+			throw new SQLException("해당 Restaurant 아이디가 없습니다");
+		}
+		return re;
+	}
+
 }

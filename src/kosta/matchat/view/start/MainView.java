@@ -4,9 +4,12 @@ import kosta.matchat.view.manager.ManagerJTableView;
 public class MainView {
 	public static void main(String[] args) {
 
-		//logV.setVisible(true);
-		new LoginView();
-			
+//		LoginView logV = new LoginView();
+//		logV.setVisible(true);
+
+			new LoginView();
+		//	new ManagerJTableView();  //관리자
+
 		// 현수
 //		UserController.joinMember(new Member("test1", "test", "test", "test", "test")); //회원가입
 //		UserController.quitMember("test1", "test"); //회원탈퇴
