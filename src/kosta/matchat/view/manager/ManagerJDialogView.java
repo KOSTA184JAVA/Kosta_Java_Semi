@@ -1,19 +1,21 @@
 package kosta.matchat.view.manager;
 
-	import java.awt.EventQueue;
-import java.awt.Font;
+	import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import kosta.matchat.controller.AdminController;
+import kosta.matchat.model.dto.Menu;
+import kosta.matchat.model.dto.Restaurant;
 
 public class ManagerJDialogView extends JDialog implements ActionListener{
 		private JPanel contentPane;
@@ -24,7 +26,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 		private JTextField AMatchatDeliver;
 		private JTextField AMatchatAddr;
 		private JTextField AMenuPrice1;
-		private JTextField AMenuKcal;
+		private JTextField AMenuKcal1;
 		private JTextField AMenuSp1;
 		private JTextField AMenuSource1;
 		private JTextField AMenuName2;
@@ -113,7 +115,77 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			label_5.setBounds(48, 134, 110, 20);
 			panel.add(label_5);
 			
-			JButton button = new JButton("\uCD94  \uAC00");
+			//JButton button = new JButton("\uCD94  \uAC00");
+			
+			JButton button;
+			if(string.equals("추가")) {
+				 button = new JButton("추   가");
+			}else{
+				 button = new JButton("수   정");
+			}
+			button.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					String labelText = e.getActionCommand(); //버튼의 글씨
+					if(labelText.equals("추   가")) {
+						
+						String matKind = AMatchatKind.getText();
+						String matName = AMatchatName.getText();
+						String matAddr = AMatchatAddr.getText();
+						String matPhone = AMatchatPhone.getText();
+						String matDeliver = AMatchatDeliver.getText();
+						//System.out.println(matKind +matName+matAddr+matPhone+matDeliver+0);
+						Restaurant restaurant = new Restaurant(matKind,matName,matAddr,matPhone,matDeliver,5);
+						
+						AdminController.insertStore(restaurant);
+						
+						
+						String menuName = AMenuName1.getText();
+						int menuPrice = Integer.parseInt(AMenuPrice1.getText());
+						String menuDesc = AMenuSp1.getText();
+						int menuKcal = Integer.parseInt(AMenuKcal1.getText());
+						String menuSource = AMenuSource1.getText();
+						
+						String menuName2 = AMenuName2.getText();
+						int menuPrice2 = Integer.parseInt(AMenuPrice2.getText());
+						String menuDesc2 = AMenuSp2.getText();
+						int menuKcal2 = Integer.parseInt(AMenuKcal2.getText());
+						String menuSource2 = AMenuSource2.getText();
+						
+						String menuName3 = AMenuName3.getText();
+						int menuPrice3 = Integer.parseInt(AMenuPrice3.getText());
+						String menuDesc3 = AMenuSp3.getText();
+						int menuKcal3 = Integer.parseInt(AMenuKcal3.getText());
+						String menuSource3 = AMenuSource3.getText();
+						
+						Menu menu = new Menu(menuName,menuPrice,menuDesc,menuKcal,menuSource);
+						int StoreId = AdminController.SearchStoreId();
+						AdminController.insertMenu(StoreId, menu);
+						
+						Menu menu2 = new Menu(menuName2,menuPrice2,menuDesc2,menuKcal2,menuSource2);
+						StoreId = AdminController.SearchStoreId();
+						AdminController.insertMenu(StoreId, menu2);
+						
+						Menu menu3 = new Menu(menuName3,menuPrice3,menuDesc3,menuKcal3,menuSource3);
+						StoreId = AdminController.SearchStoreId();
+						AdminController.insertMenu(StoreId, menu3);
+						
+						
+					}else if(labelText.equals("수정")) {
+						String matKind = AMatchatKind.getText();
+						String matName = AMatchatName.getText();
+						String matAddr = AMatchatAddr.getText();
+						String matPhone = AMatchatPhone.getText();
+						String matDeliver = AMatchatDeliver.getText();
+						//System.out.println(matKind +matName+matAddr+matPhone+matDeliver+0);
+						Restaurant restaurant = new Restaurant(matKind,matName,matAddr,matPhone,matDeliver,5);
+						
+						AdminController.updateStore(restaurant);
+						
+					}else if(labelText.equals("취소")) {
+						dispose();//다이어로그 창 닫기
+					}
+				}
+			});
 			button.setBounds(112, 375, 100, 40);
 			panel.add(button);
 			
@@ -147,10 +219,10 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			label_9.setBounds(223, 190, 50, 20);
 			panel.add(label_9);
 			
-			AMenuKcal = new JTextField();
-			AMenuKcal.setColumns(10);
-			AMenuKcal.setBounds(265, 190, 55, 20);
-			panel.add(AMenuKcal);
+			AMenuKcal1 = new JTextField();
+			AMenuKcal1.setColumns(10);
+			AMenuKcal1.setBounds(265, 190, 55, 20);
+			panel.add(AMenuKcal1);
 			
 			JLabel label_10 = new JLabel("\uBA54\uB274\uC124\uBA85 :");
 			label_10.setFont(new Font("나눔고딕코딩", Font.PLAIN, 10));
@@ -284,13 +356,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String labelText = e.getActionCommand(); //버튼의 글씨
-		if(labelText.equals("추가")) {
-			System.out.println("a");
-		}else if(labelText.equals("수정")) {
-			System.out.println("b");
-		}else if(labelText.equals("취소")) {
-			dispose();//다이어로그 창 닫기
-		}
+		
 	}//생성자끝
 }

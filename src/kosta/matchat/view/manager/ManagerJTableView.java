@@ -11,7 +11,6 @@ import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -24,12 +23,6 @@ import javax.swing.table.DefaultTableModel;
 
 import kosta.matchat.controller.AdminController;
 import kosta.matchat.model.dto.Restaurant;
-
-import kosta.matchat.view.start.LoginView;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import javax.swing.JLabel;
 
 public class ManagerJTableView extends JPanel implements ActionListener {
 	JPanel menu = new JPanel();
