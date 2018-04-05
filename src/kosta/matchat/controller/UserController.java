@@ -64,15 +64,17 @@ public class UserController {
 		}
 	}
 
-	public static void searchByStoreKind(String StoreKind) {
+	public static List<Restaurant> searchByStoreKind(String StoreKind) {
 		try {
 			List<Restaurant> list = uService.searchByStoreKind(StoreKind);
-			for(Restaurant temp : list) {
+			return list;
+			/*for(Restaurant temp : list) {
 				System.out.println(temp.getResKind()+" | "+temp.getResName() +" | "+ temp.getResAddr() +" | "+ temp.getResPhone() +" | "+ temp.getResDeliv() +" | "+ temp.getResSp() );
-			}
+			}*/
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		return null;
 	}
 
 	public static void searchByOrderStoreSP(String StoreKind) {
@@ -107,15 +109,17 @@ public class UserController {
 		}
 	}
 
-	public static void searchFavorites(String memberId) {
+	public static List<Restaurant> searchFavorites(String memberId) {
+		List<Restaurant> list =null;
 		try {
-			List<Restaurant> list = uService.searchFavorites(memberId);
+			list = uService.searchFavorites(memberId);
 			for(Restaurant temp : list) {
 				System.out.println(temp.getResKind()+" | "+temp.getResName() +" | "+ temp.getResAddr() +" | "+ temp.getResPhone() +" | "+ temp.getResDeliv() +" | "+ temp.getResSp() );
 			}
 		}catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		return list;
 	}
 
 	public static void insertStarPoint(int storeId, int score) {

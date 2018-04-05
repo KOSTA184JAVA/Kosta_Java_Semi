@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -12,10 +13,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+import kosta.matchat.controller.UserController;
+import kosta.matchat.model.dto.Restaurant;
 import kosta.matchat.view.start.LoginView;
 
 public class UserKindSearchListView extends JPanel {
@@ -25,9 +29,10 @@ public class UserKindSearchListView extends JPanel {
 	DefaultTableModel dt = new DefaultTableModel(name, 0);
 	JTable jt = new JTable(dt);
 	JScrollPane jsp = new JScrollPane(jt);
-	
+	private String kind;	
 
-	public UserKindSearchListView() {
+	public UserKindSearchListView(String kind) {
+		this.kind = kind;
 		setLayout(null);
 		
 		setBackground(new Color(135, 206, 250));
@@ -46,9 +51,7 @@ public class UserKindSearchListView extends JPanel {
 		
 		add(panel);
 
-		
-
-		
+				
 		//레코드 더블클릭 시 수행되는 메소드
 		jt.addMouseListener(new MouseAdapter() {
 			@Override
@@ -61,7 +64,7 @@ public class UserKindSearchListView extends JPanel {
                     if(i>=0) {
                         int row = t.convertRowIndexToModel(i);
                         removeAll();
-        			LoginView.contentPane.add(new StoreInformation());
+        			LoginView.contentPane.add(new StoreInformation(kind));
         				revalidate();
         				repaint();
         				LoginView.cards.next(LoginView.contentPane);
@@ -90,34 +93,74 @@ public class UserKindSearchListView extends JPanel {
 		preIcon.setBounds(12, 10, 76, 52);
 		add(preIcon);
 		
+		/**
+		 * JTable 위의 DTM에 addRow 하고 View 하기		
+		 */
+		viewRowTable(kind);
 		
-		
-		// Jtable위에 레코드 추가
-		
-		//DAO에서 리턴타입 벡터로 바꾼다음 실행 하세요!! , 매개변수도 하드코딩이 아닌 선택된 것으로 교체!
-//		List<Vector<Object>> list = UserController.searchByStoreKind("한식");
-//		if(list!=null && list.size()!=0) {
-//			this.addRowTable(list);
-//		}
-		
-		//첫번째 행을 선택!!
-		jt.setColumnSelectionInterval(0, 0);
-		
+		jt.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				JTable t = (JTable)arg0.getSource();
+				if(arg0.getClickCount()==2) {
+					TableModel m = t.getModel();
+                    Point pt = arg0.getPoint();
+                    int i = t.rowAtPoint(pt);
+                    if(i>=0) {
+                        int row = t.convertRowIndexToModel(i);
+                        removeAll();
+        			LoginView.contentPane.add(new StoreInformation(kind));
+        				repaint();
+        				LoginView.cards.next(LoginView.contentPane);
+//                        String s = String.format("%s (%s)", m.getValueAt(row, 0), m.getValueAt(row, 1));
+//                        JOptionPane.showMessageDialog(t, s, "title", JOptionPane.INFORMATION_MESSAGE);
+                    }
+				}
+			}
+		});
 		
 	}
 	
 	/***
 	 * 검색된 레코드(List<Vector<Object>>)를 DefaultTableModel에 추가하는 메소드
 	 */
-	public void addRowTable(List<Vector<Object>> list) {
-		// 기존 레코드 삭제
-		for(int i=0; i<dt.getRowCount(); i++) {
-			dt.removeRow(0);
+	public void viewRowTable(String resKind) {
+		List<Restaurant> rList = UserController.searchByStoreKind(resKind);//필
+		List<Vector<Object>>vlist = convertRestaurantToVector(rList);
+		if(vlist != null && !vlist.isEmpty()) {
+			this.addRowTable(vlist);
+			//첫번째 행을 선택 => 아무것도 선택하지 않고 시나리오를 실행할시 발생하는 오류 대처
+			jt.setRowSelectionInterval(0, 0);
+			jt.getTableHeader().setReorderingAllowed(false);
+			//table.getTableHeader().setResizingAllowed(false);
+			jt.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		}
+	}
+	
+	public void addRowTable(List<Vector<Object>>list) {
+		//기존 레코드 삭제
+		//model.setNumRows(0);
+		for(Vector<Object> v : list) {
+			//System.out.println(v);
+			dt.addRow(v);
+		}
+	}
+	
+	public List<Vector<Object>> convertRestaurantToVector(List<Restaurant> resList){
+		List<Vector<Object>> vList = new ArrayList<>();
 		
-		for (Vector<Object> v : list) {
-			dt.addRow(v);// 끝에 추가
+		for(Restaurant r : resList) {
+			Vector<Object> v = new Vector<>();
+			v.add(r.getResKind());
+			v.add(r.getResName());
+			v.add(r.getResAddr());
+			v.add(r.getResPhone());
+			v.add(r.getResDeliv());
+			v.add(r.getResSp());
+			vList.add(v);
 		}
+		return vList;
 	}
 }
 

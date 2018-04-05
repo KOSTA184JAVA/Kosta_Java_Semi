@@ -20,12 +20,13 @@ import kosta.matchat.view.manager.ManagerJTableView;
 import kosta.matchat.view.user.UserMainView;
 
 public class LoginView extends JFrame {
-
+	
 	public static JPanel contentPane;
 	private JTextField txtId;
 	private JPasswordField txtPwd;
 
 	public static CardLayout cards = new CardLayout();
+	public static String id =null;
 
 	public LoginView() {
 		setTitle("·Î±×ÀÎ");
@@ -73,6 +74,7 @@ public class LoginView extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (UserController.loginMember(txtId.getText(), new String(txtPwd.getPassword()))) {
+					id=txtId.getText();
 					contentPane.add(new UserMainView(), "searchbyKindFrist");
 					cards.next(contentPane);
 				}

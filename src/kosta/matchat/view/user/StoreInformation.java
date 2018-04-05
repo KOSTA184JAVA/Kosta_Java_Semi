@@ -52,6 +52,7 @@ public class StoreInformation extends JPanel {
       lbresinfo.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.BOLD, 17));
       lbresinfo.setBounds(159, 5, 77, 32);
       add(lbresinfo);
+     
       
       JLabel lbreskind = new JLabel("\uB9DB\uC9D1\uC885\uB958");
       lbreskind.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));

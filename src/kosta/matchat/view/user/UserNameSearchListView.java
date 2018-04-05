@@ -79,7 +79,7 @@ public class UserNameSearchListView extends JPanel {
 					if (i >= 0) {
 						int row = t.convertRowIndexToModel(i);
 						removeAll();
-						LoginView.contentPane.add(new StoreInformation());
+						LoginView.contentPane.add(new StoreInformation(null));
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);
