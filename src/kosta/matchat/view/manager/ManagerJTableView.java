@@ -1,6 +1,8 @@
 package kosta.matchat.view.manager;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -22,12 +24,6 @@ import javax.swing.table.DefaultTableModel;
 
 import kosta.matchat.controller.AdminController;
 import kosta.matchat.model.dto.Restaurant;
-
-import kosta.matchat.view.start.LoginView;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import javax.swing.JLabel;
 
 public class ManagerJTableView extends JPanel implements ActionListener {
 	JPanel menu = new JPanel();
