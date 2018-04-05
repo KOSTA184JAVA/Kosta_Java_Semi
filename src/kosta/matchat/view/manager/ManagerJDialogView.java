@@ -44,7 +44,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 		/**
 		 * Create the frame.
 		 */
-		public ManagerJDialogView(ManagerJTableView managerJTableView2, String string) {
+		public ManagerJDialogView(ManagerJTableView managerJTableView2, String string, Restaurant restaurant) {
 			setTitle("\uB9DB\uC9D1\uC815\uBCF4 \uCD94\uAC00");
 			//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setBounds(100, 100, 340,470);
@@ -114,80 +114,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			label_5.setFont(new Font("나눔고딕코딩", Font.PLAIN, 14));
 			label_5.setBounds(48, 134, 110, 20);
 			panel.add(label_5);
-			
-			//JButton button = new JButton("\uCD94  \uAC00");
-			
-			JButton button;
-			if(string.equals("추가")) {
-				 button = new JButton("추   가");
-			}else{
-				 button = new JButton("수   정");
-			}
-			button.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					String labelText = e.getActionCommand(); //버튼의 글씨
-					if(labelText.equals("추   가")) {
-						
-						String matKind = AMatchatKind.getText();
-						String matName = AMatchatName.getText();
-						String matAddr = AMatchatAddr.getText();
-						String matPhone = AMatchatPhone.getText();
-						String matDeliver = AMatchatDeliver.getText();
-						//System.out.println(matKind +matName+matAddr+matPhone+matDeliver+0);
-						Restaurant restaurant = new Restaurant(matKind,matName,matAddr,matPhone,matDeliver,5);
-						
-						AdminController.insertStore(restaurant);
-						
-						
-						String menuName = AMenuName1.getText();
-						int menuPrice = Integer.parseInt(AMenuPrice1.getText());
-						String menuDesc = AMenuSp1.getText();
-						int menuKcal = Integer.parseInt(AMenuKcal1.getText());
-						String menuSource = AMenuSource1.getText();
-						
-						String menuName2 = AMenuName2.getText();
-						int menuPrice2 = Integer.parseInt(AMenuPrice2.getText());
-						String menuDesc2 = AMenuSp2.getText();
-						int menuKcal2 = Integer.parseInt(AMenuKcal2.getText());
-						String menuSource2 = AMenuSource2.getText();
-						
-						String menuName3 = AMenuName3.getText();
-						int menuPrice3 = Integer.parseInt(AMenuPrice3.getText());
-						String menuDesc3 = AMenuSp3.getText();
-						int menuKcal3 = Integer.parseInt(AMenuKcal3.getText());
-						String menuSource3 = AMenuSource3.getText();
-						
-						Menu menu = new Menu(menuName,menuPrice,menuDesc,menuKcal,menuSource);
-						int StoreId = AdminController.SearchStoreId();
-						AdminController.insertMenu(StoreId, menu);
-						
-						Menu menu2 = new Menu(menuName2,menuPrice2,menuDesc2,menuKcal2,menuSource2);
-						StoreId = AdminController.SearchStoreId();
-						AdminController.insertMenu(StoreId, menu2);
-						
-						Menu menu3 = new Menu(menuName3,menuPrice3,menuDesc3,menuKcal3,menuSource3);
-						StoreId = AdminController.SearchStoreId();
-						AdminController.insertMenu(StoreId, menu3);
-						
-						
-					}else if(labelText.equals("수정")) {
-						String matKind = AMatchatKind.getText();
-						String matName = AMatchatName.getText();
-						String matAddr = AMatchatAddr.getText();
-						String matPhone = AMatchatPhone.getText();
-						String matDeliver = AMatchatDeliver.getText();
-						//System.out.println(matKind +matName+matAddr+matPhone+matDeliver+0);
-						Restaurant restaurant = new Restaurant(matKind,matName,matAddr,matPhone,matDeliver,5);
-						
-						AdminController.updateStore(restaurant);
-						
-					}else if(labelText.equals("취소")) {
-						dispose();//다이어로그 창 닫기
-					}
-				}
-			});
-			button.setBounds(112, 375, 100, 40);
-			panel.add(button);
 			
 			JLabel label_6 = new JLabel("\uB9DB\uC9D1 \uC8FC\uC18C  : ");
 			label_6.setFont(new Font("나눔고딕코딩", Font.PLAIN, 14));
@@ -348,6 +274,92 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			AMenuSource3.setColumns(10);
 			AMenuSource3.setBounds(265, 343, 55, 20);
 			panel.add(AMenuSource3);
+			
+			//JButton button = new JButton("\uCD94  \uAC00");
+			
+			JButton button;
+			if(string.equals("추가")) {
+				 button = new JButton("추   가");
+			}else{
+				 button = new JButton("수   정");
+				 System.out.println("id="+ restaurant.getResId()+"addr= "+restaurant.getResAddr()+"name= "+restaurant.getResName());
+					
+				 AMatchatKind.setText(restaurant.getResKind());
+				 AMatchatName.setText(restaurant.getResName());
+				 AMatchatAddr.setText(restaurant.getResAddr());
+				 AMatchatPhone.setText(restaurant.getResPhone());
+				 AMatchatDeliver.setText(restaurant.getResDeliv());
+				 
+			}
+			button.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					String labelText = e.getActionCommand(); //버튼의 글씨
+					if(labelText.equals("추   가")) {
+						
+						String matKind = AMatchatKind.getText();
+						String matName = AMatchatName.getText();
+						String matAddr = AMatchatAddr.getText();
+						String matPhone = AMatchatPhone.getText();
+						String matDeliver = AMatchatDeliver.getText();
+						//System.out.println(matKind +matName+matAddr+matPhone+matDeliver+0);
+						Restaurant restaurant = new Restaurant(matKind,matName,matAddr,matPhone,matDeliver,5);
+						
+						AdminController.insertStore(restaurant);
+						
+						
+						String menuName = AMenuName1.getText();
+						int menuPrice = Integer.parseInt(AMenuPrice1.getText());
+						String menuDesc = AMenuSp1.getText();
+						int menuKcal = Integer.parseInt(AMenuKcal1.getText());
+						String menuSource = AMenuSource1.getText();
+						
+						String menuName2 = AMenuName2.getText();
+						int menuPrice2 = Integer.parseInt(AMenuPrice2.getText());
+						String menuDesc2 = AMenuSp2.getText();
+						int menuKcal2 = Integer.parseInt(AMenuKcal2.getText());
+						String menuSource2 = AMenuSource2.getText();
+						
+						String menuName3 = AMenuName3.getText();
+						int menuPrice3 = Integer.parseInt(AMenuPrice3.getText());
+						String menuDesc3 = AMenuSp3.getText();
+						int menuKcal3 = Integer.parseInt(AMenuKcal3.getText());
+						String menuSource3 = AMenuSource3.getText();
+						
+						Menu menu = new Menu(menuName,menuPrice,menuDesc,menuKcal,menuSource);
+						int StoreId = AdminController.SearchStoreId();
+						AdminController.insertMenu(StoreId, menu);
+						
+						Menu menu2 = new Menu(menuName2,menuPrice2,menuDesc2,menuKcal2,menuSource2);
+						StoreId = AdminController.SearchStoreId();
+						AdminController.insertMenu(StoreId, menu2);
+						
+						Menu menu3 = new Menu(menuName3,menuPrice3,menuDesc3,menuKcal3,menuSource3);
+						StoreId = AdminController.SearchStoreId();
+						AdminController.insertMenu(StoreId, menu3);
+						
+						
+					}else if(labelText.equals("수   정")) {
+						String matKind = AMatchatKind.getText();
+						String matName = AMatchatName.getText();
+						String matAddr = AMatchatAddr.getText();
+						String matPhone = AMatchatPhone.getText();
+						String matDeliver = AMatchatDeliver.getText();
+						
+						Restaurant resDto = new Restaurant(restaurant.getResId(),matKind,matName,matAddr,matPhone,matDeliver,5);
+						
+						AdminController.updateStore(resDto);
+						
+						dispose();
+						
+					}else if(labelText.equals("취소")) {
+						dispose();//다이어로그 창 닫기
+					}
+				}
+			});
+			button.setBounds(112, 375, 100, 40);
+			panel.add(button);
+			
+			
 			
 			setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			 setVisible(true);//창보이기

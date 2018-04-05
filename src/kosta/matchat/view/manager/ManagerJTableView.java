@@ -31,7 +31,9 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 	JMenuItem  update=new JMenuItem("수정");
 	JMenuItem  delete=new JMenuItem("삭제");
 	JMenuBar mb=new JMenuBar();
-		
+	
+	List<Restaurant> list = null;
+	
 	String [] name={"kind","name","addr","phone","deliver","point"};
 	
 	DefaultTableModel dt= new DefaultTableModel(name,0);
@@ -90,7 +92,7 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		
 		
 		//jtable 위에 레코드(테이블) 추가
-		List<Restaurant> list = AdminController.searchTotalList();
+		list = AdminController.searchTotalList();
 		if(list!=null && list.size()!=0) {
 			this.addRowTable(list);
 			jt.setRowSelectionInterval(0, 0); //첫번째 행에 커서 올림
@@ -134,9 +136,14 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Object obj = e.getSource();//이벤트발생시키는 주체
 		if(obj==insert) {//가입
-				new ManagerJDialogView(this, "추가");
+			new ManagerJDialogView(this, "추가",null);
 		}else if(obj==update) {//수정
-				new ManagerJDialogView(this, "수정");
+			int re = jt.getSelectedRow();
+			Restaurant restaurant = list.get(re);
+				
+			new ManagerJDialogView(this, "수정",restaurant );
+				
+				
 		}else if(obj==delete) {//삭제
 				int re=JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?");					
 		}		

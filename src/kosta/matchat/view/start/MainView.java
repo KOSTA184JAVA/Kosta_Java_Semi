@@ -41,7 +41,7 @@ public class MainView {
 //		AdminController.deleteMenu(180, 1240);  //StoreId와 menuId 존재하는 경우 (180식당의 1240메뉴 '마르게리따')
 //		AdminController.deleteMenu(190, 1240);  //StoreId는 없고 menuId만 존재하는 경우  (190식당 미존재)
 //		AdminController.deleteMenu(180, 1242);  //StoreId는 있고 menuId가 없는 경우 (180식당의 메뉴 1242 미존재)
-		AdminController.searchTotalList();
+//		AdminController.searchTotalList();
 		
 	}
 
