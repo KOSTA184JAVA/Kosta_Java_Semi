@@ -25,7 +25,7 @@ public class LoginView extends JFrame {
 	private JTextField txtId;
 	private JPasswordField txtPwd;
 
-	public static CardLayout cards = new CardLayout();// ?™”ë©´ì„ ? „?™”?•˜ê¸°ì— ?•„?š”?•œ layout!
+	public static CardLayout cards = new CardLayout();
 
 	public LoginView() {
 		setTitle("·Î±×ÀÎ");
