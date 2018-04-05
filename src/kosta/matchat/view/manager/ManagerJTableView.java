@@ -11,7 +11,6 @@ import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -94,9 +93,7 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		List<Restaurant> list = AdminController.searchTotalList();
 		if(list!=null && list.size()!=0) {
 			this.addRowTable(list);
-			
-			//첫번째 행을 우선 선택해둠. 
-			jt.setRowSelectionInterval(0, 0);
+			jt.setRowSelectionInterval(0, 0); //첫번째 행에 커서 올림
 		}			
 	}//생성자끝
 
@@ -140,13 +137,43 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		}else if(obj==update) {//수정
 				new ManagerJDialogView(this, "수정");
 		}else if(obj==delete) {//삭제
-				int re=JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?");
-					
+				int re=JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?");					
 		}else if(obj==search) {  //검색
-			
-			
-			
-			
+			String keyField = combo.getSelectedItem().toString(); //object return > toString으로 문자로변경
+			if(keyField.trim().equals("ALL")) {  //전체 검색창
+				List<Restaurant> list = AdminController.searchTotalList();
+				if(list!=null && list.size()!=0) {
+					this.addRowTable(list);
+					jt.setRowSelectionInterval(0, 0);  //첫번째 행에 커서 올림
+				}	
+			}else if(keyField.trim().equals("kind")) {  //종류별 검색창
+				//text박스의 값 입력유무 체크
+				String keyWord = jtf.getText();
+				if(keyWord.equals("")) {
+					kosta.matchat.view.start.FailView.errorMessage("검색할 단어를 입력해주세요.");
+					jtf.requestFocus();
+					return;
+				}
+				List<Restaurant> list = UserController.searchByStoreKind(keyWord);
+				if(list!=null && list.size()>0) {
+					addRowTable(list);
+					jt.setRowSelectionInterval(0, 0);
+				}
+			}else if(keyField.trim().equals("name")) {  //이름별 검색창
+				String keyWord = jtf.getText();
+				if(keyWord.equals("")) {
+					kosta.matchat.view.start.FailView.errorMessage("검색할 단어를 입력해주세요.");
+					jtf.requestFocus();
+					return;
+				}
+				List<Restaurant> list = UserController.searchByStoreName(keyWord);
+				if(list!=null && list.size()>0) {
+					addRowTable(list);
+					jt.setRowSelectionInterval(0, 0);
+				}
+			}
+			//new ManagerJDialogView(this, "");
+
 		}
 				
 	}
