@@ -1,11 +1,15 @@
 package kosta.matchat.view.start;
-
+import kosta.matchat.view.manager.ManagerJTableView;
 public class MainView {
 	public static void main(String[] args) {
 
 		System.out.println("git test2");
 			LoginView logV = new LoginView();
 			logV.setVisible(true);
+					
+		//	new LoginView();
+			new ManagerJTableView();  //관리자
+			
 		// 현수
 //		UserController.joinMember(new Member("test1", "test", "test", "test", "test")); //회원가입
 //		UserController.quitMember("test1", "test"); //회원탈퇴
@@ -34,11 +38,9 @@ public class MainView {
 
 		//다영
 //		AdminController.insertMenu(180, new Menu("로제파스타", 21000, "크림과 토마토의 완벽한 조화", 800, "밀가루 : 국내산"));  //StoreId 있는경우
-
 //		AdminController.deleteMenu(180, 1240);  //StoreId와 menuId 존재하는 경우 (180식당의 1240메뉴 '마르게리따')
 //		AdminController.deleteMenu(190, 1240);  //StoreId는 없고 menuId만 존재하는 경우  (190식당 미존재)
 //		AdminController.deleteMenu(180, 1242);  //StoreId는 있고 menuId가 없는 경우 (180식당의 메뉴 1242 미존재)
-		
 //		AdminController.searchTotalList();
 		
 	}
