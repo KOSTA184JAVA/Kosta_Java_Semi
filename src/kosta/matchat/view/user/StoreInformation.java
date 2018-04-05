@@ -48,7 +48,7 @@ public class StoreInformation extends JPanel {
       setBackground(new Color(135, 206, 250));
       
       
-      JLabel label = new JLabel("¸ÀÁý Á¤º¸");
+      JLabel label = new JLabel("\uB9DB\uC9D1 \uC815\uBCF4");
       label.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.BOLD, 17));
       label.setBounds(159, 5, 77, 32);
       add(label);

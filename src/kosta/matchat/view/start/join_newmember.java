@@ -32,20 +32,21 @@ public class join_newmember extends JDialog {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-
-		join_newmember frame = new join_newmember();
-		frame.setVisible(true);
-
-	}
+	/*public static void main(String[] args) {
+		
+					join_newmember frame = new join_
+							newmember();
+					frame.setVisible(true);
+	
+	}*/
 
 	/**
 	 * Create the frame.
 	 */
 	public join_newmember() {
-		setTitle("회원가입");
+		setTitle("회원 가입");
 		setDefaultCloseOperation(HIDE_ON_CLOSE);
-		setBounds(100, 100, 390, 340);
+	setBounds(100, 100, 390, 340);
 		pan_content = new JPanel();
 		pan_content.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pan_content);
