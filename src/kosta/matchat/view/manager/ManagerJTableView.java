@@ -24,6 +24,7 @@ import javax.swing.table.DefaultTableModel;
 import kosta.matchat.controller.AdminController;
 import kosta.matchat.controller.UserController;
 import kosta.matchat.model.dto.Restaurant;
+import kosta.matchat.view.start.LoginView;
 
 public class ManagerJTableView extends JPanel implements ActionListener {
 	JPanel menu = new JPanel();
