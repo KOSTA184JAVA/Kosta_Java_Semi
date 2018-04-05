@@ -1,4 +1,5 @@
 package kosta.matchat.view.start;
+
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -18,109 +19,98 @@ import kosta.matchat.controller.UserController;
 import kosta.matchat.view.manager.ManagerJTableView;
 import kosta.matchat.view.user.SearchByKindFirstView;
 
-
 public class LoginView extends JFrame {
 
 	public static JPanel contentPane;
-	private JTextField idTextField;
-	private ImageIcon im;
-	private JPasswordField pwTextField;
+	private JTextField txtId;
+	private JPasswordField txtPwd;
 
-    public static CardLayout cards = new CardLayout();// ?™”ë©´ì„ ? „?™”?•˜ê¸°ì— ?•„?š”?•œ layout!
+	public static CardLayout cards = new CardLayout();// ?™”ë©´ì„ ? „?™”?•˜ê¸°ì— ?•„?š”?•œ layout!
 
-
-	
 	public LoginView() {
-		setTitle("\uB85C  \uADF8  \uC778  ");
+		setTitle("·Î±×ÀÎ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 797, 643);
+
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(135, 206, 250));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
-	
-		     im  = new ImageIcon("?„…?…©???…©_?„‹?…®?„…?…µ?„Œ?…©?„?…¡?†¼?„‹?…µ?„Œ?…­.3png.png");
-		     contentPane.setLayout(cards);
-		     
-		     JPanel login = new JPanel();
-		     login.setBackground(new Color(135, 206, 250));
-		     contentPane.add(login, "login");
-		     login.setLayout(null);
-		     
-		     JLabel label = new JLabel("  \uB85C     \uADF8    \uC778  ");
-		     label.setBounds(289, 79, 197, 41);
-		     login.add(label);
-		     label.setFont(new Font("?‚˜?ˆ”ê³ ë”•ì½”ë”©", Font.BOLD, 28));
-		     
-		     JLabel lblNewLabel = new JLabel("\uC544 \uC774 \uB514");
-		     lblNewLabel.setBounds(272, 183, 74, 28);
-		     login.add(lblNewLabel);
-		     lblNewLabel.setFont(new Font("?‚˜?ˆ”ê³ ë”•ì½”ë”©", Font.BOLD, 18));
-		     
-		     idTextField = new JTextField();
-		     idTextField.setBounds(377, 176, 197, 41);
-		     login.add(idTextField);
-		     idTextField.setColumns(10);
-		     
-		     JLabel id = new JLabel("\uBE44\uBC00 \uBC88\uD638");
-		     id.setBounds(252, 262, 94, 28);
-		     login.add(id);
-		     id.setFont(new Font("?‚˜?ˆ”ê³ ë”•ì½”ë”©", Font.BOLD, 18));
-		     
-		     pwTextField = new JPasswordField();
-		     pwTextField.setBounds(377, 255, 197, 41);
-		     login.add(pwTextField);
-		     
-		     JButton btnLogin = new JButton("\uB85C  \uADF8  \uC778");
-		     btnLogin.addMouseListener(new MouseAdapter() {
-		     	@Override
-		     	public void mouseClicked(MouseEvent e) { 
-		     		
-		     		
-		     		if(UserController.loginMember(idTextField.getText(), new String(pwTextField.getPassword()) )) {
-		     			contentPane.add(new SearchByKindFirstView(),"searchbyKindFrist");
-		     			cards.next(contentPane );
-		     		}
-		     	} 
-		     });
-		     btnLogin.setBounds(299, 336, 197, 60);
-		     login.add(btnLogin);
-		     btnLogin.setFont(new Font("?‚˜?ˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 16));
-		     
-		     JButton btnJoin = new JButton("\uD68C\uC6D0\uAC00\uC785");
-		     btnJoin.setBounds(317, 411, 169, 41);
-		     login.add(btnJoin);
-		       btnJoin.addMouseListener(new MouseAdapter() {
-		     	@Override
-		     	public void mouseClicked(MouseEvent e) {
-		     		
-		     		join_newmember frame = new join_newmember();
-		     		frame.setVisible(true);
-		     		frame.setDefaultCloseOperation(HIDE_ON_CLOSE);;
-		     		
-		     	}
-		     });
-		       
-		     JLabel LogoIcon = new JLabel("");
-		     LogoIcon.setBounds(289, 492, 79, 60);
-		     login.add(LogoIcon);
-		     LogoIcon.setIcon(new ImageIcon("C:\\Edu\\javaWorkSpace\\Project\\src\\ë¡œê³ .png"));
-		     
-		     JButton btnManagerMode = new JButton("\uAD00\uB9AC\uC790\uBAA8\uB4DC");
-		     btnManagerMode.addMouseListener(new MouseAdapter() {
-		     	@Override
-		     	public void mouseClicked(MouseEvent e) {
-		     		getContentPane().add("managerview", new ManagerJTableView());
-		     		cards.next(contentPane);
-		     	}
-		     });
-		     btnManagerMode.setBounds(349, 467, 117, 29);
-		     login.add(btnManagerMode);
-		     
-		   
-		     this.setVisible(true);
-		    
-		
+
+		contentPane.setLayout(cards);
+
+		JPanel panLogin = new JPanel();
+		panLogin.setBackground(new Color(135, 206, 250));
+		contentPane.add(panLogin, "login");
+		panLogin.setLayout(null);
+
+		JLabel labelLogin = new JLabel("·Î      ±×      ÀÎ");
+		labelLogin.setBounds(290, 80, 300, 41);
+		panLogin.add(labelLogin);
+		labelLogin.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 25));
+
+		JLabel labeId = new JLabel("¾Æ ÀÌ µğ");
+		labeId.setBounds(270, 180, 80, 30);
+		panLogin.add(labeId);
+		labeId.setFont(new Font("³ª´®°íµñ", Font.BOLD, 18));
+
+		txtId = new JTextField();
+		txtId.setBounds(350, 175, 200, 40);
+		panLogin.add(txtId);
+		txtId.setColumns(10);
+
+		JLabel labelPwd = new JLabel("ºñ ¹Ğ ¹ø È£");
+		labelPwd.setBounds(235, 260, 100, 28);
+		panLogin.add(labelPwd);
+		labelPwd.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 18));
+
+		txtPwd = new JPasswordField();
+		txtPwd.setBounds(350, 255, 200, 40);
+		panLogin.add(txtPwd);
+
+		JButton btnLogin = new JButton("·Î±×ÀÎ");
+		btnLogin.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (UserController.loginMember(txtId.getText(), new String(txtPwd.getPassword()))) {
+					contentPane.add(new SearchByKindFirstView(), "searchbyKindFrist");
+					cards.next(contentPane);
+				}
+			}
+		});
+		btnLogin.setBounds(380, 340, 70, 40);
+		panLogin.add(btnLogin);
+		btnLogin.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 10));
+
+		JButton btnJoin = new JButton("È¸¿ø°¡ÀÔ");
+		btnJoin.setBounds(460, 340, 80, 40);
+		panLogin.add(btnJoin);
+		btnJoin.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 10));
+		btnJoin.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+
+				join_newmember frame = new join_newmember();
+				frame.setVisible(true);
+				frame.setDefaultCloseOperation(HIDE_ON_CLOSE);
+				;
+
+			}
+		});
+
+		JButton btnManagerMode = new JButton("°ü¸®ÀÚ¸ğµå");
+		btnManagerMode.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				getContentPane().add("managerview", new ManagerJTableView());
+				cards.next(contentPane);
+			}
+		});
+		btnManagerMode.setBounds(350, 470, 110, 30);
+		panLogin.add(btnManagerMode);
+		btnManagerMode.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 10));
+
+		this.setVisible(true);
+
 	}
 }
