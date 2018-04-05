@@ -17,8 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import kosta.matchat.controller.UserController;
 import kosta.matchat.view.manager.ManagerJTableView;
-import kosta.matchat.view.manager.ManagerJTableView;
-import kosta.matchat.view.user.SearchByKindFirstView;
+import kosta.matchat.view.user.UserMainView;
 
 public class LoginView extends JFrame {
 
@@ -74,7 +73,7 @@ public class LoginView extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (UserController.loginMember(txtId.getText(), new String(txtPwd.getPassword()))) {
-					contentPane.add(new SearchByKindFirstView(), "searchbyKindFrist");
+					contentPane.add(new UserMainView(), "searchbyKindFrist");
 					cards.next(contentPane);
 				}
 			}
@@ -103,8 +102,7 @@ public class LoginView extends JFrame {
 		btnManagerMode.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
-				contentPane.add(new ManagerJTableView(),"managerview");
+				getContentPane().add("managerview", new ManagerJTableView());
 				cards.next(contentPane);
 			}
 		});

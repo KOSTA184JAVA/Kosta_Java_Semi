@@ -2,6 +2,7 @@ package kosta.matchat.model.service;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Vector;
 
 import kosta.matchat.model.dao.AdminDAOImpl;
 import kosta.matchat.model.dto.Menu;
@@ -86,7 +87,7 @@ public class AdminServiceImpl implements AdminService {
 		}else {
 			throw new SQLException("전체 검색결과가 존재하지 않습니다.");
 		}
-		return list;
+	return list;
 	}
 
 }
