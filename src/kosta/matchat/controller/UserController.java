@@ -136,15 +136,15 @@ public class UserController {
 	}
 	
 	public static List<Menu> searchMenuList(int storeId){
+		List<Menu> list =null;
 		try {
-			List<Menu> list =uService.searchMenuList(storeId);
+			list =uService.searchMenuList(storeId);
 //			for(Menu temp : list) {
 //				System.out.println(temp.getName()+" | "+temp.getPrice() +" | "+ temp.getDesc() +" | "+ temp.getKcal() +" | "+ temp.getSource());
 //			}
-			return list;
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		return null;
+		return list;
 	}
 }

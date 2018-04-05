@@ -374,7 +374,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 						StoreId = AdminController.SearchStoreId();
 						AdminController.insertMenu(StoreId, menu3);
 						
-						
+						 
 					}else if(labelText.equals("¼ö   Á¤")) {
 						String matKind = AMatchatKind.getText();
 						String matName = AMatchatName.getText();

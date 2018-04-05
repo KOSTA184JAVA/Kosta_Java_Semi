@@ -33,15 +33,11 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public void deleteStore(int storeId) throws SQLException {
-		int i = aDao.deleteStore(storeId);
-		if (i > 0) {
-			// 맛집삭제 성공
-		} else {
-			// 맛집삭제 실패
-			throw new SQLException("맛집 삭제에 실패하였습니다.");
-		}
-
+	public int deleteStore(int[] StoreIds) throws SQLException {
+		int i=0;
+		i = aDao.deleteStore(StoreIds);
+		if (i == 0) throw new SQLException("맛집 삭제에 실패하였습니다.");
+	return i;
 	}
 
 	@Override

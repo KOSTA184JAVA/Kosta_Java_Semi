@@ -33,13 +33,15 @@ public class AdminController {
 		return re;
 	}
 
-	public static void deleteStore(int storeId) {
+	public static int deleteStore(int[] StoreIds) {
+		int result=0;
 		try {
-			aService.deleteStore(storeId);
+			result = aService.deleteStore(StoreIds);
 			System.out.println("맛집을 삭제했습니다");
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}
+	return result;	
 	}
 
 	public static void updateStore(Restaurant restaurant) {
