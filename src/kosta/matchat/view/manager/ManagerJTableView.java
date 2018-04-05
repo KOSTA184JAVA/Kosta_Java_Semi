@@ -89,14 +89,11 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		search.addActionListener(this);
 		
 		
-		
 		//jtable 위에 레코드(테이블) 추가
 		List<Restaurant> list = AdminController.searchTotalList();
 		if(list!=null && list.size()!=0) {
 			this.addRowTable(list);
-			
-			//첫번째 행을 우선 선택해둠. 
-			jt.setRowSelectionInterval(0, 0);
+			jt.setRowSelectionInterval(0, 0); //첫번째 행에 커서 올림
 		}			
 	}//생성자끝
 
@@ -141,8 +138,35 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		}else if(obj==update) {//수정
 				new ManagerJDialogView(this, "수정");
 		}else if(obj==delete) {//삭제
-				int re=JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?");
-					
+				int re=JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?");					
 		}		
+		}else if(obj==search) {  //검색
+			String keyField = combo.getSelectedItem().toString(); //object return > toString으로 문자로변경
+			if(keyField.trim().equals("ALL")) {  //전체 검색창
+				List<Restaurant> list = AdminController.searchTotalList();
+				if(list!=null && list.size()!=0) {
+					this.addRowTable(list);
+					jt.setRowSelectionInterval(0, 0);  //첫번째 행에 커서 올림
+				}	
+			}else if(keyField.trim().equals("ALL")) {  //조건 검색
+				//text박스의 값 입력유무 체크
+				String keyWord = jtf.getText();
+				if(keyWord.equals("kind")) {
+					kosta.matchat.view.start.FailView.errorMessage("검색할 단어를 입력해주세요.");
+					jtf.requestFocus();
+					return;
+				}
+				List<Vector<Object>> list = UserListController.getSearchUser(keyField, keyWord);
+				if(list!=null && list.size()>0) {
+					addRowTable(list);
+					jt.setRowSelectionInterval(0, 0);
+				}
+			}else if(keyField.trim().equals("name")) {
+				
+			}
+			new UserJDialogView(this, "");
+
+		}
+				
 	}
 }
