@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 import kosta.matchat.model.dto.Menu;
 import kosta.matchat.model.dto.Restaurant;
@@ -117,28 +118,27 @@ public class AdminDAOImpl implements AdminDAO {
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		List<Restaurant> list = new ArrayList<>();
+
 		String sql = "select * from RESTAURANT";
 		try {
 			con = DBUtil.getConnection();
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				
-			list.add(
-				new Restaurant(
-					rs.getInt("SEQ_RESTAUR_ID"),
-					rs.getString("RESTAUR_KIND"),
-					rs.getString("RESTAUR_NAME"),
-					rs.getString("RESTAUR_ADDRESS"),
-					rs.getString("RESTAUR_PHONE"),
-					rs.getString("RESTAUR_DELIVER"),
-					rs.getInt("RESTAUR_POINT")
+				list.add(
+					new Restaurant(
+						rs.getInt("SEQ_RESTAUR_ID"),
+						rs.getString("RESTAUR_KIND"),
+						rs.getString("RESTAUR_NAME"),
+						rs.getString("RESTAUR_ADDRESS"),
+						rs.getString("RESTAUR_PHONE"),
+						rs.getString("RESTAUR_DELIVER"),
+						rs.getInt("RESTAUR_POINT")
 				));
 			}
 		}finally {
 			DBUtil.dbClose(con, ps, rs);
 		}
-		
 	return list;
 	}
 

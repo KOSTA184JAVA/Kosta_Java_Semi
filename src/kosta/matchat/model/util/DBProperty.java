@@ -12,4 +12,5 @@ public interface DBProperty {
 //	public static final String USER_PASS = "system";
 	public static final String USER_NAME = "javaproject";
 	public static final String USER_PASS = "1234";
+
 }

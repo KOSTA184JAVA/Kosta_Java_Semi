@@ -3,6 +3,9 @@ package kosta.matchat.view.manager;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -17,7 +20,17 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-public class ManagerJTableView extends JFrame implements ActionListener{
+import kosta.matchat.controller.AdminController;
+import kosta.matchat.model.dto.Restaurant;
+
+import kosta.matchat.view.start.LoginView;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+
+public class ManagerJTableView extends JPanel implements ActionListener {
+	JPanel menu = new JPanel();
 	JMenu m = new JMenu("관리");//메뉴바에 올려져있는것, 메뉴들
 	JMenuItem  insert=new JMenuItem("추가"); //메뉴아이템: 누르면 실행되는것
 	JMenuItem  update=new JMenuItem("수정");
@@ -47,15 +60,25 @@ public class ManagerJTableView extends JFrame implements ActionListener{
 
 */
 	public ManagerJTableView(){
-		super("DB연동");
-		
+		setLayout(new BorderLayout(0, 0));
+		menu.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		menu.add(mb);
+		mb.add(m);
+		//super("DB연동");
 		m.add(insert);
 		m.add(update);
 		m.add(delete);
-		mb.add(m);
-
-		setJMenuBar(mb);//메뉴바를 Frame위에올리기
 		
+			
+				//super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				
+				//이벤트 등록->이벤트주체.addXxxListener(이벤트구현클래스);
+				insert.addActionListener(this);
+				update.addActionListener(this);
+				delete.addActionListener(this);
+
+		//setJMenuBar(mb);//메뉴바를 Frame위에올리기
+		add(menu, BorderLayout.NORTH);
 		//South영역
 		
 		p.setBackground(Color.yellow);
@@ -63,28 +86,50 @@ public class ManagerJTableView extends JFrame implements ActionListener{
 		p.add(jtf);
 		p.add(search);
 
-		add(jsp, "Center");
-		add(p, "South");
+		add(jsp);
+		add(p, BorderLayout.SOUTH);
 
 		setSize(500,400);
-		setLocationRelativeTo(null); //정가운데
+		//setLocationRelativeTo(null); //정가운데
 		setVisible(true);
-
-	
-		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		//이벤트 등록->이벤트주체.addXxxListener(이벤트구현클래스);
-		insert.addActionListener(this);
-		update.addActionListener(this);
-		delete.addActionListener(this);
 		search.addActionListener(this);
 		
-		setDefaultCloseOperation(HIDE_ON_CLOSE);
+		//setDefaultCloseOperation(HIDE_ON_CLOSE);
 		
 	}//생성자끝
 
-
-
+	/**
+	 * 검색된 레코드(List<Restaurant>)를 defaultTableModel에 추가하는 메소드
+	 */
+	public void addRowTable(List<Restaurant> list) {
+		
+		this.convertRestaurantToVector(list);
+		//기존 레코드 삭제 후 추가, dt에 있는 데이터 한번에 삭제
+		dt.setNumRows(0);  //lowcount (행의 수)를 0으로 만든다 (모두삭제)
+		
+		for(Vector<Object> v :list) {
+			dt.addRow(v);  //끝에 추가 (누적됨)
+			
+		}
+	}//addRowTable 끝  
+	
+	/**
+	 * 검색된 레코드(List<Restaurant>)를 List<Vector<Object>>로 변환하는 메소드 (이유 : dt.addRow() 할 때 매개변수로 배열 혹은 Vector<>만 들어가기 때문)
+	 */
+	public List<Vector<Object>> convertRestaurantToVector(List<Restaurant> resList){
+	      List<Vector<Object>> vList = new ArrayList<>();
+	      Vector<Object> v = new Vector<>();
+	      for(Restaurant r : resList) {
+	         v.add(r.getResId());
+	         v.add(r.getResKind());
+	         v.add(r.getResName());
+	         v.add(r.getResAddr());
+	         v.add(r.getResPhone());
+	         vList.add(v);
+	      }
+	      return vList;
+	   }
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object obj = e.getSource();//이벤트발생시키는 주체
