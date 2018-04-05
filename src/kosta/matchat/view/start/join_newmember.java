@@ -79,7 +79,7 @@ public class join_newmember extends JDialog{
 		
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("?šŒ ?›    ê°? ?…");
+		JLabel lblNewLabel = new JLabel("È¸¿ø°¡ÀÔ");
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.BOLD, 20));
 		lblNewLabel.setBounds(124, 10, 135, 23);
 		contentPane.add(lblNewLabel);
@@ -109,7 +109,7 @@ public class join_newmember extends JDialog{
 		JName.setBounds(162, 153, 156, 23);
 		contentPane.add(JName);
 		
-		label_3 = new JLabel("?—°  ?½  ì²?  : ");
+		label_3 = new JLabel("\uC5F0\uB77D\uCC98 :");
 		label_3.setFont(new Font("?‚˜?ˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 14));
 		label_3.setBounds(45, 196, 105, 15);
 		contentPane.add(label_3);
