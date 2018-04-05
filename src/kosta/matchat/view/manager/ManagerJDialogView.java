@@ -42,7 +42,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 		/**
 		 * Create the frame.
 		 */
-		public ManagerJDialogView(ManagerJTableView managerJTableView, String string) {
+		public ManagerJDialogView(ManagerJTableView managerJTableView2, String string) {
 			setTitle("\uB9DB\uC9D1\uC815\uBCF4 \uCD94\uAC00");
 			//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setBounds(100, 100, 340,470);

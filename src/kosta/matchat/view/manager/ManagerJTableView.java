@@ -23,7 +23,14 @@ import javax.swing.table.DefaultTableModel;
 import kosta.matchat.controller.AdminController;
 import kosta.matchat.model.dto.Restaurant;
 
-public class ManagerJTableView extends JFrame implements ActionListener{
+import kosta.matchat.view.start.LoginView;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+
+public class ManagerJTableView extends JPanel implements ActionListener {
+	JPanel menu = new JPanel();
 	JMenu m = new JMenu("관리");//메뉴바에 올려져있는것, 메뉴들
 	JMenuItem  insert=new JMenuItem("추가"); //메뉴아이템: 누르면 실행되는것
 	JMenuItem  update=new JMenuItem("수정");
@@ -53,15 +60,18 @@ public class ManagerJTableView extends JFrame implements ActionListener{
 
 */
 	public ManagerJTableView(){
-		super("DB연동");
-		
+		setLayout(new BorderLayout(0, 0));
+		menu.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		menu.add(mb);
+		mb.add(m);
+		//super("DB연동");
 		m.add(insert);
 		m.add(update);
 		m.add(delete);
-		mb.add(m);
+	
 
-		setJMenuBar(mb);//메뉴바를 Frame위에올리기
-		
+		//setJMenuBar(mb);//메뉴바를 Frame위에올리기
+		add(menu, BorderLayout.NORTH);
 		//South영역
 		
 		p.setBackground(Color.yellow);
@@ -69,8 +79,8 @@ public class ManagerJTableView extends JFrame implements ActionListener{
 		p.add(jtf);
 		p.add(search);
 
-		add(jsp, "Center");
-		add(p, "South");
+		add(jsp);
+		add(p, BorderLayout.SOUTH);
 
 		setSize(500,400);
 		setLocationRelativeTo(null); //정가운데
