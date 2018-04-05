@@ -12,16 +12,16 @@ import javax.swing.JPanel;
 import kosta.matchat.view.start.LoginView;
 
 public class UserMainView extends JPanel {
-	static JPanel searchbykindfirst = new JPanel();
+	static JPanel userMainView = new JPanel();
 	/**
 	 * Create the panel.
 	 */
 	public UserMainView() {
 		setBounds(0, 0, 394, 600);
-		
-		searchbykindfirst.setLayout(null);
-		searchbykindfirst.setBackground(new Color(135, 206, 250));
-		LoginView.contentPane.add(searchbykindfirst);
+
+		userMainView.setLayout(null);
+		userMainView.setBackground(new Color(135, 206, 250));
+		LoginView.contentPane.add(userMainView);
 		
 		
 		JButton btnKind = new JButton("À½½ÄÁ¾·ùº° °Ë»ö");
@@ -29,7 +29,7 @@ public class UserMainView extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				LoginView.contentPane.removeAll();
-				LoginView.contentPane.add("searchbykindsecond",new SearchByKindSecondView());
+				LoginView.contentPane.add("searchbykindsecond",new UserKindSerach());
 				revalidate();
 				repaint();
 				LoginView.cards.last(LoginView.contentPane);
@@ -38,7 +38,7 @@ public class UserMainView extends JPanel {
 		
 		btnKind.setBounds(275, 100, 250, 85);
 		btnKind.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 25));
-		searchbykindfirst.add(btnKind);
+		userMainView.add(btnKind);
 		
 		JButton btnName = new JButton("¸ÀÁý ÀÌ¸§ °Ë»ö");
 		btnName.addMouseListener(new MouseAdapter() {
@@ -53,7 +53,7 @@ public class UserMainView extends JPanel {
 		});
 		btnName.setBounds(275, 250, 250, 85);
 		btnName.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 25));
-		searchbykindfirst.add(btnName);
+		userMainView.add(btnName);
 		
 		JButton uFravoriteList = new JButton("Áñ°ÜÃ£±â ¸ñ·Ï");
 		uFravoriteList.addMouseListener(new MouseAdapter() {
@@ -66,12 +66,12 @@ public class UserMainView extends JPanel {
 		});
 		uFravoriteList.setBounds(275, 400, 250, 85);
 		uFravoriteList.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 25));
-		searchbykindfirst.add(uFravoriteList);
+		userMainView.add(uFravoriteList);
 		
 		JLabel labelLogo = new JLabel("New label");
 		labelLogo.setBounds(650, 500, 79, 60);
 		labelLogo.setIcon(new ImageIcon(UserMainView.class.getResource("/images/logo.png")));
-		searchbykindfirst.add(labelLogo);
+		userMainView.add(labelLogo);
 		
 		JLabel labelIcon = new JLabel("");
 		labelIcon.addMouseListener(new MouseAdapter() {
@@ -84,7 +84,7 @@ public class UserMainView extends JPanel {
 		});
 		labelIcon.setIcon(new ImageIcon(UserMainView.class.getResource("/images/previousIcon.png")));
 		labelIcon.setBounds(0, 0, 76, 52);
-		searchbykindfirst.add(labelIcon);
+		userMainView.add(labelIcon);
 	
 		setVisible(true);
 	}

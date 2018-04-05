@@ -56,7 +56,7 @@ public class search extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
-				LoginView.contentPane.add(new SearchByKindSecondView());
+				LoginView.contentPane.add(new UserKindSerach());
 				LoginView.cards.next(LoginView.contentPane);
 				
 			}
