@@ -14,8 +14,12 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import kosta.matchat.controller.AdminController;
+import kosta.matchat.controller.UserController;
 import kosta.matchat.model.dto.Menu;
 import kosta.matchat.model.dto.Restaurant;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.List;
 
 public class ManagerJDialogView extends JDialog implements ActionListener{
 		private JPanel contentPane;
@@ -47,7 +51,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 		public ManagerJDialogView(ManagerJTableView managerJTableView2, String string, Restaurant restaurant) {
 			setTitle("\uB9DB\uC9D1\uC815\uBCF4 \uCD94\uAC00");
 			//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			setBounds(100, 100, 340,470);
+			setBounds(100, 100, 471,470);
 			contentPane = new JPanel();
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			setContentPane(contentPane);
@@ -276,20 +280,53 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(AMenuSource3);
 			
 			//JButton button = new JButton("\uCD94  \uAC00");
-			
+
 			JButton button;
 			if(string.equals("Ãß°¡")) {
 				 button = new JButton("Ãß   °¡");
 			}else{
 				 button = new JButton("¼ö   Á¤");
-				 System.out.println("id="+ restaurant.getResId()+"addr= "+restaurant.getResAddr()+"name= "+restaurant.getResName());
-					
 				 AMatchatKind.setText(restaurant.getResKind());
 				 AMatchatName.setText(restaurant.getResName());
 				 AMatchatAddr.setText(restaurant.getResAddr());
 				 AMatchatPhone.setText(restaurant.getResPhone());
 				 AMatchatDeliver.setText(restaurant.getResDeliv());
 				 
+				 	JButton btnMenuDelete1 = new JButton("DELETE");
+					btnMenuDelete1.setHorizontalAlignment(SwingConstants.LEFT);
+					btnMenuDelete1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
+					btnMenuDelete1.setBounds(341, 210, 80, 29);
+					contentPane.add(btnMenuDelete1);
+					btnMenuDelete1.addMouseListener(new MouseAdapter(){
+						public void mouseClicked(MouseEvent e) {
+							System.out.println("hello1");
+							List<Menu> menuList = UserController.searchMenuList(restaurant.getResId());
+								AdminController.deleteMenu(restaurant.getResId(), m.getMenuId());
+						};
+					});
+					
+					JButton btnMenuDelete2 = new JButton("DELETE");
+					btnMenuDelete2.setHorizontalAlignment(SwingConstants.LEFT);
+					btnMenuDelete2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
+					btnMenuDelete2.setBounds(341, 274, 80, 29);
+					contentPane.add(btnMenuDelete2);
+					btnMenuDelete2.addMouseListener(new MouseAdapter(){
+						public void mouseClicked(MouseEvent e) {
+							System.out.println("hello2");
+						};
+					});
+					
+					JButton btnMenuDelete3 = new JButton("DELETE");
+					btnMenuDelete3.setHorizontalAlignment(SwingConstants.LEFT);
+					btnMenuDelete3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
+					btnMenuDelete3.setBounds(341, 330, 80, 29);
+					contentPane.add(btnMenuDelete3);
+					btnMenuDelete3.addMouseListener(new MouseAdapter(){
+						public void mouseClicked(MouseEvent e) {
+							System.out.println("hello3");
+						};
+					});
+	
 			}
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -358,8 +395,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			});
 			button.setBounds(112, 375, 100, 40);
 			panel.add(button);
-			
-			
 			
 			setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			 setVisible(true);//Ã¢º¸ÀÌ±â

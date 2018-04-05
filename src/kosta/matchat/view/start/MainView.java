@@ -1,6 +1,4 @@
 package kosta.matchat.view.start;
-import kosta.matchat.controller.AdminController;
-import kosta.matchat.view.manager.ManagerJTableView;
 public class MainView {
 	public static void main(String[] args) {
 
@@ -8,7 +6,6 @@ public class MainView {
 //		logV.setVisible(true);
 
 			new LoginView();
-		//	new ManagerJTableView();  //관리자
 
 		// 현수
 //		UserController.joinMember(new Member("test1", "test", "test", "test", "test")); //회원가입

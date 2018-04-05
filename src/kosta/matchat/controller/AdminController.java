@@ -73,9 +73,9 @@ public class AdminController {
 		List<Restaurant> list=null;
 		try {
 			list = aService.searchTotalList();
-			for(Restaurant temp : list) {
-				System.out.println(temp.getResKind()+" | "+temp.getResName() +" | "+ temp.getResAddr() +" | "+ temp.getResPhone() +" | "+ temp.getResDeliv() +" | "+ temp.getResSp() );
-			}
+//			for(Restaurant temp : list) {
+//				System.out.println(temp.getResKind()+" | "+temp.getResName() +" | "+ temp.getResAddr() +" | "+ temp.getResPhone() +" | "+ temp.getResDeliv() +" | "+ temp.getResSp() );
+//			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
