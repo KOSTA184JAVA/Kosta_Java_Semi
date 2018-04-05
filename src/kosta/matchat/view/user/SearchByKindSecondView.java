@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import kosta.matchat.view.start.LoginView;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class SearchByKindSecondView extends JPanel {
 //	private CardLayout cards = new CardLayout();
@@ -33,63 +35,63 @@ public class SearchByKindSecondView extends JPanel {
 				
 				
 				
-				JButton koBtn = new JButton("\uD55C   \uC2DD");
-				koBtn.addMouseListener(new MouseAdapter() {
+				JButton btnKo = new JButton("\uD55C   \uC2DD");
+				btnKo.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
 						removeAll();
-						LoginView.contentPane.add("search",new search());
+						LoginView.contentPane.add("searchKo",new search("�ѽ�"));
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);
 					}
 				});
-				koBtn.setFont(new Font("�?짧쨈짰째챠쨉챰��쨉�?", Font.PLAIN, 25));
-				koBtn.setBounds(55, 38, 165, 60);
-				panel.add(koBtn);
+				btnKo.setFont(new Font("�?짧쨈짰째챠쨉챰��쨉�?", Font.PLAIN, 25));
+				btnKo.setBounds(55, 38, 165, 60);
+				panel.add(btnKo);
 				
-				JButton engBtn = new JButton("\uC591   \uC2DD");
-				engBtn.addMouseListener(new MouseAdapter() {
+				JButton btnEng = new JButton("\uC591   \uC2DD");
+				btnEng.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
-						LoginView.contentPane.add("search",new search());
+						LoginView.contentPane.add("searchEng",new search("���"));
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);
 					}
 				});
-				engBtn.setFont(new Font("�?짧쨈짰째챠쨉챰��쨉�?", Font.PLAIN, 25));
-				engBtn.setBounds(55, 170, 165, 60);
-				panel.add(engBtn);
+				btnEng.setFont(new Font("�?짧쨈짰째챠쨉챰��쨉�?", Font.PLAIN, 25));
+				btnEng.setBounds(55, 170, 165, 60);
+				panel.add(btnEng);
 				
-				JButton japanBtn = new JButton("\uC77C   \uC2DD");
-				japanBtn.addMouseListener(new MouseAdapter() {
+				JButton btnJap = new JButton("\uC77C   \uC2DD");
+				btnJap.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
-						LoginView.contentPane.add("search",new search());
+						LoginView.contentPane.add("searchJap",new search("�Ͻ�"));
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);
 					}
 				});
-				japanBtn.setFont(new Font("�?짧쨈짰째챠쨉챰��쨉�?", Font.PLAIN, 25));
-				japanBtn.setBounds(55, 302, 165, 60);
-				panel.add(japanBtn);
+				btnJap.setFont(new Font("�?짧쨈짰째챠쨉챰��쨉�?", Font.PLAIN, 25));
+				btnJap.setBounds(55, 302, 165, 60);
+				panel.add(btnJap);
 				
-				JButton chinaBtn = new JButton("\uC911   \uC2DD");
-				chinaBtn.addMouseListener(new MouseAdapter() {
+				JButton btnChina = new JButton("\uC911   \uC2DD");
+				btnChina.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
-						LoginView.contentPane.add("search",new search());
+						LoginView.contentPane.add("searchChina",new search("�߽�"));
 						revalidate();
 						repaint();
 						LoginView.cards.next(LoginView.contentPane);
 					}
 					
 				});
-				chinaBtn.setFont(new Font("�?짧쨈짰째챠쨉챰��쨉�?", Font.PLAIN, 25));
-				chinaBtn.setBounds(55, 434, 165, 60);
-				panel.add(chinaBtn);
+				btnChina.setFont(new Font("�?짧쨈짰째챠쨉챰��쨉�?", Font.PLAIN, 25));
+				btnChina.setBounds(55, 434, 165, 60);
+				panel.add(btnChina);
 				
 				JLabel logo = new JLabel("New label");
 				logo.setIcon(new ImageIcon(SearchByKindSecondView.class.getResource("/images/logo.png")));

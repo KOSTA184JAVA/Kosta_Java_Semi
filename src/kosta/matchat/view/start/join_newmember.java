@@ -43,18 +43,19 @@ public class join_newmember extends JDialog{
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
-					join_newmember frame = new join_newmember();
+					join_newmember frame = new join_
+							newmember();
 					frame.setVisible(true);
 	
-	}
+	}*/
 
 	/**
 	 * Create the frame.
 	 */
 	public join_newmember() {
-		setTitle("È¸¿ø°¡ÀÔ");
+		setTitle("È¸¿ø °¡ÀÔ");
 		setDefaultCloseOperation(HIDE_ON_CLOSE);
 		setBounds(100, 100, 393, 338);
 		contentPane = new JPanel();
@@ -63,11 +64,11 @@ public class join_newmember extends JDialog{
 		
 		JLabel Jsubject = new JLabel("\uD68C\uC6D0 \uAC00\uC785");
 		Jsubject.setBounds(124, 20, 81, 19);
-		Jsubject.setFont(new Font("?‚˜?ˆ”ê³ ë”•ì½”ë”©", Font.BOLD, 18));
+		Jsubject.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 18));
 		
 		JLabel JidLabel = new JLabel("\uC544  \uC774  \uB514   : ");
 		JidLabel.setBounds(45, 52, 105, 15);
-		JidLabel.setFont(new Font("?‚˜?ˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 14));
+		JidLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
 		
 		Jid = new JTextField();
 		Jid.setBounds(162, 52, 105, 23);
@@ -75,7 +76,7 @@ public class join_newmember extends JDialog{
 		
 		JLabel label = new JLabel("\uD328 \uC2A4 \uC6CC \uB4DC  : ");
 		label.setBounds(45, 85, 105, 15);
-		label.setFont(new Font("?‚˜?ˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 14));
+		label.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
 		
 		contentPane.setLayout(null);
 		
@@ -92,7 +93,7 @@ public class join_newmember extends JDialog{
 		contentPane.add(Jpw1);
 		JpwCheckLabel = new JLabel("\uD328\uC2A4\uC6CC\uB4DC \uD655\uC778  : ");
 		JpwCheckLabel.setBounds(32, 118, 119, 15);
-		JpwCheckLabel.setFont(new Font("?‚˜?ˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 14));
+		JpwCheckLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
 		contentPane.add(JpwCheckLabel);
 		
 		Jpw2 = new JPasswordField();
@@ -100,7 +101,7 @@ public class join_newmember extends JDialog{
 		contentPane.add(Jpw2);
 		
 		JNameLabel = new JLabel("\uD68C\uC6D0 \uC774\uB984   : ");
-		JNameLabel.setFont(new Font("?‚˜?ˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 14));
+		JNameLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
 		JNameLabel.setBounds(45, 159, 105, 15);
 		contentPane.add(JNameLabel);
 		
@@ -110,7 +111,7 @@ public class join_newmember extends JDialog{
 		contentPane.add(JName);
 		
 		label_3 = new JLabel("\uC5F0\uB77D\uCC98 :");
-		label_3.setFont(new Font("?‚˜?ˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 14));
+		label_3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
 		label_3.setBounds(45, 196, 105, 15);
 		contentPane.add(label_3);
 		
@@ -120,11 +121,10 @@ public class join_newmember extends JDialog{
 		contentPane.add(textField_3);
 		
 		label_2 = new JLabel("\uD68C \uC6D0 \uC8FC \uC18C  : ");
-		label_2.setFont(new Font("?‚˜?ˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 14));
+		label_2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
 		label_2.setBounds(45, 227, 105, 15);
 		contentPane.add(label_2);
 		
-		//·Î±×ÀÎ¹öÆ°
 		JoinCheckButton = new JButton("\uD655 \uC778");
 		JoinCheckButton.addMouseListener(new MouseAdapter() {
 			@Override
@@ -145,8 +145,8 @@ public class join_newmember extends JDialog{
 		contentPane.add(JAddress);
 		JoinCheckButton.setBounds(124, 260, 135, 32);
 		contentPane.add(JoinCheckButton);
-
-		JButton btnNewButton = new JButton("ì¤‘ë³µê²??‚¬");
+		
+		JButton btnNewButton = new JButton("Áßº¹Ã¼Å©");
 		btnNewButton.setFont(new Font("êµ´ë¦¼", Font.PLAIN, 11));
 		
 		btnNewButton.setBounds(280, 44, 85, 32);

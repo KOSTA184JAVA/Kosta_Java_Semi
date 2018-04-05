@@ -4,6 +4,8 @@ import java.awt.Font;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 import javax.swing.ImageIcon;
@@ -15,7 +17,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+import kosta.matchat.controller.UserController;
+import kosta.matchat.model.dto.Restaurant;
 import kosta.matchat.view.start.LoginView;
+
 import javax.swing.ListSelectionModel;
 
 public class search extends JPanel {
@@ -26,11 +31,13 @@ public class search extends JPanel {
 	Vector<String> userColumn = new Vector<String>();
 	DefaultTableModel model;
 	Vector<String> userRow;
+	private String kind;
 
 	/**
 	 * Create the panel.
 	 */
-	public search() {
+	public search(String kind) {
+		this.kind = kind;
 		setLayout(null);
 
 		setBounds(0,0, 394, 600);
@@ -82,16 +89,14 @@ public class search extends JPanel {
 		table = new JTable(model);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.getTableHeader().setReorderingAllowed(false);
-		table.getTableHeader().setResizingAllowed(false);
+//		table.getTableHeader().setResizingAllowed(false);
 		scrollPane.setViewportView(table);
+
+		/**
+		 * JTable 위의 DTM에 addRow 하고 View 하기		
+		 */
+		viewRowTable(kind);
 		
-		userRow= new Vector<String>();
-		userRow.addElement("1");
-		userRow.addElement("占쏙옙?뙴占?"	);
-		userRow.addElement("9000"	);
-		userRow.addElement("800"	);
-		userRow.addElement("占쏙옙?뙴?뫂占쏙옙"	);
-		model.addRow(userRow);
 		table.addMouseListener(new MouseAdapter() {
 			
 			@Override
@@ -114,6 +119,42 @@ public class search extends JPanel {
 				}
 			}
 		});
+	}
+	public void viewRowTable(String resKind) {
+		List<Restaurant> rList = UserController.searchByStoreKind(resKind);
+		List<Vector<Object>>vlist = convertRestaurantToVector(rList);
+		if(vlist != null && !vlist.isEmpty()) {
+			this.addRowTable(vlist);
+			//첫번째 행을 선택 => 아무것도 선택하지 않고 시나리오를 실행할시 발생하는 오류 대처
+			table.setRowSelectionInterval(0, 0);
+			table.getTableHeader().setReorderingAllowed(false);
+			//table.getTableHeader().setResizingAllowed(false);
+			table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		}
+	}
+	
+	public void addRowTable(List<Vector<Object>>list) {
+		//기존 레코드 삭제
+		//model.setNumRows(0);
+		for(Vector<Object> v : list) {
+			System.out.println(v);
+			model.addRow(v);
+		}
+	}
+	
+	public List<Vector<Object>> convertRestaurantToVector(List<Restaurant> resList){
+		List<Vector<Object>> vList = new ArrayList<>();
+		
+		for(Restaurant r : resList) {
+			Vector<Object> v = new Vector<>();
+			v.add(r.getResId());
+			v.add(r.getResKind());
+			v.add(r.getResName());
+			v.add(r.getResAddr());
+			v.add(r.getResPhone());
+			vList.add(v);
+		}
+		return vList;
 	}
 }
 
