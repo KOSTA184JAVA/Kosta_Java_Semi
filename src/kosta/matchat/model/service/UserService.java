@@ -20,7 +20,7 @@ public interface UserService {
 	 * @param memberId 탈퇴할 회원 ID
 	 * @param memberPassword 탈퇴할 회원 Password
 	 */
-	public void quitMember(String memberId, String memberPassword) throws SQLException;
+	public void quitMember(String memberId) throws SQLException;
 	
 	
 	/**
@@ -35,7 +35,7 @@ public interface UserService {
 	 * ID 중복 체크 (회원가입 시 해당 ID가 중복하는지 체크) -> JoinMember() 안에서 호출될 메소드
 	 * @param memeberId 중복 체크할 회원 ID
 	 */
-	public void checkDuplicateId(String memberId) throws SQLException;
+	public int checkDuplicateId(String memberId) throws SQLException;
 	
 	
 	/**

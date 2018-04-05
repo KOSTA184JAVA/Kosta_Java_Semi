@@ -45,15 +45,15 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public int quitMember(String memberId, String memberPassword) throws SQLException {
+	public int quitMember(String memberId) throws SQLException {
 		Connection con = null;
 		PreparedStatement ps = null;
 		int i = 0;
 		try {
 			con = DBUtil.getConnection();
-			ps = con.prepareStatement("delete from member where member_id=? and member_password=?");
+			ps = con.prepareStatement("delete from member where member_id=?");
 			ps.setString(1, memberId);
-			ps.setString(2, memberPassword);
+			
 			i = ps.executeUpdate();
 		} finally {
 			DBUtil.dbClose(con, ps);
@@ -90,21 +90,21 @@ public class UserDAOImpl implements UserDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
+		//int i =0;
 		try {
+			
 			con = DBUtil.getConnection();
 			ps = con.prepareStatement("select * from member where member_id=?");
 			ps.setString(1, memberId);
 			rs = ps.executeQuery();
 
-			if (rs.next()) {
-				return 1; // 로그인성공
-			} else {
-				return 0; // 로그인실패
-			}
+			if(rs.next()) return 1;
 
 		} finally {
 			DBUtil.dbClose(con, ps, rs);
 		}
+		System.out.println();
+	return 0 ;
 	}
 
 	@Override

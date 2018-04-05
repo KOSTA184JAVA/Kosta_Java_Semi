@@ -64,7 +64,9 @@ public class UserKindSearchListView extends JPanel {
                     if(i>=0) {
                         int row = t.convertRowIndexToModel(i);
                         removeAll();
-        			LoginView.contentPane.add(new StoreInformation(kind));
+                        String a = (String) m.getValueAt(row, 1);
+                        System.out.println(a);
+        			LoginView.contentPane.add(new StoreInformation(a));
         				revalidate();
         				repaint();
         				LoginView.cards.next(LoginView.contentPane);
@@ -110,7 +112,7 @@ public class UserKindSearchListView extends JPanel {
                     if(i>=0) {
                         int row = t.convertRowIndexToModel(i);
                         removeAll();
-        			LoginView.contentPane.add(new StoreInformation(kind));
+        			LoginView.contentPane.add(new StoreInformation((String) m.getValueAt(row, 1)));
         				repaint();
         				LoginView.cards.next(LoginView.contentPane);
 //                        String s = String.format("%s (%s)", m.getValueAt(row, 0), m.getValueAt(row, 1));

@@ -11,6 +11,7 @@ import java.util.Vector;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -80,6 +81,30 @@ public class UserFavoritesList extends JPanel {
 			//첫번째 행을 우선 선택해둠. 
 			jt.setRowSelectionInterval(0, 0);
 		}			
+		
+		jt.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				JTable t = (JTable)arg0.getSource();
+				if(arg0.getClickCount()==2) {
+					TableModel m = t.getModel();
+                    Point pt = arg0.getPoint();
+                    int i = t.rowAtPoint(pt);
+                    if(i>=0) {
+                        int row = t.convertRowIndexToModel(i);
+                        removeAll();
+        			LoginView.contentPane.add(new StoreInformation((String) m.getValueAt(row, 1)));
+        				revalidate();
+        				repaint();
+        				LoginView.cards.next(LoginView.contentPane);
+        				
+//                        String s = String.format("%s (%s)", m.getValueAt(row, 0), m.getValueAt(row, 1));
+//                        JOptionPane.showMessageDialog(t, s, "title", JOptionPane.INFORMATION_MESSAGE);
+                    }
+				}
+			}
+		});
 	}//생성자끝
 
 	/**

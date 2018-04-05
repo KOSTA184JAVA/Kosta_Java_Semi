@@ -24,9 +24,9 @@ public class UserController {
 
 	}
 
-	public static void quitMember(String memberId, String memberPassword) {
+	public static void quitMember(String memberId) {
 		try {
-			uService.quitMember(memberId, memberPassword);
+			uService.quitMember(memberId);
 			System.out.println(memberId + "님 성공적으로 회원탈퇴되었습니다.");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -44,22 +44,22 @@ public class UserController {
 		return false;
 	}
 
-	public static void checkDuplicateId(String memberId) {
+	public static int checkDuplicateId(String memberId) {
+		int i=1;
 		try {
-			uService.checkDuplicateId(memberId);
-			System.out.println(memberId+"는 사용가능한 아이디입니다.");
+			i=uService.checkDuplicateId(memberId);
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		System.out.println("con"+i);
+		return i;
 	}
 
 	public static List<Restaurant> searchByStoreName(String storeName) {
 		List<Restaurant> list = null;
 		try {
 			list =uService.searchByStoreName(storeName);
-//			for(Restaurant temp : list) {
-//				System.out.println(temp.getResKind()+" | "+temp.getResName() +" | "+ temp.getResAddr() +" | "+ temp.getResPhone() +" | "+ temp.getResDeliv() +" | "+ temp.getResSp() );
-//			}	
+
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}	
@@ -79,15 +79,15 @@ public class UserController {
 	return null;
 	}
 
-	public static void searchByOrderStoreSP(String StoreKind) {
+	public static List<Restaurant> searchByOrderStoreSP(String StoreKind) {
+		List<Restaurant> list = null;
 		try {
-			List<Restaurant> list = uService.searchByOrderStoreSP(StoreKind);
-			for(Restaurant temp : list) {
-				System.out.println(temp.getResKind()+" | "+temp.getResName() +" | "+ temp.getResAddr() +" | "+ temp.getResPhone() +" | "+ temp.getResDeliv() +" | "+ temp.getResSp() );
-			}
+			list = uService.searchByOrderStoreSP(StoreKind);
+
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		return list;
 	}
 
 	public static void searchByDeliv(String StoreKind) {
@@ -133,14 +133,16 @@ public class UserController {
 		}
 	}
 	
-	public static void searchMenuList(int storeId){
+	public static List<Menu> searchMenuList(int storeId){
+		List<Menu> list =null;
 		try {
-			List<Menu> list =uService.searchMenuList(storeId);
-			for(Menu temp : list) {
-				System.out.println(temp.getName()+" | "+temp.getPrice() +" | "+ temp.getDesc() +" | "+ temp.getKcal() +" | "+ temp.getSource());
-			}
+			list =uService.searchMenuList(storeId);
+//			for(Menu temp : list) {
+//				System.out.println(temp.getName()+" | "+temp.getPrice() +" | "+ temp.getDesc() +" | "+ temp.getKcal() +" | "+ temp.getSource());
+//			}
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		return list;
 	}
 }

@@ -32,7 +32,9 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 	JMenuItem  update=new JMenuItem("수정");
 	JMenuItem  delete=new JMenuItem("삭제");
 	JMenuBar mb=new JMenuBar();
-		
+	
+	List<Restaurant> list = null;
+	
 	String [] name={"StoreId","kind","name","addr","phone","deliver","point"};  //다영:컬럼추가(StoreId)
 	
 	DefaultTableModel dt= new DefaultTableModel(name,0);
@@ -48,6 +50,8 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 	JComboBox combo = new JComboBox(comboName); //콤보박스
 	JTextField jtf = new JTextField(20);
 	JButton search = new JButton("검색");
+
+
 	
 /**
 	화면구성 및 이벤트등록
