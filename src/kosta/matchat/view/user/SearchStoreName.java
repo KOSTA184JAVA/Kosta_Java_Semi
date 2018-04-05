@@ -53,7 +53,7 @@ public class SearchStoreName extends JPanel {
 		button.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				LoginView.contentPane.add(new SearchByKindFirstView());
+				LoginView.contentPane.add(new UserMainView());
 				LoginView.cards.next(LoginView.contentPane);
 			}
 		});
@@ -73,7 +73,7 @@ public class SearchStoreName extends JPanel {
 		label_20.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				LoginView.contentPane.add(new SearchByKindFirstView());
+				LoginView.contentPane.add(new UserMainView());
 				LoginView.cards.next(LoginView.contentPane);
 			}
 		});

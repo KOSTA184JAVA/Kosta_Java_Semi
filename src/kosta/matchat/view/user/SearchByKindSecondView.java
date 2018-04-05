@@ -100,7 +100,7 @@ public class SearchByKindSecondView extends JPanel {
 				preIcon.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
-						LoginView.contentPane.add(new SearchByKindFirstView());
+						LoginView.contentPane.add(new UserMainView());
 						LoginView.cards.next(LoginView.contentPane);
 					}
 				});

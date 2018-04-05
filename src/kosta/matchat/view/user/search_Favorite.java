@@ -55,7 +55,7 @@ public class search_Favorite extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
-				LoginView.contentPane.add(new SearchByKindFirstView());
+				LoginView.contentPane.add(new UserMainView());
 				LoginView.cards.previous(LoginView.contentPane);
 				
 			}
