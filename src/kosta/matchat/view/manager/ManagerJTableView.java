@@ -28,6 +28,12 @@ import kosta.mvc.controller.UserListController;
 import kosta.mvc.view.FailView;
 import kosta.mvc.view.UserJDialogView;
 
+import kosta.matchat.view.start.LoginView;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+
 public class ManagerJTableView extends JPanel implements ActionListener {
 	JPanel menu = new JPanel();
 	JMenu m = new JMenu("관리");//메뉴바에 올려져있는것, 메뉴들
