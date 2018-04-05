@@ -54,7 +54,7 @@ public class join_newmember extends JDialog{
 	 * Create the frame.
 	 */
 	public join_newmember() {
-		setTitle("?öå?õê Í∞??ûÖ");
+		setTitle("»∏ø¯∞°¿‘");
 		setDefaultCloseOperation(HIDE_ON_CLOSE);
 		setBounds(100, 100, 393, 338);
 		contentPane = new JPanel();
@@ -124,6 +124,7 @@ public class join_newmember extends JDialog{
 		label_2.setBounds(45, 227, 105, 15);
 		contentPane.add(label_2);
 		
+		//∑Œ±◊¿Œπˆ∆∞
 		JoinCheckButton = new JButton("\uD655 \uC778");
 		JoinCheckButton.addMouseListener(new MouseAdapter() {
 			@Override
@@ -144,7 +145,7 @@ public class join_newmember extends JDialog{
 		contentPane.add(JAddress);
 		JoinCheckButton.setBounds(124, 260, 135, 32);
 		contentPane.add(JoinCheckButton);
-		
+
 		JButton btnNewButton = new JButton("Ï§ëÎ≥µÍ≤??Ç¨");
 		btnNewButton.setFont(new Font("Íµ¥Î¶º", Font.PLAIN, 11));
 		

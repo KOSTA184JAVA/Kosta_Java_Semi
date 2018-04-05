@@ -3,7 +3,6 @@ import kosta.matchat.view.manager.ManagerJTableView;
 public class MainView {
 	public static void main(String[] args) {
 
-		System.out.println("git test2");
 			LoginView logV = new LoginView();
 			logV.setVisible(true);
 					
