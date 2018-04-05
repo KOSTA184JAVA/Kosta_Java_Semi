@@ -323,7 +323,7 @@ public class StoreInformation extends JPanel {
       label_11.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
-            LoginView.contentPane.add(new UserKindSearchListView());
+            LoginView.contentPane.add(new UserKindSerachView());
             LoginView.cards.next(LoginView.contentPane);
          }
       });

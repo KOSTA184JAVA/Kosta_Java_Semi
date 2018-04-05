@@ -20,7 +20,7 @@ public interface UserService {
 	 * @param memberId Å»ÅðÇÒ È¸¿ø ID
 	 * @param memberPassword Å»ÅðÇÒ È¸¿ø Password
 	 */
-	public void quitMember(String memberId, String memberPassword) throws SQLException;
+	public void quitMember(String memberId) throws SQLException;
 	
 	
 	/**

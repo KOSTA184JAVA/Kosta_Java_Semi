@@ -33,8 +33,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void quitMember(String memberId, String memberPassword) throws SQLException {
-		int i = uDao.quitMember(memberId, memberPassword);
+	public void quitMember(String memberId) throws SQLException {
+		int i = uDao.quitMember(memberId);
 		if (i > 0) {
 			// Å»Åð¼º°ø
 		} else {

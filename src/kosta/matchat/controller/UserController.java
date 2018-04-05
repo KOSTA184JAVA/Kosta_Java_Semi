@@ -24,9 +24,9 @@ public class UserController {
 
 	}
 
-	public static void quitMember(String memberId, String memberPassword) {
+	public static void quitMember(String memberId) {
 		try {
-			uService.quitMember(memberId, memberPassword);
+			uService.quitMember(memberId);
 			System.out.println(memberId + "님 성공적으로 회원탈퇴되었습니다.");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
