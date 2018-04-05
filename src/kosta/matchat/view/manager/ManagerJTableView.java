@@ -1,6 +1,8 @@
 package kosta.matchat.view.manager;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -9,7 +11,6 @@ import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -22,12 +23,6 @@ import javax.swing.table.DefaultTableModel;
 
 import kosta.matchat.controller.AdminController;
 import kosta.matchat.model.dto.Restaurant;
-
-import kosta.matchat.view.start.LoginView;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import javax.swing.JLabel;
 
 public class ManagerJTableView extends JPanel implements ActionListener {
 	JPanel menu = new JPanel();
@@ -83,11 +78,9 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		add(p, BorderLayout.SOUTH);
 
 		setSize(500,400);
-		setLocationRelativeTo(null); //정가운데
 		setVisible(true);
 
 	
-		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//이벤트 등록->이벤트주체.addXxxListener(이벤트구현클래스);
 		insert.addActionListener(this);
@@ -95,7 +88,7 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		delete.addActionListener(this);
 		search.addActionListener(this);
 		
-		setDefaultCloseOperation(HIDE_ON_CLOSE);
+		
 		
 		//jtable 위에 레코드(테이블) 추가
 		List<Restaurant> list = AdminController.searchTotalList();
@@ -150,12 +143,6 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		}else if(obj==delete) {//삭제
 				int re=JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?");
 					
-		}else if(obj==search) {  //검색
-			
-			
-			
-			
-		}
-				
+		}		
 	}
 }

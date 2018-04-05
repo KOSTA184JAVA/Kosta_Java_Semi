@@ -140,5 +140,25 @@ public class AdminDAOImpl implements AdminDAO {
 		}
 	return list;
 	}
-
+	@Override
+	public int SearchStoreId() throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;		
+		String sql = "select seq_restaur_id from restaurant where rownum=1 order by seq_restaur_id desc";
+		ResultSet rs= null;
+		int i=0;
+		try {
+			con = DBUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				i= rs.getInt("SEQ_RESTAUR_ID");
+			}
+			
+		}finally {
+			DBUtil.dbClose(con, ps, rs);
+		}
+		return i;
+	}
 }

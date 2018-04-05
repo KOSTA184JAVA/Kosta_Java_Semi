@@ -16,6 +16,10 @@ public interface AdminDAO {
 	 */
 	public int insertStore(Restaurant restaurant) throws SQLException;
 	
+	/**
+	 * ¸ÀÁı id»ı¼º
+	 **/
+	public int SearchStoreId() throws SQLException;
 	
 	/**
 	 * ¸ÀÁı »èÁ¦

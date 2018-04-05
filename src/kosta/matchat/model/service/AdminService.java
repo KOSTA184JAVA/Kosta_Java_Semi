@@ -13,6 +13,10 @@ public interface AdminService {
 	 */
 	public void insertStore(Restaurant restaurant) throws SQLException;
 	
+	/**
+	 * ¸ÀÁý ID »ý¼º
+	 **/
+	public int SearchStoreId() throws SQLException;
 	
 	/**
 	 * ¸ÀÁý »èÁ¦
