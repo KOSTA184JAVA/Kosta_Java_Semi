@@ -66,12 +66,16 @@ public class UserNameSearchListView extends JPanel {
 		//검색버튼이 눌렸을 때 텍스트필드를 읽어와 
 		//컨트롤러 호출 후 리턴받은 값을 table에 뿌려주세요!
 		JButton btnNewButton = new JButton("검색");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				String storeName = searchTextField.getText();
+				List<Restaurant> resList = UserController.searchByStoreName(storeName);
+				viewRowTable(resList);
+			}
+		});
 		btnNewButton.setBounds(600, 51, 68, 23);
 		add(btnNewButton);
-
-		String storeName = searchTextField.getText();
-		UserController.searchByStoreName(storeName);
-//		viewRowTable();
 
 		jt.addMouseListener(new MouseAdapter() {
 
@@ -120,8 +124,7 @@ public class UserNameSearchListView extends JPanel {
 	/***
 	 * 검색된 레코드(List<Vector<Object>>)를 DefaultTableModel에 추가하는 메소드
 	 */
-	public void viewRowTable(String resKind) {
-		List<Restaurant> rList = UserController.searchByStoreKind(resKind);
+	public void viewRowTable(List<Restaurant> rList) {
 		List<Vector<Object>>vlist = convertRestaurantToVector(rList);
 		if(vlist != null && !vlist.isEmpty()) {
 			this.addRowTable(vlist);
@@ -135,7 +138,7 @@ public class UserNameSearchListView extends JPanel {
 	
 	public void addRowTable(List<Vector<Object>>list) {
 		//기존 레코드 삭제
-		//model.setNumRows(0);
+		dt.setNumRows(0);
 		for(Vector<Object> v : list) {
 			//System.out.println(v);
 			dt.addRow(v);
