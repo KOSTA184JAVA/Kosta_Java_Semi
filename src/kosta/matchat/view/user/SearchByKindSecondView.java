@@ -20,6 +20,7 @@ public class SearchByKindSecondView extends JPanel {
 	/**
 	 * Create the panel.
 	 */
+				
 	public SearchByKindSecondView() {
 				setLayout(null);
 
@@ -28,7 +29,7 @@ public class SearchByKindSecondView extends JPanel {
 				panel.setLayout(null);
 				panel.setBorder(new EmptyBorder(5, 5, 5, 5));
 				panel.setBackground(new Color(135, 206, 250));
-				panel.setBounds(0, 0, 394, 600);
+				panel.setBounds(0, 0,  797, 643);
 				add(panel);
 				
 				

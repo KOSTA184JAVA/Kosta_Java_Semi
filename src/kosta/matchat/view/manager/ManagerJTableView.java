@@ -17,7 +17,14 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-public class ManagerJTableView extends JFrame implements ActionListener{
+import kosta.matchat.view.start.LoginView;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+
+public class ManagerJTableView extends JPanel implements ActionListener {
+	JPanel menu = new JPanel();
 	JMenu m = new JMenu("관리");//메뉴바에 올려져있는것, 메뉴들
 	JMenuItem  insert=new JMenuItem("추가"); //메뉴아이템: 누르면 실행되는것
 	JMenuItem  update=new JMenuItem("수정");
@@ -47,15 +54,25 @@ public class ManagerJTableView extends JFrame implements ActionListener{
 
 */
 	public ManagerJTableView(){
-		super("DB연동");
-		
+		setLayout(new BorderLayout(0, 0));
+		menu.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		menu.add(mb);
+		mb.add(m);
+		//super("DB연동");
 		m.add(insert);
 		m.add(update);
 		m.add(delete);
-		mb.add(m);
-
-		setJMenuBar(mb);//메뉴바를 Frame위에올리기
 		
+			
+				//super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				
+				//이벤트 등록->이벤트주체.addXxxListener(이벤트구현클래스);
+				insert.addActionListener(this);
+				update.addActionListener(this);
+				delete.addActionListener(this);
+
+		//setJMenuBar(mb);//메뉴바를 Frame위에올리기
+		add(menu, BorderLayout.NORTH);
 		//South영역
 		
 		p.setBackground(Color.yellow);
@@ -63,23 +80,15 @@ public class ManagerJTableView extends JFrame implements ActionListener{
 		p.add(jtf);
 		p.add(search);
 
-		add(jsp, "Center");
-		add(p, "South");
+		add(jsp);
+		add(p, BorderLayout.SOUTH);
 
 		setSize(500,400);
-		setLocationRelativeTo(null); //정가운데
+		//setLocationRelativeTo(null); //정가운데
 		setVisible(true);
-
-	
-		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		//이벤트 등록->이벤트주체.addXxxListener(이벤트구현클래스);
-		insert.addActionListener(this);
-		update.addActionListener(this);
-		delete.addActionListener(this);
 		search.addActionListener(this);
 		
-		setDefaultCloseOperation(HIDE_ON_CLOSE);
+		//setDefaultCloseOperation(HIDE_ON_CLOSE);
 		
 	}//생성자끝
 
@@ -98,4 +107,5 @@ public class ManagerJTableView extends JFrame implements ActionListener{
 		}
 				
 	}
+
 }
