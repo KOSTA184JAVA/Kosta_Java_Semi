@@ -76,8 +76,9 @@ public class LoginView extends JFrame {
 		     btnLogin.addMouseListener(new MouseAdapter() {
 		     	@Override
 		     	public void mouseClicked(MouseEvent e) { 
-
-		     		if(UserController.loginMember(idTextField.getText(), pwTextField.getText())) {
+		     		
+		     		
+		     		if(UserController.loginMember(idTextField.getText(), new String(pwTextField.getPassword()) )) {
 		     			contentPane.add(new SearchByKindFirstView(),"searchbyKindFrist");
 		     			cards.next(contentPane );
 		     		}
