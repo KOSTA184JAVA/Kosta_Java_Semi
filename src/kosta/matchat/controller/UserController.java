@@ -59,7 +59,9 @@ public class UserController {
 		List<Restaurant> list = null;
 		try {
 			list =uService.searchByStoreName(storeName);
-
+//			for(Restaurant temp : list) {
+//				System.out.println(temp.getResKind()+" | "+temp.getResName() +" | "+ temp.getResAddr() +" | "+ temp.getResPhone() +" | "+ temp.getResDeliv() +" | "+ temp.getResSp() );
+//			}	
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}	
@@ -79,15 +81,15 @@ public class UserController {
 	return null;
 	}
 
-	public static List<Restaurant> searchByOrderStoreSP(String StoreKind) {
-		List<Restaurant> list = null;
+	public static void searchByOrderStoreSP(String StoreKind) {
 		try {
-			list = uService.searchByOrderStoreSP(StoreKind);
-
+			List<Restaurant> list = uService.searchByOrderStoreSP(StoreKind);
+			for(Restaurant temp : list) {
+				System.out.println(temp.getResKind()+" | "+temp.getResName() +" | "+ temp.getResAddr() +" | "+ temp.getResPhone() +" | "+ temp.getResDeliv() +" | "+ temp.getResSp() );
+			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		return list;
 	}
 
 	public static void searchByDeliv(String StoreKind) {
