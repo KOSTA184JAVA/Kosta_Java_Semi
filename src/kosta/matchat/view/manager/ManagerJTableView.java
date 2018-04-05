@@ -22,6 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import kosta.matchat.controller.AdminController;
+import kosta.matchat.controller.UserController;
 import kosta.matchat.model.dto.Restaurant;
 
 public class ManagerJTableView extends JPanel implements ActionListener {
