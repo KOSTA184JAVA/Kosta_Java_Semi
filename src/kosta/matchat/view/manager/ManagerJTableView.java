@@ -68,14 +68,7 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		m.add(insert);
 		m.add(update);
 		m.add(delete);
-		
-			
-				//super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				
-				//이벤트 등록->이벤트주체.addXxxListener(이벤트구현클래스);
-				insert.addActionListener(this);
-				update.addActionListener(this);
-				delete.addActionListener(this);
+	
 
 		//setJMenuBar(mb);//메뉴바를 Frame위에올리기
 		add(menu, BorderLayout.NORTH);
@@ -90,26 +83,42 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		add(p, BorderLayout.SOUTH);
 
 		setSize(500,400);
-		//setLocationRelativeTo(null); //정가운데
+		setLocationRelativeTo(null); //정가운데
 		setVisible(true);
+
+	
+		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		//이벤트 등록->이벤트주체.addXxxListener(이벤트구현클래스);
+		insert.addActionListener(this);
+		update.addActionListener(this);
+		delete.addActionListener(this);
 		search.addActionListener(this);
 		
-		//setDefaultCloseOperation(HIDE_ON_CLOSE);
+		setDefaultCloseOperation(HIDE_ON_CLOSE);
 		
+		//jtable 위에 레코드(테이블) 추가
+		List<Restaurant> list = AdminController.searchTotalList();
+		if(list!=null && list.size()!=0) {
+			this.addRowTable(list);
+			
+			//첫번째 행을 우선 선택해둠. 
+			jt.setRowSelectionInterval(0, 0);
+		}			
 	}//생성자끝
 
 	/**
 	 * 검색된 레코드(List<Restaurant>)를 defaultTableModel에 추가하는 메소드
 	 */
 	public void addRowTable(List<Restaurant> list) {
+		//DB에서 가져온 List<Restaurant>을 List<Vector<Object>>으로 변환
+		List<Vector<Object>> vList = this.convertRestaurantToVector(list);
 		
-		this.convertRestaurantToVector(list);
-		//기존 레코드 삭제 후 추가, dt에 있는 데이터 한번에 삭제
-		dt.setNumRows(0);  //lowcount (행의 수)를 0으로 만든다 (모두삭제)
+		//기존 레코드 리셋 후 신규추가
+		dt.setNumRows(0);  //lowcount(행의 수)를 0으로 만든다 (모두삭제)
 		
-		for(Vector<Object> v :list) {
+		for(Vector<Object> v :vList) {
 			dt.addRow(v);  //끝에 추가 (누적됨)
-			
 		}
 	}//addRowTable 끝  
 	
@@ -118,14 +127,15 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 	 */
 	public List<Vector<Object>> convertRestaurantToVector(List<Restaurant> resList){
 	      List<Vector<Object>> vList = new ArrayList<>();
-	      Vector<Object> v = new Vector<>();
 	      for(Restaurant r : resList) {
-	         v.add(r.getResId());
-	         v.add(r.getResKind());
-	         v.add(r.getResName());
-	         v.add(r.getResAddr());
-	         v.add(r.getResPhone());
-	         vList.add(v);
+		     Vector<Object> v = new Vector<>();
+		         v.add(r.getResKind());
+		         v.add(r.getResName());
+		         v.add(r.getResAddr());
+		         v.add(r.getResPhone());
+		         v.add(r.getResDeliv());
+		         v.add(r.getResSp());
+		         vList.add(v);
 	      }
 	      return vList;
 	   }
@@ -140,6 +150,11 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		}else if(obj==delete) {//삭제
 				int re=JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?");
 					
+		}else if(obj==search) {  //검색
+			
+			
+			
+			
 		}
 				
 	}

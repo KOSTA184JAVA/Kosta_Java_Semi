@@ -118,7 +118,6 @@ public class AdminDAOImpl implements AdminDAO {
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		List<Restaurant> list = new ArrayList<>();
-
 		String sql = "select * from RESTAURANT";
 		try {
 			con = DBUtil.getConnection();
