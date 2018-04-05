@@ -147,8 +147,8 @@ public class UserDAOImpl implements UserDAO {
 		
 		try {
 			con = DBUtil.getConnection();
-			ps = con.prepareStatement("select * from restaurant where restaur_kind = ?");
-			ps.setString(1, StoreKind);
+			ps = con.prepareStatement("select * from restaurant where restaur_kind like ?");
+			ps.setString(1,"%"+StoreKind+"%");  //다영 : %추가
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				int resID = rs.getInt("seq_restaur_id");
