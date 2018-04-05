@@ -17,7 +17,7 @@ public class Restaurant {
 	
 	private List<Menu> list = new ArrayList<>();  //식당에 해당하는 메뉴 리스트
 
-	
+
 	public Restaurant(int resId, String resKind, String resName, String resAddr, String resPhone, String resDeliv, int resSp) {
 		this.resId = resId;
 		this.resKind = resKind;

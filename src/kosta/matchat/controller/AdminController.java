@@ -2,6 +2,7 @@ package kosta.matchat.controller;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Vector;
 
 import kosta.matchat.model.dto.Menu;
 import kosta.matchat.model.dto.Restaurant;
@@ -58,15 +59,17 @@ public class AdminController {
 		}
 	}
 
-	public static void searchTotalList() {
+	public static List<Restaurant> searchTotalList() {
+		List<Restaurant> list=null;
 		try {
-			List<Restaurant> list = aService.searchTotalList();
+			list = aService.searchTotalList();
 			for(Restaurant temp : list) {
 				System.out.println(temp.getResKind()+" | "+temp.getResName() +" | "+ temp.getResAddr() +" | "+ temp.getResPhone() +" | "+ temp.getResDeliv() +" | "+ temp.getResSp() );
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+	return list;	
 	}
 
 }

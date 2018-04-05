@@ -3,6 +3,9 @@ package kosta.matchat.view.manager;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -16,6 +19,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+
+import kosta.matchat.controller.AdminController;
+import kosta.matchat.model.dto.Restaurant;
 
 public class ManagerJTableView extends JFrame implements ActionListener{
 	JMenu m = new JMenu("관리");//메뉴바에 올려져있는것, 메뉴들
@@ -81,10 +87,49 @@ public class ManagerJTableView extends JFrame implements ActionListener{
 		
 		setDefaultCloseOperation(HIDE_ON_CLOSE);
 		
+		//jtable 위에 레코드(테이블) 추가
+		List<Restaurant> list = AdminController.searchTotalList();
+		if(list!=null && list.size()!=0) {
+			this.addRowTable(list);
+			
+			//첫번째 행을 우선 선택해둠. 
+			jt.setRowSelectionInterval(0, 0);
+		}			
+		
 	}//생성자끝
 
-
-
+	/**
+	 * 검색된 레코드(List<Restaurant>)를 defaultTableModel에 추가하는 메소드
+	 */
+	public void addRowTable(List<Restaurant> list) {
+		
+		this.convertRestaurantToVector(list);
+		//기존 레코드 삭제 후 추가, dt에 있는 데이터 한번에 삭제
+		dt.setNumRows(0);  //lowcount (행의 수)를 0으로 만든다 (모두삭제)
+		
+		for(Vector<Object> v :list) {
+			dt.addRow(v);  //끝에 추가 (누적됨)
+			
+		}
+	}//addRowTable 끝  
+	
+	/**
+	 * 검색된 레코드(List<Restaurant>)를 List<Vector<Object>>로 변환하는 메소드 (이유 : dt.addRow() 할 때 매개변수로 배열 혹은 Vector<>만 들어가기 때문)
+	 */
+	public List<Vector<Object>> convertRestaurantToVector(List<Restaurant> resList){
+	      List<Vector<Object>> vList = new ArrayList<>();
+	      Vector<Object> v = new Vector<>();
+	      for(Restaurant r : resList) {
+	         v.add(r.getResId());
+	         v.add(r.getResKind());
+	         v.add(r.getResName());
+	         v.add(r.getResAddr());
+	         v.add(r.getResPhone());
+	         vList.add(v);
+	      }
+	      return vList;
+	   }
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object obj = e.getSource();//이벤트발생시키는 주체
