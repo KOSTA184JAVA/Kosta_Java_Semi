@@ -2,26 +2,15 @@ package kosta.matchat.view.start;
 import kosta.matchat.controller.AdminController;
 import kosta.matchat.view.manager.ManagerJTableView;
 public class MainView {
-<<<<<<< HEAD
+
 	public static void main(String[] args) {
 
-
-=======
-	public static void main(String[] args) {
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
-//		LoginView logV = new LoginView();
-//		logV.setVisible(true);
-
-<<<<<<< HEAD
 		//	LoginView logV = new LoginView();
 		//	logV.setVisible(true);
 					
 			new LoginView();
 		//  new ManagerJTableView();  //관리자
-=======
-			new LoginView();
-		//	new ManagerJTableView();  //관리자
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
+
 
 		// 현수
 //		UserController.joinMember(new Member("test1", "test", "test", "test", "test")); //회원가입
