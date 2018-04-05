@@ -79,11 +79,9 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		add(p, BorderLayout.SOUTH);
 
 		setSize(500,400);
-		setLocationRelativeTo(null); //정가운데
 		setVisible(true);
 
 	
-		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//이벤트 등록->이벤트주체.addXxxListener(이벤트구현클래스);
 		insert.addActionListener(this);
@@ -91,7 +89,6 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		delete.addActionListener(this);
 		search.addActionListener(this);
 		
-		setDefaultCloseOperation(HIDE_ON_CLOSE);
 		
 		//jtable 위에 레코드(테이블) 추가
 		List<Restaurant> list = AdminController.searchTotalList();
