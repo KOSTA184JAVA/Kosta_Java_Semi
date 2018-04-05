@@ -103,11 +103,11 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 	 */
 	public void addRowTable(List<Restaurant> list) {
 		
-		this.convertRestaurantToVector(list);
+		List<Vector<Object>> vList =this.convertRestaurantToVector(list);
 		//기존 레코드 삭제 후 추가, dt에 있는 데이터 한번에 삭제
 		dt.setNumRows(0);  //lowcount (행의 수)를 0으로 만든다 (모두삭제)
 		
-		for(Vector<Object> v :list) {
+		for(Vector<Object> v :vList) {
 			dt.addRow(v);  //끝에 추가 (누적됨)
 			
 		}

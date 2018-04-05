@@ -48,65 +48,65 @@ public class StoreInformation extends JPanel {
       setBackground(new Color(135, 206, 250));
       
       
-      JLabel label = new JLabel("¸ÀÁý Á¤º¸");
-      label.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.BOLD, 17));
-      label.setBounds(159, 5, 77, 32);
-      add(label);
+      JLabel lbresinfo = new JLabel("¸ÀÁý Á¤º¸");
+      lbresinfo.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.BOLD, 17));
+      lbresinfo.setBounds(159, 5, 77, 32);
+      add(lbresinfo);
       
-      JLabel lblNewLabel = new JLabel("\uB9DB\uC9D1\uC885\uB958");
-      lblNewLabel.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      lblNewLabel.setBounds(14, 53, 56, 15);
-      add(lblNewLabel);
+      JLabel lbreskind = new JLabel("\uB9DB\uC9D1\uC885\uB958");
+      lbreskind.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      lbreskind.setBounds(14, 53, 56, 15);
+      add(lbreskind);
       
-      JLabel lblNewLabel_5 = new JLabel("\uB9DB\uC9D1\uC774\uB984");
-      lblNewLabel_5.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      lblNewLabel_5.setBounds(198, 53, 54, 15);
-      add(lblNewLabel_5);
+      JLabel lbresname = new JLabel("\uB9DB\uC9D1\uC774\uB984");
+      lbresname.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      lbresname.setBounds(198, 53, 54, 15);
+      add(lbresname);
       
-      JLabel lblNewLabel_2 = new JLabel("\uC8FC\uC18C");
-      lblNewLabel_2.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      lblNewLabel_2.setBounds(14, 84, 31, 15);
-      add(lblNewLabel_2);
+      JLabel lbresaddr = new JLabel("\uC8FC\uC18C");
+      lbresaddr.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      lbresaddr.setBounds(14, 84, 31, 15);
+      add(lbresaddr);
       
-      JLabel lblNewLabel_1 = new JLabel("\uC5F0\uB77D\uCC98");
-      lblNewLabel_1.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      lblNewLabel_1.setBounds(14, 115, 45, 15);
-      add(lblNewLabel_1);
+      JLabel lbrescontact = new JLabel("\uC5F0\uB77D\uCC98");
+      lbrescontact.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      lbrescontact.setBounds(14, 115, 45, 15);
+      add(lbrescontact);
       
-      JLabel lblNewLabel_4 = new JLabel("\uBC30\uB2EC\uC5EC\uBD80");
-      lblNewLabel_4.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      lblNewLabel_4.setBounds(14, 145, 56, 15);
-      add(lblNewLabel_4);
+      JLabel lbresdeliver = new JLabel("\uBC30\uB2EC\uC5EC\uBD80");
+      lbresdeliver.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      lbresdeliver.setBounds(14, 145, 56, 15);
+      add(lbresdeliver);
       
-      JLabel lblNewLabel_6 = new JLabel("\uBCC4\uC810");
-      lblNewLabel_6.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      lblNewLabel_6.setBounds(198, 145, 38, 15);
-      add(lblNewLabel_6);
+      JLabel lbresstar = new JLabel("\uBCC4\uC810");
+      lbresstar.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      lbresstar.setBounds(198, 145, 38, 15);
+      add(lbresstar);
       
-      JLabel lblNewLabel_3 = new JLabel("\uBA54\uB274\uC774\uB984");
-      lblNewLabel_3.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      lblNewLabel_3.setBounds(14, 204, 56, 15);
-      add(lblNewLabel_3);
+      JLabel lbMenuName = new JLabel("\uBA54\uB274\uC774\uB984");
+      lbMenuName.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      lbMenuName.setBounds(14, 204, 56, 15);
+      add(lbMenuName);
       
-      JLabel lblNewLabel_7 = new JLabel("\uCE7C\uB85C\uB9AC");
-      lblNewLabel_7.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      lblNewLabel_7.setBounds(14, 254, 50, 15);
-      add(lblNewLabel_7);
+      JLabel lbMenuKcal = new JLabel("\uCE7C\uB85C\uB9AC");
+      lbMenuKcal.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      lbMenuKcal.setBounds(14, 254, 50, 15);
+      add(lbMenuKcal);
       
-      JLabel lblNewLabel_8 = new JLabel("\uC124\uBA85");
-      lblNewLabel_8.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      lblNewLabel_8.setBounds(14, 229, 45, 15);
-      add(lblNewLabel_8);
+      JLabel lbMenuExa = new JLabel("\uC124\uBA85");
+      lbMenuExa.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      lbMenuExa.setBounds(14, 229, 45, 15);
+      add(lbMenuExa);
       
-      JLabel lblNewLabel_9 = new JLabel("\uC6D0\uC7AC\uB8CC");
-      lblNewLabel_9.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      lblNewLabel_9.setBounds(198, 254, 50, 15);
-      add(lblNewLabel_9);
+      JLabel lbMenuStuff = new JLabel("\uC6D0\uC7AC\uB8CC");
+      lbMenuStuff.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      lbMenuStuff.setBounds(198, 254, 50, 15);
+      add(lbMenuStuff);
       
-      JLabel lblNewLabel_10 = new JLabel("\uAC00\uACA9");
-      lblNewLabel_10.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      lblNewLabel_10.setBounds(198, 204, 50, 15);
-      add(lblNewLabel_10);
+      JLabel lbMenuPrice = new JLabel("\uAC00\uACA9");
+      lbMenuPrice.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      lbMenuPrice.setBounds(198, 204, 50, 15);
+      add(lbMenuPrice);
       
       textField = new JTextField();
       textField.setBounds(64, 49, 123, 21);
