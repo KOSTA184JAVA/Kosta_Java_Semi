@@ -57,9 +57,7 @@ public class UserController {
 		List<Restaurant> list = null;
 		try {
 			list =uService.searchByStoreName(storeName);
-//			for(Restaurant temp : list) {
-//				System.out.println(temp.getResKind()+" | "+temp.getResName() +" | "+ temp.getResAddr() +" | "+ temp.getResPhone() +" | "+ temp.getResDeliv() +" | "+ temp.getResSp() );
-//			}	
+
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}	
@@ -79,15 +77,15 @@ public class UserController {
 	return null;
 	}
 
-	public static void searchByOrderStoreSP(String StoreKind) {
+	public static List<Restaurant> searchByOrderStoreSP(String StoreKind) {
+		List<Restaurant> list = null;
 		try {
-			List<Restaurant> list = uService.searchByOrderStoreSP(StoreKind);
-			for(Restaurant temp : list) {
-				System.out.println(temp.getResKind()+" | "+temp.getResName() +" | "+ temp.getResAddr() +" | "+ temp.getResPhone() +" | "+ temp.getResDeliv() +" | "+ temp.getResSp() );
-			}
+			list = uService.searchByOrderStoreSP(StoreKind);
+
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		return list;
 	}
 
 	public static void searchByDeliv(String StoreKind) {
@@ -133,14 +131,16 @@ public class UserController {
 		}
 	}
 	
-	public static void searchMenuList(int storeId){
+	public static List<Menu> searchMenuList(int storeId){
+		List<Menu> list =null;
 		try {
-			List<Menu> list =uService.searchMenuList(storeId);
-			for(Menu temp : list) {
-				System.out.println(temp.getName()+" | "+temp.getPrice() +" | "+ temp.getDesc() +" | "+ temp.getKcal() +" | "+ temp.getSource());
-			}
+			list =uService.searchMenuList(storeId);
+//			for(Menu temp : list) {
+//				System.out.println(temp.getName()+" | "+temp.getPrice() +" | "+ temp.getDesc() +" | "+ temp.getKcal() +" | "+ temp.getSource());
+//			}
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		return list;
 	}
 }
