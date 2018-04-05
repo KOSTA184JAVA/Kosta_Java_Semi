@@ -90,21 +90,21 @@ public class UserDAOImpl implements UserDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
+		//int i =0;
 		try {
+			
 			con = DBUtil.getConnection();
 			ps = con.prepareStatement("select * from member where member_id=?");
 			ps.setString(1, memberId);
 			rs = ps.executeQuery();
 
-			if (rs.next()) {
-				return 1; // 로그인성공
-			} else {
-				return 0; // 로그인실패
-			}
+			if(rs.next()) return 1;
 
 		} finally {
 			DBUtil.dbClose(con, ps, rs);
 		}
+		System.out.println();
+	return 0 ;
 	}
 
 	@Override

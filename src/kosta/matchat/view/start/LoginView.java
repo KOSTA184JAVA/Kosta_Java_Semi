@@ -6,10 +6,10 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -20,7 +20,7 @@ import kosta.matchat.view.manager.ManagerJTableView;
 import kosta.matchat.view.user.UserMainView;
 
 public class LoginView extends JFrame {
-
+	public static String id;
 	public static JPanel contentPane;
 	private JTextField txtId;
 	private JPasswordField txtPwd;
@@ -72,9 +72,21 @@ public class LoginView extends JFrame {
 		btnLogin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (UserController.loginMember(txtId.getText(), new String(txtPwd.getPassword()))) {
-					contentPane.add(new UserMainView(), "searchbyKindFrist");
-					cards.next(contentPane);
+				if(txtId.getText().trim().equals("") && txtPwd.getText().trim().equals("")) {
+					JOptionPane.showMessageDialog(null,"다시 입력해 주세요.");
+				}
+				else 
+				{
+					if (UserController.loginMember(txtId.getText(), new String(txtPwd.getPassword())))
+					{
+						id = txtId.getText();
+						contentPane.add(new UserMainView(), "userMainView");
+						cards.next(contentPane);
+						JOptionPane.showMessageDialog(null,"환영합니다.");
+					}else 
+					{
+						JOptionPane.showMessageDialog(null,"아이디 패스워드를 확인해주세요.");
+					}
 				}
 			}
 		});

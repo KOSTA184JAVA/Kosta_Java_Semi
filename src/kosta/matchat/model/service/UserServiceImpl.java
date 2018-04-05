@@ -58,14 +58,16 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void checkDuplicateId(String memberId) throws SQLException {
+	public int checkDuplicateId(String memberId) throws SQLException {
 		int i = uDao.checkDuplicateId(memberId);
 		if (i > 0) {
 			// 아이디중복
+			System.out.println("ser"+i);
 			throw new SQLException(memberId + "는 이미 사용중인 아이디입니다.");
-		} else {
-			// 아이디중복X
+			
 		}
+		
+		return i;
 	}
 
 	@Override
