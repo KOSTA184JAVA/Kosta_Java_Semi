@@ -22,6 +22,7 @@ import javax.swing.table.TableModel;
 import kosta.matchat.controller.UserController;
 import kosta.matchat.model.dto.Restaurant;
 import kosta.matchat.view.start.LoginView;
+import javax.swing.JButton;
 
 public class UserKindSearchListView extends JPanel {
 
@@ -100,6 +101,24 @@ public class UserKindSearchListView extends JPanel {
 		preIcon.setIcon(new ImageIcon(UserKindSerachView.class.getResource("/images/previousIcon.png")));
 		preIcon.setBounds(12, 10, 76, 52);
 		add(preIcon);
+		
+		JButton btnSPSort = new JButton("\uBCC4   \uC810    \uC21C");
+		btnSPSort.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		btnSPSort.setBounds(453, 440, 97, 23);
+		add(btnSPSort);
+		
+		JButton btnDeliverSort = new JButton("\uBC30\uB2EC \uAC00\uB2A5 \uC21C");
+		btnDeliverSort.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		btnDeliverSort.setBounds(580, 440, 101, 23);
+		add(btnDeliverSort);
 		
 		/**
 		 * JTable 위의 DTM에 addRow 하고 View 하기		
