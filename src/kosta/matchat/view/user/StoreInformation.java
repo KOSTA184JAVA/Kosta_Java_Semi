@@ -19,6 +19,8 @@ import kosta.matchat.model.dto.Menu;
 import kosta.matchat.model.dto.Restaurant;
 import kosta.matchat.view.start.FailView;
 import kosta.matchat.view.start.LoginView;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class StoreInformation extends JPanel {
 	private JTextField resKind;

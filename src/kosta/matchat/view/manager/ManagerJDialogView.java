@@ -21,6 +21,8 @@ import kosta.matchat.controller.AdminController;
 import kosta.matchat.controller.UserController;
 import kosta.matchat.model.dto.Menu;
 import kosta.matchat.model.dto.Restaurant;
+import kosta.matchat.view.start.FailView;
+
 
 public class ManagerJDialogView extends JDialog implements ActionListener {
 	private JPanel contentPane;
@@ -518,6 +520,8 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				String labelText = e.getActionCommand(); // 버튼의 글씨
 				if (labelText.equals("추   가")) {
+				int result = JOptionPane.showConfirmDialog(button, "추가하시겠습니까??");
+						if(result ==0) {
 
 					String matKind = aMatchatKindTextField.getText();
 					String matName = aMatchatNameTextField.getText();
@@ -560,7 +564,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 					AdminController.insertMenu(StoreId, menu3);
 
 					JOptionPane.showMessageDialog(null, "추가되었습니다");
-
+					}
 				} else if (labelText.equals("수   정")) {
 					String matKind = aMatchatKindTextField.getText();
 					String matName = aMatchatNameTextField.getText();

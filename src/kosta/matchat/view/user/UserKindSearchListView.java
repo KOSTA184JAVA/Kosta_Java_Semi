@@ -106,8 +106,8 @@ public class UserKindSearchListView extends JPanel {
       btnSPSort.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
-        	 List<Vector<Object>> list = convertRestaurantToVector (UserController.searchByOrderStoreSP(kind));
-        	 addRowTable(list);
+            List<Vector<Object>> list = convertRestaurantToVector (UserController.searchByOrderStoreSP(kind));
+            addRowTable(list);
          }
       });
       btnSPSort.setBounds(453, 440, 97, 23);
@@ -117,8 +117,8 @@ public class UserKindSearchListView extends JPanel {
       btnDeliverSort.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
-        	 List<Vector<Object>> list = convertRestaurantToVector (UserController.searchByDeliv(kind));
-        	 addRowTable(list); 
+            List<Vector<Object>> list = convertRestaurantToVector (UserController.searchByDeliv(kind));
+            addRowTable(list); 
          }
       });
       btnDeliverSort.setBounds(580, 440, 101, 23);
