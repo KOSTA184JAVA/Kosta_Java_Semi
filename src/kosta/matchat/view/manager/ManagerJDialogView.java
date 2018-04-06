@@ -1,6 +1,7 @@
 package kosta.matchat.view.manager;
 
 	import java.awt.Font;
+import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -286,46 +287,113 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 				 button = new JButton("Ãß   °¡");
 			}else{
 				 button = new JButton("¼ö   Á¤");
+				 List<Menu> menuList = UserController.searchMenuList(restaurant.getResId());
+				 /**¸ÀÁý Á¤º¸ load*/
 				 aMatchatKindTextField.setText(restaurant.getResKind());
 				 aMatchatNameTextField.setText(restaurant.getResName());
 				 aMatchatAddrTextField.setText(restaurant.getResAddr());
 				 aMatchatPhoneTextField.setText(restaurant.getResPhone());
 				 aMatchatDeliverTextField.setText(restaurant.getResDeliv());
 				 
-				 	JButton btnMenuDelete1 = new JButton("DELETE");
-					btnMenuDelete1.setHorizontalAlignment(SwingConstants.LEFT);
-					btnMenuDelete1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
-					btnMenuDelete1.setBounds(341, 210, 80, 29);
-					contentPane.add(btnMenuDelete1);
-					btnMenuDelete1.addMouseListener(new MouseAdapter(){
-						public void mouseClicked(MouseEvent e) {
-							System.out.println("hello1");
-							List<Menu> menuList = UserController.searchMenuList(restaurant.getResId());
-								AdminController.deleteMenu(restaurant.getResId(), m.getMenuId());
-						};
-					});
+				 if(menuList ==null) {
+					 
+				 }else	 if(menuList.size() > 0) {
+					 AMenuName1.setText(menuList.get(0).getName());
+					 AMenuKcal1.setText(menuList.get(0).getKcal()+"");
+					 AMenuPrice1.setText(menuList.get(0).getPrice()+"");
+					 AMenuSource1.setText(menuList.get(0).getSource()+"");
+					 AMenuSp1.setText(menuList.get(0).getDesc()+"");
+				 }else	 if(menuList.size() > 1) {
+					 AMenuName2.setText(menuList.get(1).getName());
+					 AMenuKcal2.setText(menuList.get(1).getKcal()+"");
+					 AMenuPrice2.setText(menuList.get(1).getPrice()+"");
+					 AMenuSource2.setText(menuList.get(1).getSource()+"");
+					 AMenuSp2.setText(menuList.get(1).getDesc()+"");
+				 }else	 if(menuList.size() > 2) {
+					 AMenuName3.setText(menuList.get(2).getName());
+					 AMenuKcal3.setText(menuList.get(2).getKcal()+"");
+					 AMenuPrice3.setText(menuList.get(2).getPrice()+"");
+					 AMenuSource3.setText(menuList.get(2).getSource()+"");
+					 AMenuSp3.setText(menuList.get(2).getDesc()+"");
+				 }
+				 
+				 JButton btnMenuDelete1 = new JButton("DELETE");
+				 if(menuList ==null) {
+					 
+				 }else	 if(menuList.size() > 0) {
+					 AMenuName1.setText(menuList.get(0).getName());
+					 AMenuKcal1.setText(menuList.get(0).getKcal()+"");
+					 AMenuPrice1.setText(menuList.get(0).getPrice()+"");
+					 AMenuSource1.setText(menuList.get(0).getSource()+"");
+					 AMenuSp1.setText(menuList.get(0).getDesc()+"");
+				 }else	 if(menuList.size() > 1) {
+					 AMenuName2.setText(menuList.get(1).getName());
+					 AMenuKcal2.setText(menuList.get(1).getKcal()+"");
+					 AMenuPrice2.setText(menuList.get(1).getPrice()+"");
+					 AMenuSource2.setText(menuList.get(1).getSource()+"");
+					 AMenuSp2.setText(menuList.get(1).getDesc()+"");
+				 }else	 if(menuList.size() > 2) {
+					 AMenuName3.setText(menuList.get(2).getName());
+					 AMenuKcal3.setText(menuList.get(2).getKcal()+"");
+					 AMenuPrice3.setText(menuList.get(2).getPrice()+"");
+					 AMenuSource3.setText(menuList.get(2).getSource()+"");
+					 AMenuSp3.setText(menuList.get(2).getDesc()+"");
+				 }
+				 
+				JButton btnMenuDelete1 = new JButton("DELETE");
 					
 					JButton btnMenuDelete2 = new JButton("DELETE");
 					btnMenuDelete2.setHorizontalAlignment(SwingConstants.LEFT);
 					btnMenuDelete2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
 					btnMenuDelete2.setBounds(341, 274, 80, 29);
-					contentPane.add(btnMenuDelete2);
-					btnMenuDelete2.addMouseListener(new MouseAdapter(){
-						public void mouseClicked(MouseEvent e) {
-							System.out.println("hello2");
-						};
-					});
 					
 					JButton btnMenuDelete3 = new JButton("DELETE");
 					btnMenuDelete3.setHorizontalAlignment(SwingConstants.LEFT);
 					btnMenuDelete3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
 					btnMenuDelete3.setBounds(341, 330, 80, 29);
-					contentPane.add(btnMenuDelete3);
-					btnMenuDelete3.addMouseListener(new MouseAdapter(){
+			 	
+				if(menuList != null) {
+				 switch(menuList.size()) { 
+				 	case 1:{
+				 		contentPane.add(btnMenuDelete1);
+				 		break;
+				 	}
+				 	case 2: {
+				 		contentPane.add(btnMenuDelete1);
+						contentPane.add(btnMenuDelete2);
+						break;
+				 	}
+				 	case 3: {
+				 		contentPane.add(btnMenuDelete1);
+						contentPane.add(btnMenuDelete2);
+						contentPane.add(btnMenuDelete3);
+						break;
+				 	}
+				 	default : break;
+				 }
+				}
+				btnMenuDelete1.addMouseListener(new MouseAdapter(){
 						public void mouseClicked(MouseEvent e) {
-							System.out.println("hello3");
+								AdminController.deleteMenu(restaurant.getResId(), menuList.get(0).getMenuId());
+								menuTextFieldDelete(AMenuName1, AMenuKcal1, AMenuPrice1, AMenuSource1, AMenuSp1);
+						};
+				});
+					
+				btnMenuDelete2.addMouseListener(new MouseAdapter(){
+					public void mouseClicked(MouseEvent e) {
+							AdminController.deleteMenu(restaurant.getResId(), menuList.get(1).getMenuId());
+							menuTextFieldDelete(AMenuName2, AMenuKcal2, AMenuPrice2, AMenuSource2, AMenuSp2);
 						};
 					});
+					
+				btnMenuDelete3.addMouseListener(new MouseAdapter(){
+					public void mouseClicked(MouseEvent e) {
+						AdminController.deleteMenu(restaurant.getResId(), menuList.get(2).getMenuId());
+						menuTextFieldDelete(AMenuName3, AMenuKcal3, AMenuPrice3, AMenuSource3, AMenuSp3);
+						};
+					});
+	
+	
 	
 			}
 			button.addActionListener(new ActionListener() {
@@ -401,7 +469,13 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			 setVisible(true);//Ã¢º¸ÀÌ±â
 		}
 
-
+	public void menuTextFieldDelete(JTextField aMenuName32,JTextField aMenuKcal22,JTextField aMenuPrice22,JTextField aMenuSource22,JTextField aMenuSp22) {
+		aMenuName32.setText("");
+		aMenuKcal22.setText("");
+		aMenuPrice22.setText("");
+		aMenuSource22.setText("");
+		aMenuSp22.setText("");
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		

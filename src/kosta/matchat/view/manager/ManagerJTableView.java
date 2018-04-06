@@ -94,7 +94,7 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		
 		
 		//jtable 위에 레코드(테이블) 추가
-		List<Restaurant> list = AdminController.searchTotalList();
+		list = AdminController.searchTotalList();
 		if(list!=null && list.size()!=0) {
 			this.addRowTable(list);
 			jt.setRowSelectionInterval(0, 0); //첫번째 행에 커서 올림
@@ -173,7 +173,7 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 				if(list!=null && list.size()!=0) {
 					this.addRowTable(list);
 					jt.setRowSelectionInterval(0, 0);  //첫번째 행에 커서 올림
-				}	
+				}
 			}else if(keyField.trim().equals("kind")) {  //종류별 검색창
 				//text박스의 값 입력유무 체크
 				String keyWord = jtf.getText();
@@ -200,7 +200,6 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 					jt.setRowSelectionInterval(0, 0);
 				}
 			}
-			//new ManagerJDialogView(this, "");
 
 		}
 				
