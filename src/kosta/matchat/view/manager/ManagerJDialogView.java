@@ -1,9 +1,11 @@
 package kosta.matchat.view.manager;
 
 	import java.awt.Font;
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,9 +21,7 @@ import kosta.matchat.controller.AdminController;
 import kosta.matchat.controller.UserController;
 import kosta.matchat.model.dto.Menu;
 import kosta.matchat.model.dto.Restaurant;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.List;
+import kosta.matchat.view.start.FailView;
 
 public class ManagerJDialogView extends JDialog implements ActionListener{
 		private JPanel contentPane;
@@ -380,50 +380,57 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 				public void actionPerformed(ActionEvent e) {
 					String labelText = e.getActionCommand(); //버튼의 글씨
 					if(labelText.equals("추   가")) {
-						
-						String matKind = aMatchatKindTextField.getText();
-						String matName = aMatchatNameTextField.getText();
-						String matAddr = aMatchatAddrTextField.getText();
-						String matPhone = aMatchatPhoneTextField.getText();
-						String matDeliver = aMatchatDeliverTextField.getText();
-						//System.out.println(matKind +matName+matAddr+matPhone+matDeliver+0);
-						Restaurant restaurant = new Restaurant(matKind,matName,matAddr,matPhone,matDeliver,5);
-						
-						AdminController.insertStore(restaurant);
-						
-						
-						String menuName = aMenuNameTextField1.getText();
-						int menuPrice = Integer.parseInt(aMenuPriceTextField1.getText());
-						String menuDesc = aMenuDescTextField1.getText();
-						int menuKcal = Integer.parseInt(aMenuKcalTextField1.getText());
-						String menuSource = aMenuSourceTextField1.getText();
-						
-						String menuName2 = aMenuNameTextField2.getText();
-						int menuPrice2 = Integer.parseInt(aMenuPriceTextField2.getText());
-						String menuDesc2 = aMenuDescTextField2.getText();
-						int menuKcal2 = Integer.parseInt(aMenuKcalTextField2.getText());
-						String menuSource2 = aMenuSourceTextField2.getText();
-						
-						String menuName3 = aMenuNameTextField3.getText();
-						int menuPrice3 = Integer.parseInt(aMenuPriceTextField3.getText());
-						String menuDesc3 = aMenuDescTextField3.getText();
-						int menuKcal3 = Integer.parseInt(aMenuKcalTextField3.getText());
-						String menuSource3 = aMenuSourceTextField3.getText();
-						
-						Menu menu = new Menu(menuName,menuPrice,menuDesc,menuKcal,menuSource);
-						int StoreId = AdminController.SearchStoreId();
-						AdminController.insertMenu(StoreId, menu);
-						
-						Menu menu2 = new Menu(menuName2,menuPrice2,menuDesc2,menuKcal2,menuSource2);
-						StoreId = AdminController.SearchStoreId();
-						AdminController.insertMenu(StoreId, menu2);
-						
-						Menu menu3 = new Menu(menuName3,menuPrice3,menuDesc3,menuKcal3,menuSource3);
-						StoreId = AdminController.SearchStoreId();
-						AdminController.insertMenu(StoreId, menu3);
-						
-						JOptionPane.showMessageDialog(null, "추가되었습니다");
-						
+						int result = JOptionPane.showConfirmDialog(button, "추가하시겠습니까??");
+						if(result ==0) {
+								String matKind = aMatchatKindTextField.getText();
+								String matName = aMatchatNameTextField.getText();
+								String matAddr = aMatchatAddrTextField.getText();
+								String matPhone = aMatchatPhoneTextField.getText();
+								String matDeliver = aMatchatDeliverTextField.getText();
+								//System.out.println(matKind +matName+matAddr+matPhone+matDeliver+0);
+								Restaurant restaurant = new Restaurant(matKind,matName,matAddr,matPhone,matDeliver,5);
+								
+								AdminController.insertStore(restaurant);
+								
+								
+								String menuName = aMenuNameTextField1.getText();
+								int menuPrice = Integer.parseInt(aMenuPriceTextField1.getText());
+								String menuDesc = aMenuDescTextField1.getText();
+								int menuKcal = Integer.parseInt(aMenuKcalTextField1.getText());
+								String menuSource = aMenuSourceTextField1.getText();
+								
+								String menuName2 = aMenuNameTextField2.getText();
+								int menuPrice2 = Integer.parseInt(aMenuPriceTextField2.getText());
+								String menuDesc2 = aMenuDescTextField2.getText();
+								int menuKcal2 = Integer.parseInt(aMenuKcalTextField2.getText());
+								String menuSource2 = aMenuSourceTextField2.getText();
+								
+								String menuName3 = aMenuNameTextField3.getText();
+								int menuPrice3 = Integer.parseInt(aMenuPriceTextField3.getText());
+								String menuDesc3 = aMenuDescTextField3.getText();
+								int menuKcal3 = Integer.parseInt(aMenuKcalTextField3.getText());
+								String menuSource3 = aMenuSourceTextField3.getText();
+								
+								
+								Menu menu = new Menu(menuName,menuPrice,menuDesc,menuKcal,menuSource);
+								int StoreId = AdminController.SearchStoreId();
+								AdminController.insertMenu(StoreId, menu);
+								
+								Menu menu2 = new Menu(menuName2,menuPrice2,menuDesc2,menuKcal2,menuSource2);
+								StoreId = AdminController.SearchStoreId();
+								AdminController.insertMenu(StoreId, menu2);
+								
+								Menu menu3 = new Menu(menuName3,menuPrice3,menuDesc3,menuKcal3,menuSource3);
+								StoreId = AdminController.SearchStoreId();
+								AdminController.insertMenu(StoreId, menu3);
+								
+								JOptionPane.showInternalMessageDialog(null, "추가되었습니다");
+								
+						}else {
+							JOptionPane.showInternalMessageDialog(null, "추가되지않았습니다");
+						}
+							
+							
 					}else if(labelText.equals("수   정")) {
 						String matKind = aMatchatKindTextField.getText();
 						String matName = aMatchatNameTextField.getText();
@@ -460,4 +467,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 	}//생성자끝
+
+
 }
