@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import kosta.matchat.controller.UserController;
 import kosta.matchat.model.dto.Menu;
 import kosta.matchat.model.dto.Restaurant;
+import kosta.matchat.view.start.FailView;
 import kosta.matchat.view.start.LoginView;
 
 public class StoreInformation extends JPanel {
@@ -41,7 +42,7 @@ public class StoreInformation extends JPanel {
    private JTextField Menu3Kcal;
    private JTextField Menu3Price;
    private JTextField Menu3Stuff;
-   int resNum = 0;
+   int resNum =0;
    /**
     * Create the panel.
     */
@@ -169,7 +170,10 @@ public class StoreInformation extends JPanel {
       btnNewButton.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
-            JOptionPane.showConfirmDialog(btnNewButton, "즐겨찾기에 추가하시겠습니까?");
+            int result = JOptionPane.showConfirmDialog(btnNewButton, "즐겨찾기에 추가하시겠습니까?");
+            if(result==0) { UserController.insertFavorite(resNum, LoginView.id);
+            FailView.errorMessage("즐겨찾기가 추가가 되었습니다.");;}
+            else { FailView.errorMessage("즐겨찾기가 되지 않았습니다.");}
          }
       });
       btnNewButton.setFont(new Font("나눔고딕코딩", Font.PLAIN, 12));
