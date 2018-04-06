@@ -196,7 +196,6 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 					jt.setRowSelectionInterval(0, 0);
 				}
 			}
-			//new ManagerJDialogView(this, "");
 
 		}
 				
