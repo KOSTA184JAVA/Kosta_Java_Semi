@@ -140,7 +140,11 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		if(obj==insert) {//가입
 			new ManagerJDialogView(this, "추가",null);
 		}else if(obj==update) {//수정
-			new ManagerJDialogView(this, "수정",null);
+			int re= jt.getSelectedRow();
+			Restaurant restaurant =list.get(re);
+			new ManagerJDialogView(this, "수정",restaurant);
+			
+			
 		}else if(obj==delete) {//삭제
 			int re=JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?");		
 			//yes를 클릭했을 경우

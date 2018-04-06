@@ -301,7 +301,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 						public void mouseClicked(MouseEvent e) {
 							System.out.println("hello1");
 							List<Menu> menuList = UserController.searchMenuList(restaurant.getResId());
-								AdminController.deleteMenu(restaurant.getResId(), m.getMenuId());
+//								AdminController.deleteMenu(restaurant.getResId(), m.getMenuId());
 						};
 					});
 					

@@ -2,6 +2,7 @@ package kosta.matchat.view.user;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -28,15 +29,17 @@ import kosta.matchat.view.start.LoginView;
 public class UserFavoritesList extends JPanel {
 
 	String[] name = { "맛집종류", "맛집이름", "주소", "연락처", "배달여부", "별점" };
-
+	
 	DefaultTableModel dt = new DefaultTableModel(name, 0);
 	JTable jt = new JTable(dt);
 	JScrollPane jsp = new JScrollPane(jt);
+
 
 	/**
 	 * Create the panel.
 	 */
 	public UserFavoritesList() {
+		String id = LoginView.id;
 
 		setLayout(null);
 		setBackground(new Color(135, 206, 250));
@@ -48,13 +51,19 @@ public class UserFavoritesList extends JPanel {
 		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		panel.setBackground(new Color(135, 206, 250));
 
-		panel.setBounds(100, 30, 400, 450);
+		panel.setBounds(110,120, 550, 300);
 
 		panel.add(jsp, "Center");
 
 		add(panel);
 		
 
+		JLabel label = new JLabel(id + "님의 즐겨찾기 리스트");
+		label.setBounds(270, 50, 350, 30);
+		label.setFont(new Font("나눔고딕코딩", Font.BOLD, 17));
+		add(label);
+
+		
 		JLabel logo = new JLabel("New label");
 		logo.setIcon(new ImageIcon(UserKindSerachView.class.getResource("/images/logo.png")));
 		logo.setBounds(650, 500, 79, 60);
@@ -64,7 +73,7 @@ public class UserFavoritesList extends JPanel {
 		preIcon.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				LoginView.contentPane.add(new UserKindSerachView());
+				LoginView.contentPane.add(new UserMainView());
 				LoginView.cards.next(LoginView.contentPane);
 			}
 		});
@@ -73,7 +82,6 @@ public class UserFavoritesList extends JPanel {
 		add(preIcon);
 
 		//jtable 위에 레코드(테이블) 추가
-		String id = LoginView.id;
 		List<Restaurant> list = UserController.searchFavorites(id);
 		if(list!=null && list.size()!=0) {
 			this.addRowTable(list);

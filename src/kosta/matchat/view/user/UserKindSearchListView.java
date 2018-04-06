@@ -1,6 +1,7 @@
 package kosta.matchat.view.user;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -44,12 +45,17 @@ public class UserKindSearchListView extends JPanel {
 		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		panel.setBackground(new Color(135, 206, 250));
 		
-		panel.setBounds(100,30, 550, 450);
+		panel.setBounds(110,120, 550, 300);
 		
 		
 		panel.add(jsp,"Center");
 		
 		add(panel);
+		
+		JLabel label = new JLabel(kind+" 맛집 리스트");
+		label.setBounds(310, 50, 155, 30);
+		label.setFont(new Font("나눔고딕코딩", Font.BOLD, 17));
+		add(label);
 
 				
 		//레코드 더블클릭 시 수행되는 메소드
@@ -87,7 +93,7 @@ public class UserKindSearchListView extends JPanel {
 		preIcon.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				LoginView.contentPane.add(new UserMainView());
+				LoginView.contentPane.add(new UserKindSerachView());
 				LoginView.cards.next(LoginView.contentPane);
 			}
 		});
