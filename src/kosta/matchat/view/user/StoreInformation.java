@@ -17,7 +17,10 @@ import javax.swing.JTextField;
 import kosta.matchat.controller.UserController;
 import kosta.matchat.model.dto.Menu;
 import kosta.matchat.model.dto.Restaurant;
+import kosta.matchat.view.start.FailView;
 import kosta.matchat.view.start.LoginView;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class StoreInformation extends JPanel {
    private JTextField resKind;
@@ -41,7 +44,7 @@ public class StoreInformation extends JPanel {
    private JTextField Menu3Kcal;
    private JTextField Menu3Price;
    private JTextField Menu3Stuff;
-   int resNum = 0;
+   int resNum =0;
    /**
     * Create the panel.
     */
@@ -65,70 +68,70 @@ public class StoreInformation extends JPanel {
       
       
       JLabel lbresinfo = new JLabel("¸ÀÁý Á¤º¸");
-      lbresinfo.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 16));
-      lbresinfo.setBounds(351, 46, 77, 32);
+      lbresinfo.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 18));
+      lbresinfo.setBounds(331, 24, 91, 32);
       add(lbresinfo);
      
       
-      JLabel lbreskind = new JLabel("\uB9DB\uC9D1\uC885\uB958");
-      lbreskind.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      lbreskind.setBounds(206, 94, 56, 15);
+      JLabel lbreskind = new JLabel("¸ÀÁýÁ¾·ù");
+      lbreskind.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      lbreskind.setBounds(181, 81, 56, 15);
       add(lbreskind);
       
-      JLabel lbresname = new JLabel("\uB9DB\uC9D1\uC774\uB984");
-      lbresname.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      lbresname.setBounds(390, 94, 54, 15);
+      JLabel lbresname = new JLabel("¸ÀÁýÀÌ¸§");
+      lbresname.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      lbresname.setBounds(368, 81, 54, 15);
       add(lbresname);
       
-      JLabel lbresaddr = new JLabel("\uC8FC\uC18C");
-      lbresaddr.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      lbresaddr.setBounds(206, 125, 31, 15);
+      JLabel lbresaddr = new JLabel("ÁÖ¼Ò");
+      lbresaddr.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      lbresaddr.setBounds(184, 112, 31, 15);
       add(lbresaddr);
       
-      JLabel lbrescontact = new JLabel("\uC5F0\uB77D\uCC98");
-      lbrescontact.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      lbrescontact.setBounds(206, 156, 45, 15);
+      JLabel lbrescontact = new JLabel("¿¬¶ôÃ³");
+      lbrescontact.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      lbrescontact.setBounds(184, 143, 45, 15);
       add(lbrescontact);
       
-      JLabel lbresdeliver = new JLabel("\uBC30\uB2EC\uC5EC\uBD80");
-      lbresdeliver.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      lbresdeliver.setBounds(206, 186, 56, 15);
+      JLabel lbresdeliver = new JLabel("¹è´Þ¿©ºÎ");
+      lbresdeliver.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      lbresdeliver.setBounds(184, 173, 56, 15);
       add(lbresdeliver);
       
-      JLabel lbresstar = new JLabel("\uBCC4\uC810");
-      lbresstar.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      lbresstar.setBounds(390, 186, 38, 15);
+      JLabel lbresstar = new JLabel("º°Á¡");
+      lbresstar.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      lbresstar.setBounds(368, 173, 38, 15);
       add(lbresstar);
       
-      JLabel lbMenuName = new JLabel("\uBA54\uB274\uC774\uB984");
-      lbMenuName.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      lbMenuName.setBounds(206, 245, 56, 15);
+      JLabel lbMenuName = new JLabel("¸Þ´ºÀÌ¸§");
+      lbMenuName.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      lbMenuName.setBounds(184, 232, 56, 15);
       add(lbMenuName);
       
-      JLabel lbMenuKcal = new JLabel("\uCE7C\uB85C\uB9AC");
-      lbMenuKcal.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      lbMenuKcal.setBounds(206, 295, 50, 15);
+      JLabel lbMenuKcal = new JLabel("Ä®·Î¸®");
+      lbMenuKcal.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      lbMenuKcal.setBounds(184, 282, 50, 15);
       add(lbMenuKcal);
       
-      JLabel lbMenuExa = new JLabel("\uC124\uBA85");
-      lbMenuExa.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      lbMenuExa.setBounds(206, 270, 45, 15);
+      JLabel lbMenuExa = new JLabel("¼³¸í");
+      lbMenuExa.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      lbMenuExa.setBounds(184, 257, 45, 15);
       add(lbMenuExa);
       
-      JLabel lbMenuStuff = new JLabel("\uC6D0\uC7AC\uB8CC");
-      lbMenuStuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      lbMenuStuff.setBounds(390, 295, 50, 15);
+      JLabel lbMenuStuff = new JLabel("¿øÀç·á");
+      lbMenuStuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      lbMenuStuff.setBounds(368, 282, 50, 15);
       add(lbMenuStuff);
       
-      JLabel lbMenuPrice = new JLabel("\uAC00\uACA9");
-      lbMenuPrice.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      lbMenuPrice.setBounds(390, 245, 50, 15);
+      JLabel lbMenuPrice = new JLabel("°¡°Ý");
+      lbMenuPrice.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      lbMenuPrice.setBounds(368, 232, 50, 15);
       add(lbMenuPrice);
       
       resKind = new JTextField();
       resKind.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       resKind.setEditable(false);
-      resKind.setBounds(256, 90, 123, 21);
+      resKind.setBounds(234, 77, 123, 21);
       add(resKind);
       resKind.setColumns(10);
       
@@ -136,50 +139,57 @@ public class StoreInformation extends JPanel {
       restAddr.setEditable(false);
       restAddr.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       restAddr.setColumns(10);
-      restAddr.setBounds(256, 121, 309, 21);
+      restAddr.setBounds(234, 108, 346, 21);
       add(restAddr);
       
       restName = new JTextField();
       restName.setEditable(false);
       restName.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       restName.setColumns(10);
-      restName.setBounds(442, 91, 123, 21);
+      restName.setBounds(420, 78, 160, 21);
       add(restName);
       
       restPhone = new JTextField();
       restPhone.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       restPhone.setEditable(false);
       restPhone.setColumns(10);
-      restPhone.setBounds(256, 152, 123, 21);
+      restPhone.setBounds(234, 139, 123, 21);
       add(restPhone);
       
       Menu1Exa = new JTextField();
       Menu1Exa.setEditable(false);
       Menu1Exa.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       Menu1Exa.setColumns(10);
-      Menu1Exa.setBounds(256, 267, 309, 21);
+      Menu1Exa.setBounds(234, 254, 346, 21);
       add(Menu1Exa);
       
       Menu1Stuff = new JTextField();
       Menu1Stuff.setEditable(false);
-      Menu1Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
+      Menu1Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
       Menu1Stuff.setColumns(10);
-      Menu1Stuff.setBounds(442, 292, 123, 21);
+      Menu1Stuff.setBounds(420, 279, 159, 21);
       add(Menu1Stuff);
       
-      JButton btnNewButton = new JButton("\uC990\uACA8\uCC3E\uAE30");
+      JButton btnNewButton = new JButton("\u2606\uC990\uACA8\uCC3E\uAE30");
+      btnNewButton.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+         }
+      });
       btnNewButton.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
-            JOptionPane.showConfirmDialog(btnNewButton, "ì¶”ê??•˜?‹œê² ìŠµ?‹ˆê¹??");
+            int result = JOptionPane.showConfirmDialog(btnNewButton, "Áñ°ÜÃ£±â¿¡ Ãß°¡ÇÏ½Ã°Ú½À´Ï±î?");
+            if(result==0) { UserController.insertFavorite(resNum, LoginView.id);
+            FailView.errorMessage("Áñ°ÜÃ£±â°¡ Ãß°¡°¡ µÇ¾ú½À´Ï´Ù.");;}
+            else { FailView.errorMessage("Áñ°ÜÃ£±â°¡ µÇÁö ¾Ê¾Ò½À´Ï´Ù.");}
          }
       });
-      btnNewButton.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
+      btnNewButton.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 14));
       btnNewButton.setBackground(Color.WHITE);
-      btnNewButton.setBounds(206, 518, 173, 23);
+      btnNewButton.setBounds(184, 514, 173, 35);
       add(btnNewButton);
       
-      JButton BtnGetStar = new JButton("\uBCC4\uC810\uC8FC\uAE30");
+      JButton BtnGetStar = new JButton("\u2605\uBCC4\uC810\uC8FC\uAE30");
       BtnGetStar.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
@@ -189,177 +199,170 @@ public class StoreInformation extends JPanel {
          }
       });
       
-      BtnGetStar.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
+      BtnGetStar.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 14));
       BtnGetStar.setBackground(Color.WHITE);
-      BtnGetStar.setBounds(391, 518, 174, 23);
+      BtnGetStar.setBounds(406, 514, 174, 35);
       add(BtnGetStar);
       
       JLabel label_12 = new JLabel("");
       label_12.setIcon(new ImageIcon("C:\\Edu\\JavaWorkSpace\\GUI\\src\\\uC774\uBBF8\uC9C0\uB77C\uBCA8.png"));
       label_12.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_12.setBounds(710, 583, 77, 52);
+      label_12.setBounds(650, 500, 79, 60);
       add(label_12);
       
       restDeliver = new JTextField();
       restDeliver.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       restDeliver.setEditable(false);
       restDeliver.setColumns(10);
-      restDeliver.setBounds(256, 182, 123, 21);
+      restDeliver.setBounds(234, 169, 123, 21);
       add(restDeliver);
       
       Menu1Name = new JTextField();
       Menu1Name.setEditable(false);
       Menu1Name.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       Menu1Name.setColumns(10);
-      Menu1Name.setBounds(256, 241, 123, 21);
+      Menu1Name.setBounds(234, 228, 123, 21);
       add(Menu1Name);
       
       Menu1Kcal = new JTextField();
       Menu1Kcal.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       Menu1Kcal.setEditable(false);
       Menu1Kcal.setColumns(10);
-      Menu1Kcal.setBounds(256, 292, 123, 21);
+      Menu1Kcal.setBounds(234, 279, 123, 21);
       add(Menu1Kcal);
       
       restStar = new JTextField();
       restStar.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       restStar.setEditable(false);
       restStar.setColumns(10);
-      restStar.setBounds(442, 182, 123, 21);
+      restStar.setBounds(420, 169, 160, 21);
       add(restStar);
       
       Menu1Price = new JTextField();
       Menu1Price.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       Menu1Price.setEditable(false);
       Menu1Price.setColumns(10);
-      Menu1Price.setBounds(442, 241, 123, 21);
+      Menu1Price.setBounds(420, 228, 160, 21);
       add(Menu1Price);
       
       JLabel label_1 = new JLabel("\uBA54\uB274\uC774\uB984");
-      label_1.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      label_1.setBounds(206, 336, 56, 15);
+      label_1.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      label_1.setBounds(184, 323, 56, 15);
       add(label_1);
       
       JLabel label_2 = new JLabel("\uC124\uBA85");
-      label_2.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      label_2.setBounds(206, 361, 45, 15);
+      label_2.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      label_2.setBounds(184, 348, 45, 15);
       add(label_2);
       
       Menu2Exa = new JTextField();
       Menu2Exa.setEditable(false);
       Menu2Exa.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       Menu2Exa.setColumns(10);
-      Menu2Exa.setBounds(256, 358, 309, 21);
+      Menu2Exa.setBounds(234, 345, 346, 21);
       add(Menu2Exa);
       
       Menu2Name = new JTextField();
       Menu2Name.setEditable(false);
       Menu2Name.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       Menu2Name.setColumns(10);
-      Menu2Name.setBounds(256, 332, 123, 21);
+      Menu2Name.setBounds(234, 319, 123, 21);
       add(Menu2Name);
       
       JLabel label_3 = new JLabel("\uCE7C\uB85C\uB9AC");
-      label_3.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      label_3.setBounds(206, 386, 50, 15);
+      label_3.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      label_3.setBounds(184, 373, 50, 15);
       add(label_3);
       
       Menu2Kcal = new JTextField();
       Menu2Kcal.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       Menu2Kcal.setEditable(false);
       Menu2Kcal.setColumns(10);
-      Menu2Kcal.setBounds(256, 383, 123, 21);
+      Menu2Kcal.setBounds(234, 370, 123, 21);
       add(Menu2Kcal);
       
       Menu2Price = new JTextField();
+      Menu2Price.setEditable(false);
       Menu2Price.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      Menu2Price.setEnabled(false);
       Menu2Price.setColumns(10);
-      Menu2Price.setBounds(442, 332, 123, 21);
+      Menu2Price.setBounds(420, 319, 160, 21);
       add(Menu2Price);
       
       Menu2Stuff = new JTextField();
       Menu2Stuff.setEditable(false);
-      Menu2Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
+      Menu2Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
       Menu2Stuff.setColumns(10);
-      Menu2Stuff.setBounds(442, 383, 123, 21);
+      Menu2Stuff.setBounds(420, 370, 159, 21);
       add(Menu2Stuff);
       
-    
       JLabel label_4 = new JLabel("\uC6D0\uC7AC\uB8CC");
-      label_4.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_4.setBounds(390, 386, 50, 15);
+      label_4.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      label_4.setBounds(368, 373, 50, 15);
       add(label_4);
       
       JLabel label_5 = new JLabel("\uAC00\uACA9");
-
-      label_5.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_5.setBounds(390, 428, 50, 15);
+      label_5.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      label_5.setBounds(368, 415, 50, 15);
       add(label_5);
       
       JLabel label_6 = new JLabel("\uBA54\uB274\uC774\uB984");
-
-      label_6.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_6.setBounds(206, 428, 56, 15);
+      label_6.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      label_6.setBounds(184, 415, 56, 15);
       add(label_6);
       
       JLabel label_7 = new JLabel("\uC124\uBA85");
-   
-      label_7.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_7.setBounds(206, 454, 45, 15);
+      label_7.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      label_7.setBounds(184, 441, 45, 15);
       add(label_7);
       
       Menu3Exa = new JTextField();
       Menu3Exa.setEditable(false);
       Menu3Exa.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       Menu3Exa.setColumns(10);
-      Menu3Exa.setBounds(256, 451, 309, 21);
+      Menu3Exa.setBounds(234, 438, 346, 21);
       add(Menu3Exa);
       
       Menu3Name = new JTextField();
       Menu3Name.setEditable(false);
       Menu3Name.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       Menu3Name.setColumns(10);
-      Menu3Name.setBounds(256, 425, 123, 21);
+      Menu3Name.setBounds(234, 412, 123, 21);
       add(Menu3Name);
       
       JLabel label_8 = new JLabel("\uCE7C\uB85C\uB9AC");
-  
-    label_8.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_8.setBounds(206, 479, 50, 15);
+    label_8.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      label_8.setBounds(184, 466, 50, 15);
       add(label_8);
       
       Menu3Kcal = new JTextField();
       Menu3Kcal.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       Menu3Kcal.setEditable(false);
       Menu3Kcal.setColumns(10);
-      Menu3Kcal.setBounds(256, 476, 123, 21);
+      Menu3Kcal.setBounds(234, 463, 123, 21);
       add(Menu3Kcal);
       
       Menu3Price = new JTextField();
+      Menu3Price.setEditable(false);
       Menu3Price.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      Menu3Price.setEnabled(false);
       Menu3Price.setColumns(10);
-      Menu3Price.setBounds(442, 425, 123, 21);
+      Menu3Price.setBounds(420, 412, 160, 21);
       add(Menu3Price);
       
       Menu3Stuff = new JTextField();
       Menu3Stuff.setEditable(false);
-      Menu3Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
+      Menu3Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
       Menu3Stuff.setColumns(10);
-      Menu3Stuff.setBounds(442, 476, 123, 21);
+      Menu3Stuff.setBounds(420, 463, 159, 21);
       add(Menu3Stuff);
       
       JLabel label_9 = new JLabel("\uC6D0\uC7AC\uB8CC");
-
-      label_9.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_9.setBounds(390, 479, 50, 15);
+      label_9.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      label_9.setBounds(368, 466, 50, 15);
       add(label_9);
       
       JLabel label_10 = new JLabel("\uAC00\uACA9");
-
-      label_10.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_10.setBounds(390, 336, 50, 15);
+      label_10.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 12));
+      label_10.setBounds(368, 323, 50, 15);
       add(label_10);
       
       JLabel label_11 = new JLabel("");
@@ -399,5 +402,9 @@ public class StoreInformation extends JPanel {
       Menu3Kcal.setText(Integer.toString(menu.get(2).getKcal()));
       Menu3Exa.setText(menu.get(2).getDesc());
       Menu3Stuff.setText(menu.get(2).getSource());
+      
+      JLabel label = new JLabel("---------------------------------------------------------------------------------------------------");
+      label.setBounds(183, 198, 646, 15);
+      add(label);
    }
 }
