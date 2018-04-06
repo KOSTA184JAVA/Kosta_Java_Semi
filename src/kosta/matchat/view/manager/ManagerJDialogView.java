@@ -281,8 +281,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(AMenuSource3);
 			
 			//JButton button = new JButton("\uCD94  \uAC00");
-			
-			
+
 			JButton button;
 			if(string.equals("추가")) {
 				 button = new JButton("추   가");
