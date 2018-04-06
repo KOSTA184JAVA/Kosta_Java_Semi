@@ -80,10 +80,15 @@ public class LoginView extends JFrame {
 				{
 					if (UserController.loginMember(txtId.getText(), new String(txtPwd.getPassword())))
 					{
+						if(txtId.getText().equals("admin")) {
+							getContentPane().add("managerview", new ManagerJTableView());
+							cards.next(contentPane);
+						}else {
 						id = txtId.getText();
 						contentPane.add(new UserMainView(), "userMainView");
 						cards.next(contentPane);
 						JOptionPane.showMessageDialog(null,"환영합니다.");
+						}
 					}else 
 					{
 						JOptionPane.showMessageDialog(null,"아이디 패스워드를 확인해주세요.");
@@ -110,18 +115,6 @@ public class LoginView extends JFrame {
 
 			}
 		});
-
-		JButton btnManagerMode = new JButton("관리자모드");
-		btnManagerMode.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				getContentPane().add("managerview", new ManagerJTableView());
-				cards.next(contentPane);
-			}
-		});
-		btnManagerMode.setBounds(350, 470, 110, 30);
-		panLogin.add(btnManagerMode);
-		btnManagerMode.setFont(new Font("나눔고딕코딩", Font.BOLD, 10));
 
 		this.setVisible(true);
 
