@@ -285,23 +285,27 @@ public class StoreInformation extends JPanel {
       Menu2Stuff.setBounds(442, 383, 123, 21);
       add(Menu2Stuff);
       
+    
       JLabel label_4 = new JLabel("\uC6D0\uC7AC\uB8CC");
-      label_4.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      label_4.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_4.setBounds(390, 386, 50, 15);
       add(label_4);
       
       JLabel label_5 = new JLabel("\uAC00\uACA9");
-      label_5.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      label_5.setBounds(390, 336, 50, 15);
+
+      label_5.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
+      label_5.setBounds(390, 428, 50, 15);
       add(label_5);
       
       JLabel label_6 = new JLabel("\uBA54\uB274\uC774\uB984");
-      label_6.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      label_6.setBounds(206, 429, 56, 15);
+
+      label_6.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
+      label_6.setBounds(206, 428, 56, 15);
       add(label_6);
       
       JLabel label_7 = new JLabel("\uC124\uBA85");
-      label_7.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+   
+      label_7.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_7.setBounds(206, 454, 45, 15);
       add(label_7);
       
@@ -320,7 +324,8 @@ public class StoreInformation extends JPanel {
       add(Menu3Name);
       
       JLabel label_8 = new JLabel("\uCE7C\uB85C\uB9AC");
-      label_8.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+  
+    label_8.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_8.setBounds(206, 479, 50, 15);
       add(label_8);
       
@@ -346,13 +351,15 @@ public class StoreInformation extends JPanel {
       add(Menu3Stuff);
       
       JLabel label_9 = new JLabel("\uC6D0\uC7AC\uB8CC");
-      label_9.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+
+      label_9.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_9.setBounds(390, 479, 50, 15);
       add(label_9);
       
       JLabel label_10 = new JLabel("\uAC00\uACA9");
-      label_10.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
-      label_10.setBounds(390, 429, 50, 15);
+
+      label_10.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
+      label_10.setBounds(390, 336, 50, 15);
       add(label_10);
       
       JLabel label_11 = new JLabel("");

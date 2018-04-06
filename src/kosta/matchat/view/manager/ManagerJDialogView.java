@@ -1,6 +1,7 @@
 package kosta.matchat.view.manager;
 
 	import java.awt.Font;
+import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -23,27 +25,26 @@ import java.util.List;
 
 public class ManagerJDialogView extends JDialog implements ActionListener{
 		private JPanel contentPane;
-		private JTextField AMatchatKind;
-		private JTextField AMatchatPhone;
-		private JTextField AMatchatName;
-		private JTextField AMenuName1;
-		private JTextField AMatchatDeliver;
-		private JTextField AMatchatAddr;
-		private JTextField AMenuPrice1;
-		private JTextField AMenuKcal1;
-		private JTextField AMenuSp1;
-		private JTextField AMenuSource1;
-		private JTextField AMenuName2;
-		private JTextField AMenuPrice2;
-		private JTextField AMenuKcal2;
-		private JTextField AMenuSp2;
-		private JTextField AMenuSource2;
-		private JTextField AMenuName3;
-		private JTextField AMenuPrice3;
-		private JTextField AMenuKcal3;
-		private JTextField AMenuSp3;
-		private JTextField AMenuSource3;
-
+		private JTextField aMatchatKindTextField;
+		private JTextField aMatchatPhoneTextField;
+		private JTextField aMatchatNameTextField;
+		private JTextField aMenuNameTextField1;
+		private JTextField aMatchatDeliverTextField;
+		private JTextField aMatchatAddrTextField;
+		private JTextField aMenuPriceTextField1;
+		private JTextField aMenuKcalTextField1;
+		private JTextField aMenuDescTextField1;
+		private JTextField aMenuSourceTextField1;
+		private JTextField aMenuNameTextField2;
+		private JTextField aMenuPriceTextField2;
+		private JTextField aMenuKcalTextField2;
+		private JTextField aMenuDescTextField2;
+		private JTextField aMenuSourceTextField2;
+		private JTextField aMenuNameTextField3;
+		private JTextField aMenuPriceTextField3;
+		private JTextField aMenuKcalTextField3;
+		private JTextField aMenuDescTextField3;
+		private JTextField aMenuSourceTextField3;
 
 		/**
 		 * Create the frame.
@@ -63,221 +64,221 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.setBounds(0, 10, 324, 431);
 			contentPane.add(panel);
 			
-			JLabel label = new JLabel("\uB9DB\uC9D1 \uC815\uBCF4");
-			label.setHorizontalAlignment(SwingConstants.CENTER);
-			label.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 19));
-			label.setBounds(112, 1, 100, 40);
-			panel.add(label);
+			JLabel SubjectLabel = new JLabel("\uB9DB\uC9D1 \uC815\uBCF4");
+			SubjectLabel.setHorizontalAlignment(SwingConstants.CENTER);
+			SubjectLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 19));
+			SubjectLabel.setBounds(112, 1, 100, 40);
+			panel.add(SubjectLabel);
 			
-			JLabel label_1 = new JLabel("\uB9DB\uC9D1 \uC5F0\uB77D\uCC98 : ");
-			label_1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
-			label_1.setBounds(48, 109, 110, 20);
-			panel.add(label_1);
+			JLabel aMatchatPhoneLabel = new JLabel("\uB9DB\uC9D1 \uC5F0\uB77D\uCC98 : ");
+			aMatchatPhoneLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
+			aMatchatPhoneLabel.setBounds(48, 109, 110, 20);
+			panel.add(aMatchatPhoneLabel);
 			
-			JLabel label_2 = new JLabel("\uB9DB\uC9D1 \uC885\uB958  : ");
-			label_2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
-			label_2.setBounds(48, 34, 110, 20);
-			panel.add(label_2);
+			JLabel aMatchatKindLabel = new JLabel("\uB9DB\uC9D1 \uC885\uB958  : ");
+			aMatchatKindLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
+			aMatchatKindLabel.setBounds(48, 34, 110, 20);
+			panel.add(aMatchatKindLabel);
 			
-			AMatchatKind = new JTextField();
-			AMatchatKind.setColumns(10);
-			AMatchatKind.setBounds(150, 34, 135, 20);
-			panel.add(AMatchatKind);
+			aMatchatKindTextField = new JTextField();
+			aMatchatKindTextField.setColumns(10);
+			aMatchatKindTextField.setBounds(150, 34, 135, 20);
+			panel.add(aMatchatKindTextField);
 			
-			JLabel label_3 = new JLabel("\uB9DB\uC9D1 \uC774\uB984  : ");
-			label_3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
-			label_3.setBounds(48, 59, 110, 20);
-			panel.add(label_3);
+			JLabel aMatchatNameLabel = new JLabel("\uB9DB\uC9D1 \uC774\uB984  : ");
+			aMatchatNameLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
+			aMatchatNameLabel.setBounds(48, 59, 110, 20);
+			panel.add(aMatchatNameLabel);
 			
-			AMatchatPhone = new JTextField();
-			AMatchatPhone.setColumns(10);
-			AMatchatPhone.setBounds(150, 109, 136, 21);
-			panel.add(AMatchatPhone);
+			aMatchatPhoneTextField = new JTextField();
+			aMatchatPhoneTextField.setColumns(10);
+			aMatchatPhoneTextField.setBounds(150, 109, 136, 21);
+			panel.add(aMatchatPhoneTextField);
 			
-			AMatchatName = new JTextField();
-			AMatchatName.setColumns(10);
-			AMatchatName.setBounds(150, 59, 135, 20);
-			panel.add(AMatchatName);
+			aMatchatNameTextField = new JTextField();
+			aMatchatNameTextField.setColumns(10);
+			aMatchatNameTextField.setBounds(150, 59, 135, 20);
+			panel.add(aMatchatNameTextField);
 			
-			JLabel label_4 = new JLabel("\uBCC4\uC810  : ");
-			label_4.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
-			label_4.setBounds(48, 160, 110, 20);
-			panel.add(label_4);
+			JLabel aMatchatSpLabel = new JLabel("\uBCC4\uC810  : ");
+			aMatchatSpLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
+			aMatchatSpLabel.setBounds(48, 160, 110, 20);
+			panel.add(aMatchatSpLabel);
 			
-			AMenuName1 = new JTextField();
-			AMenuName1.setColumns(10);
-			AMenuName1.setBounds(67, 190, 65, 20);
-			panel.add(AMenuName1);
+			aMenuNameTextField1 = new JTextField();
+			aMenuNameTextField1.setColumns(10);
+			aMenuNameTextField1.setBounds(67, 190, 65, 20);
+			panel.add(aMenuNameTextField1);
 			
-			AMatchatDeliver = new JTextField();
-			AMatchatDeliver.setColumns(10);
-			AMatchatDeliver.setBounds(150, 134, 135, 21);
-			panel.add(AMatchatDeliver);
+			aMatchatDeliverTextField = new JTextField();
+			aMatchatDeliverTextField.setColumns(10);
+			aMatchatDeliverTextField.setBounds(150, 134, 135, 21);
+			panel.add(aMatchatDeliverTextField);
 			
-			JLabel label_5 = new JLabel("\uBC30\uB2EC \uC5EC\uBD80  : ");
-			label_5.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
-			label_5.setBounds(48, 134, 110, 20);
-			panel.add(label_5);
+			JLabel aMatchatDeliverLabel = new JLabel("\uBC30\uB2EC \uC5EC\uBD80  : ");
+			aMatchatDeliverLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
+			aMatchatDeliverLabel.setBounds(48, 134, 110, 20);
+			panel.add(aMatchatDeliverLabel);
 			
-			JLabel label_6 = new JLabel("\uB9DB\uC9D1 \uC8FC\uC18C  : ");
-			label_6.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
-			label_6.setBounds(48, 84, 110, 20);
-			panel.add(label_6);
+			JLabel aMatchatAddrLabel = new JLabel("\uB9DB\uC9D1 \uC8FC\uC18C  : ");
+			aMatchatAddrLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
+			aMatchatAddrLabel.setBounds(48, 84, 110, 20);
+			panel.add(aMatchatAddrLabel);
 			
-			AMatchatAddr = new JTextField();
-			AMatchatAddr.setColumns(10);
-			AMatchatAddr.setBounds(150, 84, 135, 21);
-			panel.add(AMatchatAddr);
+			aMatchatAddrTextField = new JTextField();
+			aMatchatAddrTextField.setColumns(10);
+			aMatchatAddrTextField.setBounds(150, 84, 135, 21);
+			panel.add(aMatchatAddrTextField);
 			
-			JLabel label_7 = new JLabel("\uBA54\uB274\uC774\uB984 :");
-			label_7.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_7.setBounds(13, 190, 50, 20);
-			panel.add(label_7);
+			JLabel aMenuNameLabel1 = new JLabel("\uBA54\uB274\uC774\uB984 :");
+			aMenuNameLabel1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuNameLabel1.setBounds(13, 190, 50, 20);
+			panel.add(aMenuNameLabel1);
 			
-			JLabel label_8 = new JLabel("\uAC00 \uACA9 :");
-			label_8.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_8.setBounds(134, 190, 39, 20);
-			panel.add(label_8);
+			JLabel aMenuPriceLabel1 = new JLabel("\uAC00 \uACA9 :");
+			aMenuPriceLabel1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuPriceLabel1.setBounds(134, 190, 39, 20);
+			panel.add(aMenuPriceLabel1);
 			
-			AMenuPrice1 = new JTextField();
-			AMenuPrice1.setColumns(10);
-			AMenuPrice1.setBounds(172, 190, 44, 20);
-			panel.add(AMenuPrice1);
+			aMenuPriceTextField1 = new JTextField();
+			aMenuPriceTextField1.setColumns(10);
+			aMenuPriceTextField1.setBounds(172, 190, 44, 20);
+			panel.add(aMenuPriceTextField1);
 			
-			JLabel label_9 = new JLabel("\uCE7C\uB85C\uB9AC :");
-			label_9.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_9.setBounds(223, 190, 50, 20);
-			panel.add(label_9);
+			JLabel aMenuKcalLabel1 = new JLabel("\uCE7C\uB85C\uB9AC :");
+			aMenuKcalLabel1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuKcalLabel1.setBounds(223, 190, 50, 20);
+			panel.add(aMenuKcalLabel1);
 			
-			AMenuKcal1 = new JTextField();
-			AMenuKcal1.setColumns(10);
-			AMenuKcal1.setBounds(265, 190, 55, 20);
-			panel.add(AMenuKcal1);
+			aMenuKcalTextField1 = new JTextField();
+			aMenuKcalTextField1.setColumns(10);
+			aMenuKcalTextField1.setBounds(265, 190, 55, 20);
+			panel.add(aMenuKcalTextField1);
 			
-			JLabel label_10 = new JLabel("\uBA54\uB274\uC124\uBA85 :");
-			label_10.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_10.setBounds(13, 220, 50, 20);
-			panel.add(label_10);
+			JLabel aMenuDescLabel1 = new JLabel("\uBA54\uB274\uC124\uBA85 :");
+			aMenuDescLabel1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuDescLabel1.setBounds(13, 220, 50, 20);
+			panel.add(aMenuDescLabel1);
 			
-			AMenuSp1 = new JTextField();
-			AMenuSp1.setColumns(10);
-			AMenuSp1.setBounds(67, 220, 151, 20);
-			panel.add(AMenuSp1);
+			aMenuDescTextField1 = new JTextField();
+			aMenuDescTextField1.setColumns(10);
+			aMenuDescTextField1.setBounds(67, 220, 151, 20);
+			panel.add(aMenuDescTextField1);
 			
-			JLabel label_11 = new JLabel("¿ø»êÁö :");
-			label_11.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_11.setBounds(223, 220, 50, 20);
-			panel.add(label_11);
+			JLabel aMenuSourceLabel1 = new JLabel("¿ø»êÁö :");
+			aMenuSourceLabel1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuSourceLabel1.setBounds(223, 220, 50, 20);
+			panel.add(aMenuSourceLabel1);
 			
-			AMenuSource1 = new JTextField();
-			AMenuSource1.setColumns(10);
-			AMenuSource1.setBounds(265, 220, 55, 20);
-			panel.add(AMenuSource1);
+			aMenuSourceTextField1 = new JTextField();
+			aMenuSourceTextField1.setColumns(10);
+			aMenuSourceTextField1.setBounds(265, 220, 55, 20);
+			panel.add(aMenuSourceTextField1);
 			
 			JLabel label_12 = new JLabel("New label");
 			label_12.setIcon(new ImageIcon("C:\\Users\\Xiyeon\\Desktop\\Edu\\JavaWorkSpace\\GUI\\src\\\uC774\uBBF8\uC9C0.png"));
 			label_12.setBounds(239, 369, 81, 52);
 			panel.add(label_12);
 			
-			JLabel label_13 = new JLabel("¸Þ´ºÀÌ¸§ :");
-			label_13.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_13.setBounds(13, 250, 50, 20);
-			panel.add(label_13);
+			JLabel aMenuNameLabel2 = new JLabel("¸Þ´ºÀÌ¸§ :");
+			aMenuNameLabel2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuNameLabel2.setBounds(13, 250, 50, 20);
+			panel.add(aMenuNameLabel2);
 			
-			AMenuName2 = new JTextField();
-			AMenuName2.setColumns(10);
-			AMenuName2.setBounds(67, 250, 65, 20);
-			panel.add(AMenuName2);
+			aMenuNameTextField2 = new JTextField();
+			aMenuNameTextField2.setColumns(10);
+			aMenuNameTextField2.setBounds(67, 250, 65, 20);
+			panel.add(aMenuNameTextField2);
 			
-			JLabel label_14 = new JLabel("°¡ °Ý :");
-			label_14.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_14.setBounds(134, 250, 39, 20);
-			panel.add(label_14);
+			JLabel aMenuPriceLabel2 = new JLabel("°¡ °Ý :");
+			aMenuPriceLabel2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuPriceLabel2.setBounds(134, 250, 39, 20);
+			panel.add(aMenuPriceLabel2);
 			
-			AMenuPrice2 = new JTextField();
-			AMenuPrice2.setColumns(10);
-			AMenuPrice2.setBounds(172, 250, 44, 20);
-			panel.add(AMenuPrice2);
+			aMenuPriceTextField2 = new JTextField();
+			aMenuPriceTextField2.setColumns(10);
+			aMenuPriceTextField2.setBounds(172, 250, 44, 20);
+			panel.add(aMenuPriceTextField2);
 			
-			JLabel label_15 = new JLabel("Ä®·Î¸® :");
-			label_15.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_15.setBounds(223, 250, 50, 20);
-			panel.add(label_15);
+			JLabel aMenuKcalLabel2 = new JLabel("Ä®·Î¸® :");
+			aMenuKcalLabel2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuKcalLabel2.setBounds(223, 250, 50, 20);
+			panel.add(aMenuKcalLabel2);
 			
-			AMenuKcal2 = new JTextField();
-			AMenuKcal2.setColumns(10);
-			AMenuKcal2.setBounds(265, 250, 55, 20);
-			panel.add(AMenuKcal2);
+			aMenuKcalTextField2 = new JTextField();
+			aMenuKcalTextField2.setColumns(10);
+			aMenuKcalTextField2.setBounds(265, 250, 55, 20);
+			panel.add(aMenuKcalTextField2);
 			
-			JLabel label_16 = new JLabel("¸Þ´º¼³¸í :");
-			label_16.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_16.setBounds(13, 282, 50, 20);
-			panel.add(label_16);
+			JLabel aMenuDescLabel2 = new JLabel("¸Þ´º¼³¸í :");
+			aMenuDescLabel2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuDescLabel2.setBounds(13, 282, 50, 20);
+			panel.add(aMenuDescLabel2);
 			
-			AMenuSp2 = new JTextField();
-			AMenuSp2.setColumns(10);
-			AMenuSp2.setBounds(67, 282, 151, 20);
-			panel.add(AMenuSp2);
+			aMenuDescTextField2 = new JTextField();
+			aMenuDescTextField2.setColumns(10);
+			aMenuDescTextField2.setBounds(67, 282, 151, 20);
+			panel.add(aMenuDescTextField2);
 			
-			JLabel label_17 = new JLabel("¿ø»êÁö :");
-			label_17.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_17.setBounds(223, 282, 50, 20);
-			panel.add(label_17);
+			JLabel aMenuSourceLabel2 = new JLabel("¿ø»êÁö :");
+			aMenuSourceLabel2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuSourceLabel2.setBounds(223, 282, 50, 20);
+			panel.add(aMenuSourceLabel2);
 			
-			AMenuSource2 = new JTextField();
-			AMenuSource2.setColumns(10);
-			AMenuSource2.setBounds(265, 280, 55, 20);
-			panel.add(AMenuSource2);
+			aMenuSourceTextField2 = new JTextField();
+			aMenuSourceTextField2.setColumns(10);
+			aMenuSourceTextField2.setBounds(265, 280, 55, 20);
+			panel.add(aMenuSourceTextField2);
 			
-			JLabel label_18 = new JLabel("¸Þ´ºÀÌ¸§ :");
-			label_18.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_18.setBounds(13, 312, 50, 20);
-			panel.add(label_18);
+			JLabel aMenuNameLabel3 = new JLabel("¸Þ´ºÀÌ¸§ :");
+			aMenuNameLabel3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuNameLabel3.setBounds(13, 312, 50, 20);
+			panel.add(aMenuNameLabel3);
 			
-			AMenuName3 = new JTextField();
-			AMenuName3.setColumns(10);
-			AMenuName3.setBounds(67, 312, 65, 20);
-			panel.add(AMenuName3);
+			aMenuNameTextField3 = new JTextField();
+			aMenuNameTextField3.setColumns(10);
+			aMenuNameTextField3.setBounds(67, 312, 65, 20);
+			panel.add(aMenuNameTextField3);
 			
-			JLabel label_19 = new JLabel("°¡ °Ý :");
-			label_19.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_19.setBounds(134, 312, 39, 20);
-			panel.add(label_19);
+			JLabel aMenuPriceLabel3 = new JLabel("°¡ °Ý :");
+			aMenuPriceLabel3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuPriceLabel3.setBounds(134, 312, 39, 20);
+			panel.add(aMenuPriceLabel3);
 			
-			AMenuPrice3 = new JTextField();
-			AMenuPrice3.setColumns(10);
-			AMenuPrice3.setBounds(172, 312, 44, 20);
-			panel.add(AMenuPrice3);
+			aMenuPriceTextField3 = new JTextField();
+			aMenuPriceTextField3.setColumns(10);
+			aMenuPriceTextField3.setBounds(172, 312, 44, 20);
+			panel.add(aMenuPriceTextField3);
 			
-			JLabel label_20 = new JLabel("Ä®·Î¸® :");
-			label_20.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_20.setBounds(223, 312, 50, 20);
-			panel.add(label_20);
+			JLabel aMenuKcalLabel3 = new JLabel("Ä®·Î¸® :");
+			aMenuKcalLabel3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuKcalLabel3.setBounds(223, 312, 50, 20);
+			panel.add(aMenuKcalLabel3);
 			
-			AMenuKcal3 = new JTextField();
-			AMenuKcal3.setColumns(10);
-			AMenuKcal3.setBounds(265, 312, 55, 20);
-			panel.add(AMenuKcal3);
+			aMenuKcalTextField3 = new JTextField();
+			aMenuKcalTextField3.setColumns(10);
+			aMenuKcalTextField3.setBounds(265, 312, 55, 20);
+			panel.add(aMenuKcalTextField3);
 			
-			JLabel label_21 = new JLabel("¸Þ´º¼³¸í :");
-			label_21.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_21.setBounds(13, 345, 50, 20);
-			panel.add(label_21);
+			JLabel aMenuDescLabel3 = new JLabel("¸Þ´º¼³¸í :");
+			aMenuDescLabel3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuDescLabel3.setBounds(13, 345, 50, 20);
+			panel.add(aMenuDescLabel3);
 			
-			AMenuSp3 = new JTextField();
-			AMenuSp3.setColumns(10);
-			AMenuSp3.setBounds(67, 345, 151, 20);
-			panel.add(AMenuSp3);
+			aMenuDescTextField3 = new JTextField();
+			aMenuDescTextField3.setColumns(10);
+			aMenuDescTextField3.setBounds(67, 345, 151, 20);
+			panel.add(aMenuDescTextField3);
 			
-			JLabel label_22 = new JLabel("¿ø»êÁö :");
-			label_22.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
-			label_22.setBounds(223, 345, 50, 20);
-			panel.add(label_22);
+			JLabel aMenuSourceLabel3 = new JLabel("¿ø»êÁö :");
+			aMenuSourceLabel3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+			aMenuSourceLabel3.setBounds(223, 345, 50, 20);
+			panel.add(aMenuSourceLabel3);
 			
-			AMenuSource3 = new JTextField();
-			AMenuSource3.setColumns(10);
-			AMenuSource3.setBounds(265, 343, 55, 20);
-			panel.add(AMenuSource3);
+			aMenuSourceTextField3 = new JTextField();
+			aMenuSourceTextField3.setColumns(10);
+			aMenuSourceTextField3.setBounds(265, 343, 55, 20);
+			panel.add(aMenuSourceTextField3);
 			
 			//JButton button = new JButton("\uCD94  \uAC00");
 
@@ -286,46 +287,113 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 				 button = new JButton("Ãß   °¡");
 			}else{
 				 button = new JButton("¼ö   Á¤");
-				 AMatchatKind.setText(restaurant.getResKind());
-				 AMatchatName.setText(restaurant.getResName());
-				 AMatchatAddr.setText(restaurant.getResAddr());
-				 AMatchatPhone.setText(restaurant.getResPhone());
-				 AMatchatDeliver.setText(restaurant.getResDeliv());
+				 List<Menu> menuList = UserController.searchMenuList(restaurant.getResId());
+				 /**¸ÀÁý Á¤º¸ load*/
+				 aMatchatKindTextField.setText(restaurant.getResKind());
+				 aMatchatNameTextField.setText(restaurant.getResName());
+				 aMatchatAddrTextField.setText(restaurant.getResAddr());
+				 aMatchatPhoneTextField.setText(restaurant.getResPhone());
+				 aMatchatDeliverTextField.setText(restaurant.getResDeliv());
 				 
-				 	JButton btnMenuDelete1 = new JButton("DELETE");
-					btnMenuDelete1.setHorizontalAlignment(SwingConstants.LEFT);
-					btnMenuDelete1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
-					btnMenuDelete1.setBounds(341, 210, 80, 29);
-					contentPane.add(btnMenuDelete1);
-					btnMenuDelete1.addMouseListener(new MouseAdapter(){
-						public void mouseClicked(MouseEvent e) {
-							System.out.println("hello1");
-							List<Menu> menuList = UserController.searchMenuList(restaurant.getResId());
-//								AdminController.deleteMenu(restaurant.getResId(), m.getMenuId());
-						};
-					});
+				 if(menuList ==null) {
+					 
+				 }else	 if(menuList.size() > 0) {
+					 AMenuName1.setText(menuList.get(0).getName());
+					 AMenuKcal1.setText(menuList.get(0).getKcal()+"");
+					 AMenuPrice1.setText(menuList.get(0).getPrice()+"");
+					 AMenuSource1.setText(menuList.get(0).getSource()+"");
+					 AMenuSp1.setText(menuList.get(0).getDesc()+"");
+				 }else	 if(menuList.size() > 1) {
+					 AMenuName2.setText(menuList.get(1).getName());
+					 AMenuKcal2.setText(menuList.get(1).getKcal()+"");
+					 AMenuPrice2.setText(menuList.get(1).getPrice()+"");
+					 AMenuSource2.setText(menuList.get(1).getSource()+"");
+					 AMenuSp2.setText(menuList.get(1).getDesc()+"");
+				 }else	 if(menuList.size() > 2) {
+					 AMenuName3.setText(menuList.get(2).getName());
+					 AMenuKcal3.setText(menuList.get(2).getKcal()+"");
+					 AMenuPrice3.setText(menuList.get(2).getPrice()+"");
+					 AMenuSource3.setText(menuList.get(2).getSource()+"");
+					 AMenuSp3.setText(menuList.get(2).getDesc()+"");
+				 }
+				 
+				 JButton btnMenuDelete1 = new JButton("DELETE");
+				 if(menuList ==null) {
+					 
+				 }else	 if(menuList.size() > 0) {
+					 AMenuName1.setText(menuList.get(0).getName());
+					 AMenuKcal1.setText(menuList.get(0).getKcal()+"");
+					 AMenuPrice1.setText(menuList.get(0).getPrice()+"");
+					 AMenuSource1.setText(menuList.get(0).getSource()+"");
+					 AMenuSp1.setText(menuList.get(0).getDesc()+"");
+				 }else	 if(menuList.size() > 1) {
+					 AMenuName2.setText(menuList.get(1).getName());
+					 AMenuKcal2.setText(menuList.get(1).getKcal()+"");
+					 AMenuPrice2.setText(menuList.get(1).getPrice()+"");
+					 AMenuSource2.setText(menuList.get(1).getSource()+"");
+					 AMenuSp2.setText(menuList.get(1).getDesc()+"");
+				 }else	 if(menuList.size() > 2) {
+					 AMenuName3.setText(menuList.get(2).getName());
+					 AMenuKcal3.setText(menuList.get(2).getKcal()+"");
+					 AMenuPrice3.setText(menuList.get(2).getPrice()+"");
+					 AMenuSource3.setText(menuList.get(2).getSource()+"");
+					 AMenuSp3.setText(menuList.get(2).getDesc()+"");
+				 }
+				 
+				JButton btnMenuDelete1 = new JButton("DELETE");
 					
 					JButton btnMenuDelete2 = new JButton("DELETE");
 					btnMenuDelete2.setHorizontalAlignment(SwingConstants.LEFT);
 					btnMenuDelete2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
 					btnMenuDelete2.setBounds(341, 274, 80, 29);
-					contentPane.add(btnMenuDelete2);
-					btnMenuDelete2.addMouseListener(new MouseAdapter(){
-						public void mouseClicked(MouseEvent e) {
-							System.out.println("hello2");
-						};
-					});
 					
 					JButton btnMenuDelete3 = new JButton("DELETE");
 					btnMenuDelete3.setHorizontalAlignment(SwingConstants.LEFT);
 					btnMenuDelete3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
 					btnMenuDelete3.setBounds(341, 330, 80, 29);
-					contentPane.add(btnMenuDelete3);
-					btnMenuDelete3.addMouseListener(new MouseAdapter(){
+			 	
+				if(menuList != null) {
+				 switch(menuList.size()) { 
+				 	case 1:{
+				 		contentPane.add(btnMenuDelete1);
+				 		break;
+				 	}
+				 	case 2: {
+				 		contentPane.add(btnMenuDelete1);
+						contentPane.add(btnMenuDelete2);
+						break;
+				 	}
+				 	case 3: {
+				 		contentPane.add(btnMenuDelete1);
+						contentPane.add(btnMenuDelete2);
+						contentPane.add(btnMenuDelete3);
+						break;
+				 	}
+				 	default : break;
+				 }
+				}
+				btnMenuDelete1.addMouseListener(new MouseAdapter(){
 						public void mouseClicked(MouseEvent e) {
-							System.out.println("hello3");
+								AdminController.deleteMenu(restaurant.getResId(), menuList.get(0).getMenuId());
+								menuTextFieldDelete(AMenuName1, AMenuKcal1, AMenuPrice1, AMenuSource1, AMenuSp1);
+						};
+				});
+					
+				btnMenuDelete2.addMouseListener(new MouseAdapter(){
+					public void mouseClicked(MouseEvent e) {
+							AdminController.deleteMenu(restaurant.getResId(), menuList.get(1).getMenuId());
+							menuTextFieldDelete(AMenuName2, AMenuKcal2, AMenuPrice2, AMenuSource2, AMenuSp2);
 						};
 					});
+					
+				btnMenuDelete3.addMouseListener(new MouseAdapter(){
+					public void mouseClicked(MouseEvent e) {
+						AdminController.deleteMenu(restaurant.getResId(), menuList.get(2).getMenuId());
+						menuTextFieldDelete(AMenuName3, AMenuKcal3, AMenuPrice3, AMenuSource3, AMenuSp3);
+						};
+					});
+	
+	
 	
 			}
 			button.addActionListener(new ActionListener() {
@@ -333,34 +401,34 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 					String labelText = e.getActionCommand(); //¹öÆ°ÀÇ ±Û¾¾
 					if(labelText.equals("Ãß   °¡")) {
 						
-						String matKind = AMatchatKind.getText();
-						String matName = AMatchatName.getText();
-						String matAddr = AMatchatAddr.getText();
-						String matPhone = AMatchatPhone.getText();
-						String matDeliver = AMatchatDeliver.getText();
+						String matKind = aMatchatKindTextField.getText();
+						String matName = aMatchatNameTextField.getText();
+						String matAddr = aMatchatAddrTextField.getText();
+						String matPhone = aMatchatPhoneTextField.getText();
+						String matDeliver = aMatchatDeliverTextField.getText();
 						//System.out.println(matKind +matName+matAddr+matPhone+matDeliver+0);
 						Restaurant restaurant = new Restaurant(matKind,matName,matAddr,matPhone,matDeliver,5);
 						
 						AdminController.insertStore(restaurant);
 						
 						
-						String menuName = AMenuName1.getText();
-						int menuPrice = Integer.parseInt(AMenuPrice1.getText());
-						String menuDesc = AMenuSp1.getText();
-						int menuKcal = Integer.parseInt(AMenuKcal1.getText());
-						String menuSource = AMenuSource1.getText();
+						String menuName = aMenuNameTextField1.getText();
+						int menuPrice = Integer.parseInt(aMenuPriceTextField1.getText());
+						String menuDesc = aMenuDescTextField1.getText();
+						int menuKcal = Integer.parseInt(aMenuKcalTextField1.getText());
+						String menuSource = aMenuSourceTextField1.getText();
 						
-						String menuName2 = AMenuName2.getText();
-						int menuPrice2 = Integer.parseInt(AMenuPrice2.getText());
-						String menuDesc2 = AMenuSp2.getText();
-						int menuKcal2 = Integer.parseInt(AMenuKcal2.getText());
-						String menuSource2 = AMenuSource2.getText();
+						String menuName2 = aMenuNameTextField2.getText();
+						int menuPrice2 = Integer.parseInt(aMenuPriceTextField2.getText());
+						String menuDesc2 = aMenuDescTextField2.getText();
+						int menuKcal2 = Integer.parseInt(aMenuKcalTextField2.getText());
+						String menuSource2 = aMenuSourceTextField2.getText();
 						
-						String menuName3 = AMenuName3.getText();
-						int menuPrice3 = Integer.parseInt(AMenuPrice3.getText());
-						String menuDesc3 = AMenuSp3.getText();
-						int menuKcal3 = Integer.parseInt(AMenuKcal3.getText());
-						String menuSource3 = AMenuSource3.getText();
+						String menuName3 = aMenuNameTextField3.getText();
+						int menuPrice3 = Integer.parseInt(aMenuPriceTextField3.getText());
+						String menuDesc3 = aMenuDescTextField3.getText();
+						int menuKcal3 = Integer.parseInt(aMenuKcalTextField3.getText());
+						String menuSource3 = aMenuSourceTextField3.getText();
 						
 						Menu menu = new Menu(menuName,menuPrice,menuDesc,menuKcal,menuSource);
 						int StoreId = AdminController.SearchStoreId();
@@ -374,22 +442,23 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 						StoreId = AdminController.SearchStoreId();
 						AdminController.insertMenu(StoreId, menu3);
 						
-						 
+						JOptionPane.showMessageDialog(null, "Ãß°¡µÇ¾ú½À´Ï´Ù");
+						
 					}else if(labelText.equals("¼ö   Á¤")) {
-						String matKind = AMatchatKind.getText();
-						String matName = AMatchatName.getText();
-						String matAddr = AMatchatAddr.getText();
-						String matPhone = AMatchatPhone.getText();
-						String matDeliver = AMatchatDeliver.getText();
+						String matKind = aMatchatKindTextField.getText();
+						String matName = aMatchatNameTextField.getText();
+						String matAddr = aMatchatAddrTextField.getText();
+						String matPhone = aMatchatPhoneTextField.getText();
+						String matDeliver = aMatchatDeliverTextField.getText();
 						
 						Restaurant resDto = new Restaurant(restaurant.getResId(),matKind,matName,matAddr,matPhone,matDeliver,5);
 						
 						AdminController.updateStore(resDto);
 						
+						//JOptionPane.showMessageDialog(null, "¼öÁ¤µÇ¾ú½À´Ï´Ù");
+						
 						dispose();
 						
-					}else if(labelText.equals("Ãë¼Ò")) {
-						dispose();//´ÙÀÌ¾î·Î±× Ã¢ ´Ý±â
 					}
 				}
 			});
@@ -400,7 +469,13 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			 setVisible(true);//Ã¢º¸ÀÌ±â
 		}
 
-
+	public void menuTextFieldDelete(JTextField aMenuName32,JTextField aMenuKcal22,JTextField aMenuPrice22,JTextField aMenuSource22,JTextField aMenuSp22) {
+		aMenuName32.setText("");
+		aMenuKcal22.setText("");
+		aMenuPrice22.setText("");
+		aMenuSource22.setText("");
+		aMenuSp22.setText("");
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
