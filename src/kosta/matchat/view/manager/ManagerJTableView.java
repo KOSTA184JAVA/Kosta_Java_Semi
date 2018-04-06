@@ -94,7 +94,7 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		
 		
 		//jtable 위에 레코드(테이블) 추가
-		List<Restaurant> list = AdminController.searchTotalList();
+		list = AdminController.searchTotalList();
 		if(list!=null && list.size()!=0) {
 			this.addRowTable(list);
 			jt.setRowSelectionInterval(0, 0); //첫번째 행에 커서 올림
