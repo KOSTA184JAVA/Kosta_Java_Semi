@@ -282,7 +282,8 @@ public class UserDAOImpl implements UserDAO {
 		try {
 			String sql = "select seq_menu_id, menu_name, menu_price, menu_desc, menu_kcal, menu_source " 
 		            + "from menu "
-					+ "where seq_restaur_id = (select seq_restaur_id from restaurant where seq_restaur_id = ?)";
+					+ "where seq_restaur_id = (select seq_restaur_id from restaurant where seq_restaur_id = ?)"
+					+ "order by seq_menu_id";
 
 			con = DBUtil.getConnection();
 			ps = con.prepareStatement(sql);
