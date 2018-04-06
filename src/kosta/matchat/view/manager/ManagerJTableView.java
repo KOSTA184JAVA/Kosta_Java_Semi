@@ -24,6 +24,7 @@ import javax.swing.table.DefaultTableModel;
 import kosta.matchat.controller.AdminController;
 import kosta.matchat.controller.UserController;
 import kosta.matchat.model.dto.Restaurant;
+import kosta.matchat.view.start.LoginView;
 
 public class ManagerJTableView extends JPanel implements ActionListener {
 	JPanel menu = new JPanel();
@@ -139,7 +140,7 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 		if(obj==insert) {//가입
 			new ManagerJDialogView(this, "추가",null);
 		}else if(obj==update) {//수정
-			new ManagerJDialogView(this, "수정");
+			new ManagerJDialogView(this, "수정",null);
 		}else if(obj==delete) {//삭제
 			int re=JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?");		
 			//yes를 클릭했을 경우
