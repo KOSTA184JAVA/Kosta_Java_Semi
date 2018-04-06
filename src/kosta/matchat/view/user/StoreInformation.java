@@ -65,67 +65,62 @@ public class StoreInformation extends JPanel {
       
       
       JLabel lbresinfo = new JLabel("¸ÀÁý Á¤º¸");
-<<<<<<< HEAD
       lbresinfo.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 16));
       lbresinfo.setBounds(351, 46, 77, 32);
-=======
-      lbresinfo.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 17));
-      lbresinfo.setBounds(159, 5, 77, 32);
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       add(lbresinfo);
      
       
-      JLabel lbreskind = new JLabel("¸ÀÁýÁ¾·ù");
+      JLabel lbreskind = new JLabel("\uB9DB\uC9D1\uC885\uB958");
       lbreskind.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbreskind.setBounds(206, 94, 56, 15);
       add(lbreskind);
       
-      JLabel lbresname = new JLabel("¸ÀÁýÀÌ¸§");
+      JLabel lbresname = new JLabel("\uB9DB\uC9D1\uC774\uB984");
       lbresname.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbresname.setBounds(390, 94, 54, 15);
       add(lbresname);
       
-      JLabel lbresaddr = new JLabel("ÁÖ¼Ò");
+      JLabel lbresaddr = new JLabel("\uC8FC\uC18C");
       lbresaddr.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbresaddr.setBounds(206, 125, 31, 15);
       add(lbresaddr);
       
-      JLabel lbrescontact = new JLabel("¿¬¶ôÃ³");
+      JLabel lbrescontact = new JLabel("\uC5F0\uB77D\uCC98");
       lbrescontact.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbrescontact.setBounds(206, 156, 45, 15);
       add(lbrescontact);
       
-      JLabel lbresdeliver = new JLabel("¹è´Þ¿©ºÎ");
+      JLabel lbresdeliver = new JLabel("\uBC30\uB2EC\uC5EC\uBD80");
       lbresdeliver.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbresdeliver.setBounds(206, 186, 56, 15);
       add(lbresdeliver);
       
-      JLabel lbresstar = new JLabel("º°Á¡");
+      JLabel lbresstar = new JLabel("\uBCC4\uC810");
       lbresstar.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbresstar.setBounds(390, 186, 38, 15);
       add(lbresstar);
       
-      JLabel lbMenuName = new JLabel("¸Þ´ºÀÌ¸§");
+      JLabel lbMenuName = new JLabel("\uBA54\uB274\uC774\uB984");
       lbMenuName.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuName.setBounds(206, 245, 56, 15);
       add(lbMenuName);
       
-      JLabel lbMenuKcal = new JLabel("Ä®·Î¸®");
+      JLabel lbMenuKcal = new JLabel("\uCE7C\uB85C\uB9AC");
       lbMenuKcal.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuKcal.setBounds(206, 295, 50, 15);
       add(lbMenuKcal);
       
-      JLabel lbMenuExa = new JLabel("¼³¸í");
+      JLabel lbMenuExa = new JLabel("\uC124\uBA85");
       lbMenuExa.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuExa.setBounds(206, 270, 45, 15);
       add(lbMenuExa);
       
-      JLabel lbMenuStuff = new JLabel("¿øÀç·á");
+      JLabel lbMenuStuff = new JLabel("\uC6D0\uC7AC\uB8CC");
       lbMenuStuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuStuff.setBounds(390, 295, 50, 15);
       add(lbMenuStuff);
       
-      JLabel lbMenuPrice = new JLabel("°¡°Ý");
+      JLabel lbMenuPrice = new JLabel("\uAC00\uACA9");
       lbMenuPrice.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuPrice.setBounds(390, 245, 50, 15);
       add(lbMenuPrice);
@@ -172,11 +167,11 @@ public class StoreInformation extends JPanel {
       Menu1Stuff.setBounds(442, 292, 123, 21);
       add(Menu1Stuff);
       
-      JButton btnNewButton = new JButton("Áñ°ÜÃ£±â");
+      JButton btnNewButton = new JButton("\uC990\uACA8\uCC3E\uAE30");
       btnNewButton.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
-            JOptionPane.showConfirmDialog(btnNewButton, "Áñ°ÜÃ£±â¿¡ Ãß°¡ÇÏ½Ã°Ú½À´Ï±î?");
+            JOptionPane.showConfirmDialog(btnNewButton, "ì¶”ê??•˜?‹œê² ìŠµ?‹ˆê¹??");
          }
       });
       btnNewButton.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
@@ -184,7 +179,7 @@ public class StoreInformation extends JPanel {
       btnNewButton.setBounds(206, 518, 173, 23);
       add(btnNewButton);
       
-      JButton BtnGetStar = new JButton("º°Á¡ÁÖ±â");
+      JButton BtnGetStar = new JButton("\uBCC4\uC810\uC8FC\uAE30");
       BtnGetStar.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
@@ -214,11 +209,7 @@ public class StoreInformation extends JPanel {
       
       Menu1Name = new JTextField();
       Menu1Name.setEditable(false);
-<<<<<<< HEAD
       Menu1Name.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-=======
-      Menu1Name.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       Menu1Name.setColumns(10);
       Menu1Name.setBounds(256, 241, 123, 21);
       add(Menu1Name);
@@ -245,55 +236,32 @@ public class StoreInformation extends JPanel {
       add(Menu1Price);
       
       JLabel label_1 = new JLabel("\uBA54\uB274\uC774\uB984");
-<<<<<<< HEAD
       label_1.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
       label_1.setBounds(206, 336, 56, 15);
-=======
-      label_1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_1.setBounds(14, 295, 56, 15);
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       add(label_1);
       
       JLabel label_2 = new JLabel("\uC124\uBA85");
-<<<<<<< HEAD
       label_2.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
       label_2.setBounds(206, 361, 45, 15);
-=======
-      label_2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_2.setBounds(14, 320, 45, 15);
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       add(label_2);
       
       Menu2Exa = new JTextField();
       Menu2Exa.setEditable(false);
-<<<<<<< HEAD
       Menu2Exa.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-=======
-      Menu2Exa.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       Menu2Exa.setColumns(10);
       Menu2Exa.setBounds(256, 358, 309, 21);
       add(Menu2Exa);
       
       Menu2Name = new JTextField();
       Menu2Name.setEditable(false);
-<<<<<<< HEAD
       Menu2Name.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-=======
-      Menu2Name.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       Menu2Name.setColumns(10);
       Menu2Name.setBounds(256, 332, 123, 21);
       add(Menu2Name);
       
       JLabel label_3 = new JLabel("\uCE7C\uB85C\uB9AC");
-<<<<<<< HEAD
       label_3.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
       label_3.setBounds(206, 386, 50, 15);
-=======
-      label_3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_3.setBounds(14, 345, 50, 15);
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       add(label_3);
       
       Menu2Kcal = new JTextField();
@@ -312,85 +280,48 @@ public class StoreInformation extends JPanel {
       
       Menu2Stuff = new JTextField();
       Menu2Stuff.setEditable(false);
-<<<<<<< HEAD
       Menu2Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-=======
-      Menu2Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       Menu2Stuff.setColumns(10);
       Menu2Stuff.setBounds(442, 383, 123, 21);
       add(Menu2Stuff);
       
       JLabel label_4 = new JLabel("\uC6D0\uC7AC\uB8CC");
-<<<<<<< HEAD
       label_4.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
       label_4.setBounds(390, 386, 50, 15);
-=======
-      label_4.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_4.setBounds(198, 345, 50, 15);
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       add(label_4);
       
       JLabel label_5 = new JLabel("\uAC00\uACA9");
-<<<<<<< HEAD
       label_5.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
       label_5.setBounds(390, 336, 50, 15);
-=======
-      label_5.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_5.setBounds(198, 295, 50, 15);
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       add(label_5);
       
       JLabel label_6 = new JLabel("\uBA54\uB274\uC774\uB984");
-<<<<<<< HEAD
       label_6.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
       label_6.setBounds(206, 429, 56, 15);
-=======
-      label_6.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_6.setBounds(14, 388, 56, 15);
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       add(label_6);
       
       JLabel label_7 = new JLabel("\uC124\uBA85");
-<<<<<<< HEAD
       label_7.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
       label_7.setBounds(206, 454, 45, 15);
-=======
-      label_7.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_7.setBounds(14, 413, 45, 15);
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       add(label_7);
       
       Menu3Exa = new JTextField();
       Menu3Exa.setEditable(false);
-<<<<<<< HEAD
       Menu3Exa.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-=======
-      Menu3Exa.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       Menu3Exa.setColumns(10);
       Menu3Exa.setBounds(256, 451, 309, 21);
       add(Menu3Exa);
       
       Menu3Name = new JTextField();
       Menu3Name.setEditable(false);
-<<<<<<< HEAD
       Menu3Name.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-=======
-      Menu3Name.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       Menu3Name.setColumns(10);
       Menu3Name.setBounds(256, 425, 123, 21);
       add(Menu3Name);
       
       JLabel label_8 = new JLabel("\uCE7C\uB85C\uB9AC");
-<<<<<<< HEAD
       label_8.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
       label_8.setBounds(206, 479, 50, 15);
-=======
-      label_8.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_8.setBounds(14, 438, 50, 15);
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       add(label_8);
       
       Menu3Kcal = new JTextField();
@@ -409,33 +340,19 @@ public class StoreInformation extends JPanel {
       
       Menu3Stuff = new JTextField();
       Menu3Stuff.setEditable(false);
-<<<<<<< HEAD
       Menu3Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-=======
-      Menu3Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       Menu3Stuff.setColumns(10);
       Menu3Stuff.setBounds(442, 476, 123, 21);
       add(Menu3Stuff);
       
       JLabel label_9 = new JLabel("\uC6D0\uC7AC\uB8CC");
-<<<<<<< HEAD
       label_9.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
       label_9.setBounds(390, 479, 50, 15);
-=======
-      label_9.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_9.setBounds(198, 438, 50, 15);
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       add(label_9);
       
       JLabel label_10 = new JLabel("\uAC00\uACA9");
-<<<<<<< HEAD
       label_10.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
       label_10.setBounds(390, 429, 50, 15);
-=======
-      label_10.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_10.setBounds(198, 388, 50, 15);
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
       add(label_10);
       
       JLabel label_11 = new JLabel("");
