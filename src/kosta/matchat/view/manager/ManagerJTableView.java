@@ -36,7 +36,7 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 	
 	List<Restaurant> list = null;
 	
-	String [] name={"StoreId","kind","name","addr","phone","deliver","point"};  //다영:컬럼추가(StoreId)
+	String [] name={"맛집ID","종류","맛집이름","주소","연락처","배달여부","별점"};  //다영:컬럼추가(StoreId)
 	
 	DefaultTableModel dt= new DefaultTableModel(name,0);
 	JTable jt=new JTable(dt);

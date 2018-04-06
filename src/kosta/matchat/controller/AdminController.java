@@ -7,6 +7,7 @@ import java.util.Vector;
 import kosta.matchat.model.dto.Menu;
 import kosta.matchat.model.dto.Restaurant;
 import kosta.matchat.model.service.AdminServiceImpl;
+import kosta.matchat.view.start.FailView;
 
 /**
  * 맛챗 관리자 기능 컨트롤러
@@ -19,7 +20,7 @@ public class AdminController {
 			aService.insertStore(restaurant);
 			System.out.println("맛집을 등록했습니다");
 		}catch(SQLException e) {
-			System.out.println(e.getMessage());
+			FailView.errorMessage("형식에 맞지 않습니다. 다시 입력해주세요");
 		}
 	}
 	
