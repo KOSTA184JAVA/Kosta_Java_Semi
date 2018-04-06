@@ -67,17 +67,17 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 
 		JLabel SubjectLabel = new JLabel("\uB9DB\uC9D1 \uC815\uBCF4");
 		SubjectLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		SubjectLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 19));
+		SubjectLabel.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.BOLD, 19));
 		SubjectLabel.setBounds(112, 1, 100, 40);
 		panel.add(SubjectLabel);
 
 		JLabel aMatchatPhoneLabel = new JLabel("\uB9DB\uC9D1 \uC5F0\uB77D\uCC98 : ");
-		aMatchatPhoneLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
+		aMatchatPhoneLabel.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 14));
 		aMatchatPhoneLabel.setBounds(48, 109, 110, 20);
 		panel.add(aMatchatPhoneLabel);
 
 		JLabel aMatchatKindLabel = new JLabel("\uB9DB\uC9D1 \uC885\uB958  : ");
-		aMatchatKindLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
+		aMatchatKindLabel.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 14));
 		aMatchatKindLabel.setBounds(48, 34, 110, 20);
 		panel.add(aMatchatKindLabel);
 
@@ -87,7 +87,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		panel.add(aMatchatKindTextField);
 
 		JLabel aMatchatNameLabel = new JLabel("\uB9DB\uC9D1 \uC774\uB984  : ");
-		aMatchatNameLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
+		aMatchatNameLabel.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 14));
 		aMatchatNameLabel.setBounds(48, 59, 110, 20);
 		panel.add(aMatchatNameLabel);
 
@@ -102,7 +102,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		panel.add(aMatchatNameTextField);
 
 		JLabel aMatchatSpLabel = new JLabel("\uBCC4\uC810  : ");
-		aMatchatSpLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
+		aMatchatSpLabel.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 14));
 		aMatchatSpLabel.setBounds(48, 160, 110, 20);
 		panel.add(aMatchatSpLabel);
 
@@ -117,12 +117,12 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		panel.add(aMatchatDeliverTextField);
 
 		JLabel aMatchatDeliverLabel = new JLabel("\uBC30\uB2EC \uC5EC\uBD80  : ");
-		aMatchatDeliverLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
+		aMatchatDeliverLabel.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 14));
 		aMatchatDeliverLabel.setBounds(48, 134, 110, 20);
 		panel.add(aMatchatDeliverLabel);
 
 		JLabel aMatchatAddrLabel = new JLabel("\uB9DB\uC9D1 \uC8FC\uC18C  : ");
-		aMatchatAddrLabel.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 14));
+		aMatchatAddrLabel.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 14));
 		aMatchatAddrLabel.setBounds(48, 84, 110, 20);
 		panel.add(aMatchatAddrLabel);
 
@@ -132,12 +132,12 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		panel.add(aMatchatAddrTextField);
 
 		JLabel aMenuNameLabel1 = new JLabel("\uBA54\uB274\uC774\uB984 :");
-		aMenuNameLabel1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		aMenuNameLabel1.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuNameLabel1.setBounds(13, 190, 50, 20);
 		panel.add(aMenuNameLabel1);
 
 		JLabel aMenuPriceLabel1 = new JLabel("\uAC00 \uACA9 :");
-		aMenuPriceLabel1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		aMenuPriceLabel1.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuPriceLabel1.setBounds(134, 190, 39, 20);
 		panel.add(aMenuPriceLabel1);
 
@@ -147,7 +147,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		panel.add(aMenuPriceTextField1);
 
 		JLabel aMenuKcalLabel1 = new JLabel("\uCE7C\uB85C\uB9AC :");
-		aMenuKcalLabel1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		aMenuKcalLabel1.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuKcalLabel1.setBounds(223, 190, 50, 20);
 		panel.add(aMenuKcalLabel1);
 
@@ -157,7 +157,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		panel.add(aMenuKcalTextField1);
 
 		JLabel aMenuDescLabel1 = new JLabel("\uBA54\uB274\uC124\uBA85 :");
-		aMenuDescLabel1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		aMenuDescLabel1.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuDescLabel1.setBounds(13, 220, 50, 20);
 		panel.add(aMenuDescLabel1);
 
@@ -166,8 +166,8 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		aMenuDescTextField1.setBounds(67, 220, 151, 20);
 		panel.add(aMenuDescTextField1);
 
-		JLabel aMenuSourceLabel1 = new JLabel("¿ø»êÁö :");
-		aMenuSourceLabel1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		JLabel aMenuSourceLabel1 = new JLabel("ì›ì‚°ì§€ :");
+		aMenuSourceLabel1.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuSourceLabel1.setBounds(223, 220, 50, 20);
 		panel.add(aMenuSourceLabel1);
 
@@ -182,8 +182,8 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		label_12.setBounds(239, 369, 81, 52);
 		panel.add(label_12);
 
-		JLabel aMenuNameLabel2 = new JLabel("¸Ş´ºÀÌ¸§ :");
-		aMenuNameLabel2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		JLabel aMenuNameLabel2 = new JLabel("ë©”ë‰´ì´ë¦„ :");
+		aMenuNameLabel2.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuNameLabel2.setBounds(13, 250, 50, 20);
 		panel.add(aMenuNameLabel2);
 
@@ -192,8 +192,8 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		aMenuNameTextField2.setBounds(67, 250, 65, 20);
 		panel.add(aMenuNameTextField2);
 
-		JLabel aMenuPriceLabel2 = new JLabel("°¡ °İ :");
-		aMenuPriceLabel2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		JLabel aMenuPriceLabel2 = new JLabel("ê°€ ê²© :");
+		aMenuPriceLabel2.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuPriceLabel2.setBounds(134, 250, 39, 20);
 		panel.add(aMenuPriceLabel2);
 
@@ -202,8 +202,8 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		aMenuPriceTextField2.setBounds(172, 250, 44, 20);
 		panel.add(aMenuPriceTextField2);
 
-		JLabel aMenuKcalLabel2 = new JLabel("Ä®·Î¸® :");
-		aMenuKcalLabel2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		JLabel aMenuKcalLabel2 = new JLabel("ì¹¼ë¡œë¦¬ :");
+		aMenuKcalLabel2.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuKcalLabel2.setBounds(223, 250, 50, 20);
 		panel.add(aMenuKcalLabel2);
 
@@ -212,8 +212,8 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		aMenuKcalTextField2.setBounds(265, 250, 55, 20);
 		panel.add(aMenuKcalTextField2);
 
-		JLabel aMenuDescLabel2 = new JLabel("¸Ş´º¼³¸í :");
-		aMenuDescLabel2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		JLabel aMenuDescLabel2 = new JLabel("ë©”ë‰´ì„¤ëª… :");
+		aMenuDescLabel2.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuDescLabel2.setBounds(13, 282, 50, 20);
 		panel.add(aMenuDescLabel2);
 
@@ -222,8 +222,8 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		aMenuDescTextField2.setBounds(67, 282, 151, 20);
 		panel.add(aMenuDescTextField2);
 
-		JLabel aMenuSourceLabel2 = new JLabel("¿ø»êÁö :");
-		aMenuSourceLabel2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		JLabel aMenuSourceLabel2 = new JLabel("ì›ì‚°ì§€ :");
+		aMenuSourceLabel2.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuSourceLabel2.setBounds(223, 282, 50, 20);
 		panel.add(aMenuSourceLabel2);
 
@@ -232,8 +232,8 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		aMenuSourceTextField2.setBounds(265, 280, 55, 20);
 		panel.add(aMenuSourceTextField2);
 
-		JLabel aMenuNameLabel3 = new JLabel("¸Ş´ºÀÌ¸§ :");
-		aMenuNameLabel3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		JLabel aMenuNameLabel3 = new JLabel("ë©”ë‰´ì´ë¦„ :");
+		aMenuNameLabel3.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuNameLabel3.setBounds(13, 312, 50, 20);
 		panel.add(aMenuNameLabel3);
 
@@ -242,8 +242,8 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		aMenuNameTextField3.setBounds(67, 312, 65, 20);
 		panel.add(aMenuNameTextField3);
 
-		JLabel aMenuPriceLabel3 = new JLabel("°¡ °İ :");
-		aMenuPriceLabel3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		JLabel aMenuPriceLabel3 = new JLabel("ê°€ ê²© :");
+		aMenuPriceLabel3.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuPriceLabel3.setBounds(134, 312, 39, 20);
 		panel.add(aMenuPriceLabel3);
 
@@ -252,8 +252,8 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		aMenuPriceTextField3.setBounds(172, 312, 44, 20);
 		panel.add(aMenuPriceTextField3);
 
-		JLabel aMenuKcalLabel3 = new JLabel("Ä®·Î¸® :");
-		aMenuKcalLabel3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		JLabel aMenuKcalLabel3 = new JLabel("ì¹¼ë¡œë¦¬ :");
+		aMenuKcalLabel3.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuKcalLabel3.setBounds(223, 312, 50, 20);
 		panel.add(aMenuKcalLabel3);
 
@@ -262,8 +262,8 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		aMenuKcalTextField3.setBounds(265, 312, 55, 20);
 		panel.add(aMenuKcalTextField3);
 
-		JLabel aMenuDescLabel3 = new JLabel("¸Ş´º¼³¸í :");
-		aMenuDescLabel3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		JLabel aMenuDescLabel3 = new JLabel("ë©”ë‰´ì„¤ëª… :");
+		aMenuDescLabel3.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuDescLabel3.setBounds(13, 345, 50, 20);
 		panel.add(aMenuDescLabel3);
 
@@ -272,8 +272,8 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		aMenuDescTextField3.setBounds(67, 345, 151, 20);
 		panel.add(aMenuDescTextField3);
 
-		JLabel aMenuSourceLabel3 = new JLabel("¿ø»êÁö :");
-		aMenuSourceLabel3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+		JLabel aMenuSourceLabel3 = new JLabel("ì›ì‚°ì§€ :");
+		aMenuSourceLabel3.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 10));
 		aMenuSourceLabel3.setBounds(223, 345, 50, 20);
 		panel.add(aMenuSourceLabel3);
 
@@ -285,12 +285,12 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		// JButton button = new JButton("\uCD94 \uAC00");
 
 		JButton button;
-		if (string.equals("Ãß°¡")) {
-			button = new JButton("Ãß   °¡");
+		if (string.equals("ì¶”ê°€")) {
+			button = new JButton("ì¶”   ê°€");
 		} else {
-			button = new JButton("¼ö   Á¤");
+			button = new JButton("ìˆ˜   ì •");
 			List<Menu> menuList = UserController.searchMenuList(restaurant.getResId());
-			/** ¸ÀÁı Á¤º¸ load */
+			/** ë§›ì§‘ ì •ë³´ load */
 			aMatchatKindTextField.setText(restaurant.getResKind());
 			aMatchatNameTextField.setText(restaurant.getResName());
 			aMatchatAddrTextField.setText(restaurant.getResAddr());
@@ -329,39 +329,39 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 
 			JButton btnMenuDelete1 = new JButton("DELETE");
 			btnMenuDelete1.setHorizontalAlignment(SwingConstants.LEFT);
-			btnMenuDelete1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
+			btnMenuDelete1.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 13));
 			btnMenuDelete1.setBounds(341, 214, 80, 29);
 
 			JButton btnMenuDelete2 = new JButton("DELETE");
 			btnMenuDelete2.setHorizontalAlignment(SwingConstants.LEFT);
-			btnMenuDelete2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
+			btnMenuDelete2.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 13));
 			btnMenuDelete2.setBounds(341, 274, 80, 29);
 
 			JButton btnMenuDelete3 = new JButton("DELETE");
 			btnMenuDelete3.setHorizontalAlignment(SwingConstants.LEFT);
-			btnMenuDelete3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
+			btnMenuDelete3.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 13));
 			btnMenuDelete3.setBounds(341, 330, 80, 29);
 
 			JButton btnMenuInsert1 = new JButton("INSERT");
 			btnMenuInsert1.setHorizontalAlignment(SwingConstants.LEFT);
-			btnMenuInsert1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
+			btnMenuInsert1.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 13));
 			btnMenuInsert1.setBounds(341, 214, 80, 29);
 
 			JButton btnMenuInsert2 = new JButton("INSERT");
 			btnMenuInsert2.setHorizontalAlignment(SwingConstants.LEFT);
-			btnMenuInsert2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
+			btnMenuInsert2.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 13));
 			btnMenuInsert2.setBounds(341, 274, 80, 29);
 
 			JButton btnMenuInsert3 = new JButton("INSERT");
 			btnMenuInsert3.setHorizontalAlignment(SwingConstants.LEFT);
-			btnMenuInsert3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 13));
+			btnMenuInsert3.setFont(new Font("ë‚˜ëˆ”ê³ ë”•ì½”ë”©", Font.PLAIN, 13));
 			btnMenuInsert3.setBounds(341, 330, 80, 29);
 
 			if (menuList != null) {
 				switch (menuList.size()) {
 
 				case 1: {
-					System.out.println("1111111111111ÀÏ‹š");
+					System.out.println("1111111111111ì¼Â‹Âš");
 
 					contentPane.add(btnMenuDelete1);
 
@@ -370,7 +370,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 					break;
 				}
 				case 2: {
-					System.out.println("222222222222ÀÏ‹š");
+					System.out.println("222222222222ì¼Â‹Âš");
 
 					contentPane.add(btnMenuDelete1);
 					contentPane.add(btnMenuDelete2);
@@ -379,7 +379,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 					break;
 				}
 				case 3: {
-					System.out.println("33333333333ÀÏ‹š");
+					System.out.println("33333333333ì¼Â‹Âš");
 
 					contentPane.add(btnMenuDelete1);
 					contentPane.add(btnMenuDelete2);
@@ -387,13 +387,13 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 					break;
 				}
 				default: {
-					System.out.println("defaultÀÏ‹š");
+					System.out.println("defaultì¼Â‹Âš");
 
 					break;
 				}
 				}
 			} else {
-				System.out.println("000000000000000000ÀÏ‹š");
+				System.out.println("000000000000000000ì¼Â‹Âš");
 				contentPane.add(btnMenuInsert1);
 				contentPane.add(btnMenuInsert2);
 				contentPane.add(btnMenuInsert3);
@@ -401,7 +401,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 
 			btnMenuDelete1.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					int result = JOptionPane.showConfirmDialog(null, "¸Ş´º¸¦ »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?");
+					int result = JOptionPane.showConfirmDialog(null, "ë©”ë‰´ë¥¼ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 					if (result == 0) {
 						AdminController.deleteMenu(restaurant.getResId(), menuList.get(0).getMenuId());
 						menuTextFieldDelete(aMenuNameTextField1, aMenuKcalTextField1, aMenuPriceTextField1,
@@ -418,7 +418,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 			btnMenuDelete2.addMouseListener(new MouseAdapter() {
 
 				public void mouseClicked(MouseEvent e) {
-					int result = JOptionPane.showConfirmDialog(null, "¸Ş´º¸¦ »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?");
+					int result = JOptionPane.showConfirmDialog(null, "ë©”ë‰´ë¥¼ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 					if (result == 0) {
 						AdminController.deleteMenu(restaurant.getResId(), menuList.get(1).getMenuId());
 						menuTextFieldDelete(aMenuNameTextField2, aMenuKcalTextField2, aMenuPriceTextField2,
@@ -434,7 +434,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 
 			btnMenuDelete3.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					int result = JOptionPane.showConfirmDialog(null, "¸Ş´º¸¦ »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?");
+					int result = JOptionPane.showConfirmDialog(null, "ë©”ë‰´ë¥¼ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 					if (result == 0) {
 						AdminController.deleteMenu(restaurant.getResId(), menuList.get(2).getMenuId());
 						menuTextFieldDelete(aMenuNameTextField3, aMenuKcalTextField3, aMenuPriceTextField3,
@@ -452,7 +452,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 			btnMenuInsert1.addMouseListener(new MouseAdapter() {
 
 				public void mouseClicked(MouseEvent e) {
-					int result = JOptionPane.showConfirmDialog(null, "¸Ş´º¸¦ Ãß°¡ÇÏ½Ã°Ú½À´Ï±î?");
+					int result = JOptionPane.showConfirmDialog(null, "ë©”ë‰´ë¥¼ ì¶”ê°€í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 					if (result == 0) {
 						String name = aMenuNameTextField1.getText();
 						int price = Integer.parseInt(aMenuPriceTextField1.getText());
@@ -474,7 +474,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 
 			btnMenuInsert2.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					int result = JOptionPane.showConfirmDialog(null, "¸Ş´º¸¦ Ãß°¡ÇÏ½Ã°Ú½À´Ï±î?");
+					int result = JOptionPane.showConfirmDialog(null, "ë©”ë‰´ë¥¼ ì¶”ê°€í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 					if (result == 0) {
 						String name = aMenuNameTextField2.getText();
 						int price = Integer.parseInt(aMenuPriceTextField2.getText());
@@ -496,7 +496,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 
 			btnMenuInsert3.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					int result = JOptionPane.showConfirmDialog(null, "¸Ş´º¸¦ Ãß°¡ÇÏ½Ã°Ú½À´Ï±î?");
+					int result = JOptionPane.showConfirmDialog(null, "ë©”ë‰´ë¥¼ ì¶”ê°€í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 					if (result == 0) {
 						String name = aMenuNameTextField3.getText();
 						int price = Integer.parseInt(aMenuPriceTextField3.getText());
@@ -510,94 +510,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 
 						btnMenuInsert3.setVisible(false);
 						contentPane.add(btnMenuDelete3);
-						break;
-				 	}
-				 	default : break;
-				 }
-				}
-				btnMenuDelete1.addMouseListener(new MouseAdapter(){
-						public void mouseClicked(MouseEvent e) {
-								AdminController.deleteMenu(restaurant.getResId(), menuList.get(0).getMenuId());
-								menuTextFieldDelete(aMenuNameTextField1,aMenuKcalTextField1,aMenuPriceTextField1, aMenuSourceTextField1, aMenuSourceTextField1);
-						};
-				});
-					
-				btnMenuDelete2.addMouseListener(new MouseAdapter(){
-					public void mouseClicked(MouseEvent e) {
-							AdminController.deleteMenu(restaurant.getResId(), menuList.get(1).getMenuId());
-							menuTextFieldDelete(aMenuNameTextField2,aMenuKcalTextField2,aMenuPriceTextField2, aMenuSourceTextField2, aMenuSourceTextField2);
-							};
-					});
-					
-				btnMenuDelete3.addMouseListener(new MouseAdapter(){
-					public void mouseClicked(MouseEvent e) {
-						AdminController.deleteMenu(restaurant.getResId(), menuList.get(2).getMenuId());
-						menuTextFieldDelete(aMenuNameTextField3,aMenuKcalTextField3,aMenuPriceTextField3, aMenuSourceTextField3, aMenuSourceTextField3);
-						};
-					});
-			}
-			button.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					String labelText = e.getActionCommand(); //¹öÆ°ÀÇ ±Û¾¾
-					if(labelText.equals("Ãß   °¡")) {
-						
-						String matKind = aMatchatKindTextField.getText();
-						String matName = aMatchatNameTextField.getText();
-						String matAddr = aMatchatAddrTextField.getText();
-						String matPhone = aMatchatPhoneTextField.getText();
-						String matDeliver = aMatchatDeliverTextField.getText();
-						//System.out.println(matKind +matName+matAddr+matPhone+matDeliver+0);
-						Restaurant restaurant = new Restaurant(matKind,matName,matAddr,matPhone,matDeliver,5);
-						
-						AdminController.insertStore(restaurant);
-						
-						String menuName = aMenuNameTextField1.getText();
-						int menuPrice = Integer.parseInt(aMenuPriceTextField1.getText());
-						String menuDesc = aMenuDescTextField1.getText();
-						int menuKcal = Integer.parseInt(aMenuKcalTextField1.getText());
-						String menuSource = aMenuSourceTextField1.getText();
-						
-						String menuName2 = aMenuNameTextField2.getText();
-						int menuPrice2 = Integer.parseInt(aMenuPriceTextField2.getText());
-						String menuDesc2 = aMenuDescTextField2.getText();
-						int menuKcal2 = Integer.parseInt(aMenuKcalTextField2.getText());
-						String menuSource2 = aMenuSourceTextField2.getText();
-						
-						String menuName3 = aMenuNameTextField3.getText();
-						int menuPrice3 = Integer.parseInt(aMenuPriceTextField3.getText());
-						String menuDesc3 = aMenuDescTextField3.getText();
-						int menuKcal3 = Integer.parseInt(aMenuKcalTextField3.getText());
-						String menuSource3 = aMenuSourceTextField3.getText();
-						
-						Menu menu = new Menu(menuName,menuPrice,menuDesc,menuKcal,menuSource);
-						int StoreId = AdminController.SearchStoreId();
-						AdminController.insertMenu(StoreId, menu);
-						
-						Menu menu2 = new Menu(menuName2,menuPrice2,menuDesc2,menuKcal2,menuSource2);
-						StoreId = AdminController.SearchStoreId();
-						AdminController.insertMenu(StoreId, menu2);
-						
-						Menu menu3 = new Menu(menuName3,menuPrice3,menuDesc3,menuKcal3,menuSource3);
-						StoreId = AdminController.SearchStoreId();
-						AdminController.insertMenu(StoreId, menu3);
-						
-						JOptionPane.showMessageDialog(null, "Ãß°¡µÇ¾ú½À´Ï´Ù");
-						
-					}else if(labelText.equals("¼ö   Á¤")) {
-						String matKind = aMatchatKindTextField.getText();
-						String matName = aMatchatNameTextField.getText();
-						String matAddr = aMatchatAddrTextField.getText();
-						String matPhone = aMatchatPhoneTextField.getText();
-						String matDeliver = aMatchatDeliverTextField.getText();
-						
-						Restaurant resDto = new Restaurant(restaurant.getResId(),matKind,matName,matAddr,matPhone,matDeliver,5);
-						
-						AdminController.updateStore(resDto);
-						
-						//JOptionPane.showMessageDialog(null, "¼öÁ¤µÇ¾ú½À´Ï´Ù");
-						
-						dispose();
-						
+						btnMenuDelete3.setVisible(true);
 					}
 				};
 			});
@@ -605,9 +518,9 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		}
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String labelText = e.getActionCommand(); // ¹öÆ°ÀÇ ±Û¾¾
-				if (labelText.equals("Ãß   °¡")) {
-				int result = JOptionPane.showConfirmDialog(button, "Ãß°¡ÇÏ½Ã°Ú½À´Ï±î??");
+				String labelText = e.getActionCommand(); // ë²„íŠ¼ì˜ ê¸€ì”¨
+				if (labelText.equals("ì¶”   ê°€")) {
+				int result = JOptionPane.showConfirmDialog(button, "ì¶”ê°€í•˜ì‹œê² ìŠµë‹ˆê¹Œ??");
 						if(result ==0) {
 
 					String matKind = aMatchatKindTextField.getText();
@@ -650,9 +563,9 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 					StoreId = AdminController.SearchStoreId();
 					AdminController.insertMenu(StoreId, menu3);
 
-					JOptionPane.showMessageDialog(null, "Ãß°¡µÇ¾ú½À´Ï´Ù");
+					JOptionPane.showMessageDialog(null, "ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤");
 					}
-				} else if (labelText.equals("¼ö   Á¤")) {
+				} else if (labelText.equals("ìˆ˜   ì •")) {
 					String matKind = aMatchatKindTextField.getText();
 					String matName = aMatchatNameTextField.getText();
 					String matAddr = aMatchatAddrTextField.getText();
@@ -664,7 +577,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 
 					AdminController.updateStore(resDto);
 
-					// JOptionPane.showMessageDialog(null, "¼öÁ¤µÇ¾ú½À´Ï´Ù");
+					// JOptionPane.showMessageDialog(null, "ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤");
 
 					dispose();
 
@@ -675,7 +588,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 		panel.add(button);
 
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		setVisible(true);// Ã¢º¸ÀÌ±â
+		setVisible(true);// ì°½ë³´ì´ê¸°
 	}
 
 	public void menuTextFieldDelete(JTextField name, JTextField kcal, JTextField price, JTextField source,
@@ -690,5 +603,5 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-	}// »ı¼ºÀÚ³¡
+	}// ìƒì„±ìë
 }
