@@ -84,9 +84,10 @@ public class UserMainView extends JPanel {
 		labelIcon.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-
-				LoginView.contentPane.add(new LoginView());
-				LoginView.cards.show(LoginView.contentPane, "login");
+				int result = JOptionPane.showConfirmDialog(labelIcon, "프로그램 종료하시겠습니까??");
+				if(result ==0) {//LoginView.cards.show(LoginView.contentPane, "login");
+					System.exit(0);
+				}
 			}
 		});
 		labelIcon.setIcon(new ImageIcon(UserMainView.class.getResource("/images/previousIcon.png")));
@@ -100,7 +101,9 @@ public class UserMainView extends JPanel {
 				UserController.quitMember(LoginView.id);
 				
 				int result = JOptionPane.showConfirmDialog(MemDelete, "탈퇴하시겠습니까??");
-				if(result ==0) {LoginView.cards.show(LoginView.contentPane, "login");}
+				if(result ==0) {//LoginView.cards.show(LoginView.contentPane, "login");
+					System.exit(0);
+				}
 				
 				
 

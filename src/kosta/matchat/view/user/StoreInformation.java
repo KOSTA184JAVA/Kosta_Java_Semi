@@ -17,7 +17,6 @@ import javax.swing.JTextField;
 import kosta.matchat.controller.UserController;
 import kosta.matchat.model.dto.Menu;
 import kosta.matchat.model.dto.Restaurant;
-import kosta.matchat.view.start.FailView;
 import kosta.matchat.view.start.LoginView;
 
 public class StoreInformation extends JPanel {
@@ -42,23 +41,23 @@ public class StoreInformation extends JPanel {
    private JTextField Menu3Kcal;
    private JTextField Menu3Price;
    private JTextField Menu3Stuff;
-   int resNum =0;
+   int resNum = 0;
    /**
     * Create the panel.
     */
    public StoreInformation(String name) {
-	   Restaurant res=null;
-	   List<Menu> menu =null;
-	   
-	   List<Restaurant> user = UserController.searchByStoreName(name);
-	   if(user != null) {
-		   resNum= user.get(0).getResId();
-		    res = user.get(0);
-		   int resid = res.getResId();
-		   menu =  UserController.searchMenuList(resid);
-		   
-	   }
-	   
+      Restaurant res=null;
+      List<Menu> menu =null;
+      
+      List<Restaurant> user = UserController.searchByStoreName(name);
+      if(user != null) {
+         resNum= user.get(0).getResId();
+          res = user.get(0);
+         int resid = res.getResId();
+         menu =  UserController.searchMenuList(resid);
+         
+      }
+      
       //setBackground(UIManager.getColor("Button.background"));
       setBounds(100, 100, 797, 643);
       setLayout(null);
@@ -71,57 +70,57 @@ public class StoreInformation extends JPanel {
       add(lbresinfo);
      
       
-      JLabel lbreskind = new JLabel("¸ÀÁýÁ¾·ù");
+      JLabel lbreskind = new JLabel("\uB9DB\uC9D1\uC885\uB958");
       lbreskind.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbreskind.setBounds(206, 94, 56, 15);
       add(lbreskind);
       
-      JLabel lbresname = new JLabel("¸ÀÁýÀÌ¸§");
+      JLabel lbresname = new JLabel("\uB9DB\uC9D1\uC774\uB984");
       lbresname.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbresname.setBounds(390, 94, 54, 15);
       add(lbresname);
       
-      JLabel lbresaddr = new JLabel("ÁÖ¼Ò");
+      JLabel lbresaddr = new JLabel("\uC8FC\uC18C");
       lbresaddr.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbresaddr.setBounds(206, 125, 31, 15);
       add(lbresaddr);
       
-      JLabel lbrescontact = new JLabel("¿¬¶ôÃ³");
+      JLabel lbrescontact = new JLabel("\uC5F0\uB77D\uCC98");
       lbrescontact.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbrescontact.setBounds(206, 156, 45, 15);
       add(lbrescontact);
       
-      JLabel lbresdeliver = new JLabel("¹è´Þ¿©ºÎ");
+      JLabel lbresdeliver = new JLabel("\uBC30\uB2EC\uC5EC\uBD80");
       lbresdeliver.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbresdeliver.setBounds(206, 186, 56, 15);
       add(lbresdeliver);
       
-      JLabel lbresstar = new JLabel("º°Á¡");
+      JLabel lbresstar = new JLabel("\uBCC4\uC810");
       lbresstar.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbresstar.setBounds(390, 186, 38, 15);
       add(lbresstar);
       
-      JLabel lbMenuName = new JLabel("¸Þ´ºÀÌ¸§");
+      JLabel lbMenuName = new JLabel("\uBA54\uB274\uC774\uB984");
       lbMenuName.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuName.setBounds(206, 245, 56, 15);
       add(lbMenuName);
       
-      JLabel lbMenuKcal = new JLabel("Ä®·Î¸®");
+      JLabel lbMenuKcal = new JLabel("\uCE7C\uB85C\uB9AC");
       lbMenuKcal.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuKcal.setBounds(206, 295, 50, 15);
       add(lbMenuKcal);
       
-      JLabel lbMenuExa = new JLabel("¼³¸í");
+      JLabel lbMenuExa = new JLabel("\uC124\uBA85");
       lbMenuExa.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuExa.setBounds(206, 270, 45, 15);
       add(lbMenuExa);
       
-      JLabel lbMenuStuff = new JLabel("¿øÀç·á");
+      JLabel lbMenuStuff = new JLabel("\uC6D0\uC7AC\uB8CC");
       lbMenuStuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuStuff.setBounds(390, 295, 50, 15);
       add(lbMenuStuff);
       
-      JLabel lbMenuPrice = new JLabel("°¡°Ý");
+      JLabel lbMenuPrice = new JLabel("\uAC00\uACA9");
       lbMenuPrice.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuPrice.setBounds(390, 245, 50, 15);
       add(lbMenuPrice);
@@ -168,14 +167,11 @@ public class StoreInformation extends JPanel {
       Menu1Stuff.setBounds(442, 292, 123, 21);
       add(Menu1Stuff);
       
-      JButton btnNewButton = new JButton("Áñ°ÜÃ£±â");
+      JButton btnNewButton = new JButton("\uC990\uACA8\uCC3E\uAE30");
       btnNewButton.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
-            int result = JOptionPane.showConfirmDialog(btnNewButton, "Áñ°ÜÃ£±â¿¡ Ãß°¡ÇÏ½Ã°Ú½À´Ï±î?");
-            if(result==0) { UserController.insertFavorite(resNum, LoginView.id);
-            FailView.errorMessage("Áñ°ÜÃ£±â°¡ Ãß°¡°¡ µÇ¾ú½À´Ï´Ù.");;}
-            else { FailView.errorMessage("Áñ°ÜÃ£±â°¡ µÇÁö ¾Ê¾Ò½À´Ï´Ù.");}
+            JOptionPane.showConfirmDialog(btnNewButton, "ì¶”ê??•˜?‹œê² ìŠµ?‹ˆê¹??");
          }
       });
       btnNewButton.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
@@ -183,7 +179,7 @@ public class StoreInformation extends JPanel {
       btnNewButton.setBounds(206, 518, 173, 23);
       add(btnNewButton);
       
-      JButton BtnGetStar = new JButton("º°Á¡ÁÖ±â");
+      JButton BtnGetStar = new JButton("\uBCC4\uC810\uC8FC\uAE30");
       BtnGetStar.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
@@ -289,24 +285,28 @@ public class StoreInformation extends JPanel {
       Menu2Stuff.setBounds(442, 383, 123, 21);
       add(Menu2Stuff);
       
+    
       JLabel label_4 = new JLabel("\uC6D0\uC7AC\uB8CC");
       label_4.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_4.setBounds(198, 345, 50, 15);
+      label_4.setBounds(390, 386, 50, 15);
       add(label_4);
       
       JLabel label_5 = new JLabel("\uAC00\uACA9");
+
       label_5.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_5.setBounds(198, 295, 50, 15);
+      label_5.setBounds(390, 428, 50, 15);
       add(label_5);
       
       JLabel label_6 = new JLabel("\uBA54\uB274\uC774\uB984");
+
       label_6.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_6.setBounds(14, 388, 56, 15);
+      label_6.setBounds(206, 428, 56, 15);
       add(label_6);
       
       JLabel label_7 = new JLabel("\uC124\uBA85");
+   
       label_7.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_7.setBounds(14, 413, 45, 15);
+      label_7.setBounds(206, 454, 45, 15);
       add(label_7);
       
       Menu3Exa = new JTextField();
@@ -324,8 +324,9 @@ public class StoreInformation extends JPanel {
       add(Menu3Name);
       
       JLabel label_8 = new JLabel("\uCE7C\uB85C\uB9AC");
+  
     label_8.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_8.setBounds(14, 438, 50, 15);
+      label_8.setBounds(206, 479, 50, 15);
       add(label_8);
       
       Menu3Kcal = new JTextField();
@@ -350,13 +351,15 @@ public class StoreInformation extends JPanel {
       add(Menu3Stuff);
       
       JLabel label_9 = new JLabel("\uC6D0\uC7AC\uB8CC");
+
       label_9.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_9.setBounds(198, 438, 50, 15);
+      label_9.setBounds(390, 479, 50, 15);
       add(label_9);
       
       JLabel label_10 = new JLabel("\uAC00\uACA9");
+
       label_10.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
-      label_10.setBounds(198, 388, 50, 15);
+      label_10.setBounds(390, 336, 50, 15);
       add(label_10);
       
       JLabel label_11 = new JLabel("");
@@ -372,29 +375,29 @@ public class StoreInformation extends JPanel {
       add(label_11);
       
       
-	   resKind.setText(res.getResKind());
-	   restName.setText(res.getResName());
-	   restAddr.setText(res.getResAddr());
-	   restPhone.setText(res.getResPhone());
-	   restDeliver.setText(res.getResDeliv());
-	   restStar.setText(Integer.toString(res.getResSp()));
-	   
-	   Menu1Name.setText(menu.get(0).getName());
-	   Menu1Price.setText(Integer.toString(menu.get(0).getPrice()));
-	   Menu1Kcal.setText(Integer.toString(menu.get(0).getKcal()));
-	   Menu1Exa.setText(menu.get(0).getDesc());
-	   Menu1Stuff.setText(menu.get(0).getSource());
-	   
-	   Menu2Name.setText(menu.get(1).getName());
-	   Menu2Price.setText(Integer.toString(menu.get(1).getPrice()));
-	   Menu2Kcal.setText(Integer.toString(menu.get(1).getKcal()));
-	   Menu2Exa.setText(menu.get(1).getDesc());
-	   Menu2Stuff.setText(menu.get(1).getSource());
-	   
-	   Menu3Name.setText(menu.get(2).getName());
-	   Menu3Price.setText(Integer.toString(menu.get(2).getPrice()));
-	   Menu3Kcal.setText(Integer.toString(menu.get(2).getKcal()));
-	   Menu3Exa.setText(menu.get(2).getDesc());
-	   Menu3Stuff.setText(menu.get(2).getSource());
+      resKind.setText(res.getResKind());
+      restName.setText(res.getResName());
+      restAddr.setText(res.getResAddr());
+      restPhone.setText(res.getResPhone());
+      restDeliver.setText(res.getResDeliv());
+      restStar.setText(Integer.toString(res.getResSp()));
+      
+      Menu1Name.setText(menu.get(0).getName());
+      Menu1Price.setText(Integer.toString(menu.get(0).getPrice()));
+      Menu1Kcal.setText(Integer.toString(menu.get(0).getKcal()));
+      Menu1Exa.setText(menu.get(0).getDesc());
+      Menu1Stuff.setText(menu.get(0).getSource());
+      
+      Menu2Name.setText(menu.get(1).getName());
+      Menu2Price.setText(Integer.toString(menu.get(1).getPrice()));
+      Menu2Kcal.setText(Integer.toString(menu.get(1).getKcal()));
+      Menu2Exa.setText(menu.get(1).getDesc());
+      Menu2Stuff.setText(menu.get(1).getSource());
+      
+      Menu3Name.setText(menu.get(2).getName());
+      Menu3Price.setText(Integer.toString(menu.get(2).getPrice()));
+      Menu3Kcal.setText(Integer.toString(menu.get(2).getKcal()));
+      Menu3Exa.setText(menu.get(2).getDesc());
+      Menu3Stuff.setText(menu.get(2).getSource());
    }
 }
