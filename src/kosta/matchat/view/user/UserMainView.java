@@ -98,8 +98,10 @@ public class UserMainView extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				UserController.quitMember(LoginView.id);
-				JOptionPane.showMessageDialog(null,"Å»Åð µÇ¾ú½À´Ï´Ù.");
-				LoginView.cards.show(LoginView.contentPane, "login");
+				
+				int result = JOptionPane.showConfirmDialog(MemDelete, "Å»ÅðÇÏ½Ã°Ú½À´Ï±î??");
+				if(result ==0) {LoginView.cards.show(LoginView.contentPane, "login");}
+				
 				
 
 				
