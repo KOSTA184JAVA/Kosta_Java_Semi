@@ -112,6 +112,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMatchatSpLabel);
 			
 			aMatchatSpTextField = new JTextField();
+			aMatchatSpTextField.setEditable(false);
 			aMatchatSpTextField.setColumns(10);
 			aMatchatSpTextField.setBounds(198, 159, 135, 21);
 			panel.add(aMatchatSpTextField);
