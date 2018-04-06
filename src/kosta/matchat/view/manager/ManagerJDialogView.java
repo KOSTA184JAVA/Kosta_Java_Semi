@@ -372,9 +372,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 						menuTextFieldDelete(aMenuNameTextField3,aMenuKcalTextField3,aMenuPriceTextField3, aMenuSourceTextField3, aMenuSourceTextField3);
 						};
 					});
-	
-	
-	
 			}
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -390,7 +387,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 						Restaurant restaurant = new Restaurant(matKind,matName,matAddr,matPhone,matDeliver,5);
 						
 						AdminController.insertStore(restaurant);
-						
 						
 						String menuName = aMenuNameTextField1.getText();
 						int menuPrice = Integer.parseInt(aMenuPriceTextField1.getText());
