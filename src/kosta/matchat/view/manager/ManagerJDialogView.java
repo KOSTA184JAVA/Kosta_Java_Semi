@@ -298,29 +298,49 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 				 if(menuList ==null) {
 					 
 				 }else	 if(menuList.size() > 0) {
-					 aMenuNameTextField1.setText(menuList.get(0).getName());
-					 aMenuKcalTextField1.setText(menuList.get(0).getKcal()+"");
-					 aMenuPriceTextField1.setText(menuList.get(0).getPrice()+"");
-					 aMenuSourceTextField1.setText(menuList.get(0).getSource()+"");
-					 aMenuDescTextField1.setText(menuList.get(0).getDesc()+"");
+					 AMenuName1.setText(menuList.get(0).getName());
+					 AMenuKcal1.setText(menuList.get(0).getKcal()+"");
+					 AMenuPrice1.setText(menuList.get(0).getPrice()+"");
+					 AMenuSource1.setText(menuList.get(0).getSource()+"");
+					 AMenuSp1.setText(menuList.get(0).getDesc()+"");
 				 }else	 if(menuList.size() > 1) {
-					 aMenuNameTextField2.setText(menuList.get(1).getName());
-					 aMenuKcalTextField2.setText(menuList.get(1).getKcal()+"");
-					 aMenuPriceTextField2.setText(menuList.get(1).getPrice()+"");
-					 aMenuSourceTextField2.setText(menuList.get(1).getSource()+"");
-					 aMenuDescTextField2.setText(menuList.get(1).getDesc()+"");
+					 AMenuName2.setText(menuList.get(1).getName());
+					 AMenuKcal2.setText(menuList.get(1).getKcal()+"");
+					 AMenuPrice2.setText(menuList.get(1).getPrice()+"");
+					 AMenuSource2.setText(menuList.get(1).getSource()+"");
+					 AMenuSp2.setText(menuList.get(1).getDesc()+"");
 				 }else	 if(menuList.size() > 2) {
-					 aMenuNameTextField3.setText(menuList.get(2).getName());
-					 aMenuKcalTextField3.setText(menuList.get(2).getKcal()+"");
-					 aMenuPriceTextField3.setText(menuList.get(2).getPrice()+"");
-					 aMenuSourceTextField3.setText(menuList.get(2).getSource()+"");
-					 aMenuDescTextField3.setText(menuList.get(2).getDesc()+"");
+					 AMenuName3.setText(menuList.get(2).getName());
+					 AMenuKcal3.setText(menuList.get(2).getKcal()+"");
+					 AMenuPrice3.setText(menuList.get(2).getPrice()+"");
+					 AMenuSource3.setText(menuList.get(2).getSource()+"");
+					 AMenuSp3.setText(menuList.get(2).getDesc()+"");
 				 }
 				 
-				 	JButton btnMenuDelete1 = new JButton("DELETE");
-				 	btnMenuDelete1.setHorizontalAlignment(SwingConstants.LEFT);
-					btnMenuDelete1.setFont(new Font("≥™¥Æ∞ÌµÒƒ⁄µ˘", Font.PLAIN, 13));
-					btnMenuDelete1.setBounds(341, 274, 80, 29);
+				 JButton btnMenuDelete1 = new JButton("DELETE");
+				 if(menuList ==null) {
+					 
+				 }else	 if(menuList.size() > 0) {
+					 AMenuName1.setText(menuList.get(0).getName());
+					 AMenuKcal1.setText(menuList.get(0).getKcal()+"");
+					 AMenuPrice1.setText(menuList.get(0).getPrice()+"");
+					 AMenuSource1.setText(menuList.get(0).getSource()+"");
+					 AMenuSp1.setText(menuList.get(0).getDesc()+"");
+				 }else	 if(menuList.size() > 1) {
+					 AMenuName2.setText(menuList.get(1).getName());
+					 AMenuKcal2.setText(menuList.get(1).getKcal()+"");
+					 AMenuPrice2.setText(menuList.get(1).getPrice()+"");
+					 AMenuSource2.setText(menuList.get(1).getSource()+"");
+					 AMenuSp2.setText(menuList.get(1).getDesc()+"");
+				 }else	 if(menuList.size() > 2) {
+					 AMenuName3.setText(menuList.get(2).getName());
+					 AMenuKcal3.setText(menuList.get(2).getKcal()+"");
+					 AMenuPrice3.setText(menuList.get(2).getPrice()+"");
+					 AMenuSource3.setText(menuList.get(2).getSource()+"");
+					 AMenuSp3.setText(menuList.get(2).getDesc()+"");
+				 }
+				 
+				JButton btnMenuDelete1 = new JButton("DELETE");
 					
 					JButton btnMenuDelete2 = new JButton("DELETE");
 					btnMenuDelete2.setHorizontalAlignment(SwingConstants.LEFT);
@@ -355,21 +375,21 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 				btnMenuDelete1.addMouseListener(new MouseAdapter(){
 						public void mouseClicked(MouseEvent e) {
 								AdminController.deleteMenu(restaurant.getResId(), menuList.get(0).getMenuId());
-								menuTextFieldDelete(aMenuNameTextField1,aMenuKcalTextField1,aMenuPriceTextField1, aMenuSourceTextField1, aMenuSourceTextField1);
+								menuTextFieldDelete(AMenuName1, AMenuKcal1, AMenuPrice1, AMenuSource1, AMenuSp1);
 						};
 				});
 					
 				btnMenuDelete2.addMouseListener(new MouseAdapter(){
 					public void mouseClicked(MouseEvent e) {
 							AdminController.deleteMenu(restaurant.getResId(), menuList.get(1).getMenuId());
-							menuTextFieldDelete(aMenuNameTextField2,aMenuKcalTextField2,aMenuPriceTextField2, aMenuSourceTextField2, aMenuSourceTextField2);
-							};
+							menuTextFieldDelete(AMenuName2, AMenuKcal2, AMenuPrice2, AMenuSource2, AMenuSp2);
+						};
 					});
 					
 				btnMenuDelete3.addMouseListener(new MouseAdapter(){
 					public void mouseClicked(MouseEvent e) {
 						AdminController.deleteMenu(restaurant.getResId(), menuList.get(2).getMenuId());
-						menuTextFieldDelete(aMenuNameTextField3,aMenuKcalTextField3,aMenuPriceTextField3, aMenuSourceTextField3, aMenuSourceTextField3);
+						menuTextFieldDelete(AMenuName3, AMenuKcal3, AMenuPrice3, AMenuSource3, AMenuSp3);
 						};
 					});
 	
@@ -449,12 +469,12 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			 setVisible(true);//√¢∫∏¿Ã±‚
 		}
 
-	public void menuTextFieldDelete(JTextField name ,JTextField kcal,JTextField price,JTextField source,JTextField desc) {
-		name.setText("");
-		kcal.setText("");
-		price.setText("");
-		source.setText("");
-		desc.setText("");
+	public void menuTextFieldDelete(JTextField aMenuName32,JTextField aMenuKcal22,JTextField aMenuPrice22,JTextField aMenuSource22,JTextField aMenuSp22) {
+		aMenuName32.setText("");
+		aMenuKcal22.setText("");
+		aMenuPrice22.setText("");
+		aMenuSource22.setText("");
+		aMenuSp22.setText("");
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
