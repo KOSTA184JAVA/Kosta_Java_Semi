@@ -2,8 +2,13 @@ package kosta.matchat.view.start;
 public class MainView {
 	public static void main(String[] args) {
 
-			new LoginView();
-			System.out.println("push test");
+//		LoginView logV = new LoginView();
+//		logV.setVisible(true);
+
+		new LoginView();
+//		LoginView.contentPane.add(new LoginView());
+//		LoginView.cards.next(LoginView.contentPane);
+
 		// Çö¼ö
 //		UserController.joinMember(new Member("test1", "test", "test", "test", "test")); //È¸¿ø°¡ÀÔ
 //		UserController.quitMember("test1", "test"); //È¸¿øÅ»Åð
