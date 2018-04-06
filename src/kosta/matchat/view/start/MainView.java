@@ -6,15 +6,7 @@ public class MainView {
 //		logV.setVisible(true);
 
 			new LoginView();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 		//  new ManagerJTableView();  //관리자
-
-=======
-		//  new ManagerJTableView();  //관리자
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
 
 		// 현수
 //		UserController.joinMember(new Member("test1", "test", "test", "test", "test")); //회원가입
