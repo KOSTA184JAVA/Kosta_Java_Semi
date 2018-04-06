@@ -86,8 +86,7 @@ public class UserMainView extends JPanel {
 			public void mouseClicked(MouseEvent e) {
 
 				LoginView.contentPane.add(new LoginView());
-				LoginView.cards.next(LoginView.contentPane);
-				
+				LoginView.cards.show(LoginView.contentPane, "login");
 			}
 		});
 		labelIcon.setIcon(new ImageIcon(UserMainView.class.getResource("/images/previousIcon.png")));

@@ -65,62 +65,62 @@ public class StoreInformation extends JPanel {
       
       
       JLabel lbresinfo = new JLabel("¸ÀÁý Á¤º¸");
-      lbresinfo.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.BOLD, 17));
+      lbresinfo.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 17));
       lbresinfo.setBounds(159, 5, 77, 32);
       add(lbresinfo);
      
       
-      JLabel lbreskind = new JLabel("\uB9DB\uC9D1\uC885\uB958");
+      JLabel lbreskind = new JLabel("¸ÀÁýÁ¾·ù");
       lbreskind.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbreskind.setBounds(14, 53, 56, 15);
       add(lbreskind);
       
-      JLabel lbresname = new JLabel("\uB9DB\uC9D1\uC774\uB984");
+      JLabel lbresname = new JLabel("¸ÀÁýÀÌ¸§");
       lbresname.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbresname.setBounds(198, 53, 54, 15);
       add(lbresname);
       
-      JLabel lbresaddr = new JLabel("\uC8FC\uC18C");
+      JLabel lbresaddr = new JLabel("ÁÖ¼Ò");
       lbresaddr.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbresaddr.setBounds(14, 84, 31, 15);
       add(lbresaddr);
       
-      JLabel lbrescontact = new JLabel("\uC5F0\uB77D\uCC98");
+      JLabel lbrescontact = new JLabel("¿¬¶ôÃ³");
       lbrescontact.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbrescontact.setBounds(14, 115, 45, 15);
       add(lbrescontact);
       
-      JLabel lbresdeliver = new JLabel("\uBC30\uB2EC\uC5EC\uBD80");
+      JLabel lbresdeliver = new JLabel("¹è´Þ¿©ºÎ");
       lbresdeliver.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbresdeliver.setBounds(14, 145, 56, 15);
       add(lbresdeliver);
       
-      JLabel lbresstar = new JLabel("\uBCC4\uC810");
+      JLabel lbresstar = new JLabel("º°Á¡");
       lbresstar.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbresstar.setBounds(198, 145, 38, 15);
       add(lbresstar);
       
-      JLabel lbMenuName = new JLabel("\uBA54\uB274\uC774\uB984");
+      JLabel lbMenuName = new JLabel("¸Þ´ºÀÌ¸§");
       lbMenuName.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuName.setBounds(14, 204, 56, 15);
       add(lbMenuName);
       
-      JLabel lbMenuKcal = new JLabel("\uCE7C\uB85C\uB9AC");
+      JLabel lbMenuKcal = new JLabel("Ä®·Î¸®");
       lbMenuKcal.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuKcal.setBounds(14, 254, 50, 15);
       add(lbMenuKcal);
       
-      JLabel lbMenuExa = new JLabel("\uC124\uBA85");
+      JLabel lbMenuExa = new JLabel("¼³¸í");
       lbMenuExa.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuExa.setBounds(14, 229, 45, 15);
       add(lbMenuExa);
       
-      JLabel lbMenuStuff = new JLabel("\uC6D0\uC7AC\uB8CC");
+      JLabel lbMenuStuff = new JLabel("¿øÀç·á");
       lbMenuStuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuStuff.setBounds(198, 254, 50, 15);
       add(lbMenuStuff);
       
-      JLabel lbMenuPrice = new JLabel("\uAC00\uACA9");
+      JLabel lbMenuPrice = new JLabel("°¡°Ý");
       lbMenuPrice.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       lbMenuPrice.setBounds(198, 204, 50, 15);
       add(lbMenuPrice);
@@ -165,11 +165,11 @@ public class StoreInformation extends JPanel {
       Menu1Stuff.setBounds(250, 251, 123, 21);
       add(Menu1Stuff);
       
-      JButton btnNewButton = new JButton("\uC990\uACA8\uCC3E\uAE30");
+      JButton btnNewButton = new JButton("Áñ°ÜÃ£±â");
       btnNewButton.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
-            JOptionPane.showConfirmDialog(btnNewButton, "ì¶”ê??•˜?‹œê² ìŠµ?‹ˆê¹??");
+            JOptionPane.showConfirmDialog(btnNewButton, "Áñ°ÜÃ£±â¿¡ Ãß°¡ÇÏ½Ã°Ú½À´Ï±î?");
          }
       });
       btnNewButton.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
@@ -177,7 +177,7 @@ public class StoreInformation extends JPanel {
       btnNewButton.setBounds(14, 477, 173, 23);
       add(btnNewButton);
       
-      JButton BtnGetStar = new JButton("\uBCC4\uC810\uC8FC\uAE30");
+      JButton BtnGetStar = new JButton("º°Á¡ÁÖ±â");
       BtnGetStar.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
@@ -219,7 +219,7 @@ public class StoreInformation extends JPanel {
       
       Menu1Name = new JTextField();
       Menu1Name.setEditable(false);
-      Menu1Name.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 9));
+      Menu1Name.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
       Menu1Name.setColumns(10);
       Menu1Name.setBounds(64, 200, 123, 21);
       add(Menu1Name);
@@ -243,31 +243,31 @@ public class StoreInformation extends JPanel {
       add(Menu1Price);
       
       JLabel label_1 = new JLabel("\uBA54\uB274\uC774\uB984");
-      label_1.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      label_1.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_1.setBounds(14, 295, 56, 15);
       add(label_1);
       
       JLabel label_2 = new JLabel("\uC124\uBA85");
-      label_2.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      label_2.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_2.setBounds(14, 320, 45, 15);
       add(label_2);
       
       Menu2Exa = new JTextField();
       Menu2Exa.setEditable(false);
-      Menu2Exa.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 9));
+      Menu2Exa.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
       Menu2Exa.setColumns(10);
       Menu2Exa.setBounds(64, 317, 309, 21);
       add(Menu2Exa);
       
       Menu2Name = new JTextField();
       Menu2Name.setEditable(false);
-      Menu2Name.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 9));
+      Menu2Name.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
       Menu2Name.setColumns(10);
       Menu2Name.setBounds(64, 291, 123, 21);
       add(Menu2Name);
       
       JLabel label_3 = new JLabel("\uCE7C\uB85C\uB9AC");
-      label_3.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      label_3.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_3.setBounds(14, 345, 50, 15);
       add(label_3);
       
@@ -285,47 +285,47 @@ public class StoreInformation extends JPanel {
       
       Menu2Stuff = new JTextField();
       Menu2Stuff.setEditable(false);
-      Menu2Stuff.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 9));
+      Menu2Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
       Menu2Stuff.setColumns(10);
       Menu2Stuff.setBounds(250, 342, 123, 21);
       add(Menu2Stuff);
       
       JLabel label_4 = new JLabel("\uC6D0\uC7AC\uB8CC");
-      label_4.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      label_4.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_4.setBounds(198, 345, 50, 15);
       add(label_4);
       
       JLabel label_5 = new JLabel("\uAC00\uACA9");
-      label_5.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      label_5.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_5.setBounds(198, 295, 50, 15);
       add(label_5);
       
       JLabel label_6 = new JLabel("\uBA54\uB274\uC774\uB984");
-      label_6.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      label_6.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_6.setBounds(14, 388, 56, 15);
       add(label_6);
       
       JLabel label_7 = new JLabel("\uC124\uBA85");
-      label_7.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      label_7.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_7.setBounds(14, 413, 45, 15);
       add(label_7);
       
       Menu3Exa = new JTextField();
       Menu3Exa.setEditable(false);
-      Menu3Exa.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 9));
+      Menu3Exa.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
       Menu3Exa.setColumns(10);
       Menu3Exa.setBounds(64, 410, 309, 21);
       add(Menu3Exa);
       
       Menu3Name = new JTextField();
       Menu3Name.setEditable(false);
-      Menu3Name.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 9));
+      Menu3Name.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
       Menu3Name.setColumns(10);
       Menu3Name.setBounds(64, 384, 123, 21);
       add(Menu3Name);
       
       JLabel label_8 = new JLabel("\uCE7C\uB85C\uB9AC");
-      label_8.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      label_8.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_8.setBounds(14, 438, 50, 15);
       add(label_8);
       
@@ -343,18 +343,18 @@ public class StoreInformation extends JPanel {
       
       Menu3Stuff = new JTextField();
       Menu3Stuff.setEditable(false);
-      Menu3Stuff.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 9));
+      Menu3Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 9));
       Menu3Stuff.setColumns(10);
       Menu3Stuff.setBounds(250, 435, 123, 21);
       add(Menu3Stuff);
       
       JLabel label_9 = new JLabel("\uC6D0\uC7AC\uB8CC");
-      label_9.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      label_9.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_9.setBounds(198, 438, 50, 15);
       add(label_9);
       
       JLabel label_10 = new JLabel("\uAC00\uACA9");
-      label_10.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿?", Font.PLAIN, 12));
+      label_10.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
       label_10.setBounds(198, 388, 50, 15);
       add(label_10);
       
