@@ -67,7 +67,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			JPanel panel = new JPanel();
 			panel.setLayout(null);
 			panel.setBorder(new EmptyBorder(5, 5, 5, 5));
-			panel.setBounds(0, 10, 324, 431);
+			panel.setBounds(0, 10, 392, 431);
 			contentPane.add(panel);
 			
 			JLabel SubjectLabel = new JLabel("\uB9DB\uC9D1 \uC815\uBCF4");
@@ -87,7 +87,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMatchatKindLabel);
 			
 			aMatchatKindTextField = new JTextField();
-			aMatchatKindTextField.setEditable(false);
 			aMatchatKindTextField.setColumns(10);
 			aMatchatKindTextField.setBounds(198, 33, 135, 20);
 			panel.add(aMatchatKindTextField);
@@ -98,13 +97,11 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMatchatNameLabel);
 			
 			aMatchatPhoneTextField = new JTextField();
-			aMatchatPhoneTextField.setEditable(false);
 			aMatchatPhoneTextField.setColumns(10);
 			aMatchatPhoneTextField.setBounds(198, 108, 136, 21);
 			panel.add(aMatchatPhoneTextField);
 			
 			aMatchatNameTextField = new JTextField();
-			aMatchatNameTextField.setEditable(false);
 			aMatchatNameTextField.setColumns(10);
 			aMatchatNameTextField.setBounds(198, 58, 135, 20);
 			panel.add(aMatchatNameTextField);
@@ -115,19 +112,16 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMatchatSpLabel);
 			
 			aMatchatSpTextField = new JTextField();
-			aMatchatSpTextField.setEditable(false);
 			aMatchatSpTextField.setColumns(10);
 			aMatchatSpTextField.setBounds(198, 159, 135, 21);
 			panel.add(aMatchatSpTextField);
 			
 			aMenuNameTextField1 = new JTextField();
-			aMenuNameTextField1.setEditable(false);
 			aMenuNameTextField1.setColumns(10);
 			aMenuNameTextField1.setBounds(67, 190, 81, 20);
 			panel.add(aMenuNameTextField1);
 			
 			aMatchatDeliverTextField = new JTextField();
-			aMatchatDeliverTextField.setEditable(false);
 			aMatchatDeliverTextField.setColumns(10);
 			aMatchatDeliverTextField.setBounds(198, 133, 135, 21);
 			panel.add(aMatchatDeliverTextField);
@@ -143,7 +137,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMatchatAddrLabel);
 			
 			aMatchatAddrTextField = new JTextField();
-			aMatchatAddrTextField.setEditable(false);
 			aMatchatAddrTextField.setColumns(10);
 			aMatchatAddrTextField.setBounds(198, 83, 135, 21);
 			panel.add(aMatchatAddrTextField);
@@ -159,7 +152,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuPriceLabel1);
 			
 			aMenuPriceTextField1 = new JTextField();
-			aMenuPriceTextField1.setEditable(false);
 			aMenuPriceTextField1.setColumns(10);
 			aMenuPriceTextField1.setBounds(187, 189, 44, 20);
 			panel.add(aMenuPriceTextField1);
@@ -170,7 +162,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuKcalLabel1);
 			
 			aMenuKcalTextField1 = new JTextField();
-			aMenuKcalTextField1.setEditable(false);
 			aMenuKcalTextField1.setColumns(10);
 			aMenuKcalTextField1.setBounds(280, 189, 100, 20);
 			panel.add(aMenuKcalTextField1);
@@ -181,7 +172,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuDescLabel1);
 			
 			aMenuDescTextField1 = new JTextField();
-			aMenuDescTextField1.setEditable(false);
 			aMenuDescTextField1.setColumns(10);
 			aMenuDescTextField1.setBounds(67, 220, 164, 20);
 			panel.add(aMenuDescTextField1);
@@ -192,7 +182,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuSourceLabel1);
 			
 			aMenuSourceTextField1 = new JTextField();
-			aMenuSourceTextField1.setEditable(false);
 			aMenuSourceTextField1.setColumns(10);
 			aMenuSourceTextField1.setBounds(280, 219, 100, 20);
 			panel.add(aMenuSourceTextField1);
@@ -203,7 +192,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuNameLabel2);
 			
 			aMenuNameTextField2 = new JTextField();
-			aMenuNameTextField2.setEditable(false);
 			aMenuNameTextField2.setColumns(10);
 			aMenuNameTextField2.setBounds(67, 250, 81, 20);
 			panel.add(aMenuNameTextField2);
@@ -214,7 +202,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuPriceLabel2);
 			
 			aMenuPriceTextField2 = new JTextField();
-			aMenuPriceTextField2.setEditable(false);
 			aMenuPriceTextField2.setColumns(10);
 			aMenuPriceTextField2.setBounds(187, 249, 44, 20);
 			panel.add(aMenuPriceTextField2);
@@ -225,7 +212,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuKcalLabel2);
 			
 			aMenuKcalTextField2 = new JTextField();
-			aMenuKcalTextField2.setEditable(false);
 			aMenuKcalTextField2.setColumns(10);
 			aMenuKcalTextField2.setBounds(280, 249, 100, 20);
 			panel.add(aMenuKcalTextField2);
@@ -236,7 +222,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuDescLabel2);
 			
 			aMenuDescTextField2 = new JTextField();
-			aMenuDescTextField2.setEditable(false);
 			aMenuDescTextField2.setColumns(10);
 			aMenuDescTextField2.setBounds(67, 282, 164, 20);
 			panel.add(aMenuDescTextField2);
@@ -247,7 +232,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuSourceLabel2);
 			
 			aMenuSourceTextField2 = new JTextField();
-			aMenuSourceTextField2.setEditable(false);
 			aMenuSourceTextField2.setColumns(10);
 			aMenuSourceTextField2.setBounds(280, 279, 100, 20);
 			panel.add(aMenuSourceTextField2);
@@ -258,7 +242,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuNameLabel3);
 			
 			aMenuNameTextField3 = new JTextField();
-			aMenuNameTextField3.setEditable(false);
 			aMenuNameTextField3.setColumns(10);
 			aMenuNameTextField3.setBounds(67, 312, 81, 20);
 			panel.add(aMenuNameTextField3);
@@ -269,7 +252,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuPriceLabel3);
 			
 			aMenuPriceTextField3 = new JTextField();
-			aMenuPriceTextField3.setEditable(false);
 			aMenuPriceTextField3.setColumns(10);
 			aMenuPriceTextField3.setBounds(187, 311, 44, 20);
 			panel.add(aMenuPriceTextField3);
@@ -280,7 +262,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuKcalLabel3);
 			
 			aMenuKcalTextField3 = new JTextField();
-			aMenuKcalTextField3.setEditable(false);
 			aMenuKcalTextField3.setColumns(10);
 			aMenuKcalTextField3.setBounds(280, 311, 100, 20);
 			panel.add(aMenuKcalTextField3);
@@ -291,7 +272,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuDescLabel3);
 			
 			aMenuDescTextField3 = new JTextField();
-			aMenuDescTextField3.setEditable(false);
 			aMenuDescTextField3.setColumns(10);
 			aMenuDescTextField3.setBounds(67, 345, 164, 20);
 			panel.add(aMenuDescTextField3);
@@ -302,7 +282,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener{
 			panel.add(aMenuSourceLabel3);
 			
 			aMenuSourceTextField3 = new JTextField();
-			aMenuSourceTextField3.setEditable(false);
 			aMenuSourceTextField3.setColumns(10);
 			aMenuSourceTextField3.setBounds(280, 342, 100, 20);
 			panel.add(aMenuSourceTextField3);
