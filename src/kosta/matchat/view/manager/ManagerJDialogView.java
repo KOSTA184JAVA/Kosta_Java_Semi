@@ -51,7 +51,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 	 * Create the frame.
 	 */
 	public ManagerJDialogView(ManagerJTableView managerJTableView2, String string, Restaurant restaurant) {
-		setTitle("\uB9DB\uC9D1\uC815\uBCF4 \uCD94\uAC00");
+		setTitle("맛집 정보");
 		// setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 471, 470);
 		contentPane = new JPanel();
@@ -178,7 +178,7 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 
 		JLabel label_12 = new JLabel("New label");
 		label_12.setIcon(
-				new ImageIcon("C:\\Users\\Xiyeon\\Desktop\\Edu\\JavaWorkSpace\\GUI\\src\\\uC774\uBBF8\uC9C0.png"));
+				new ImageIcon("src/images/logo.png"));
 		label_12.setBounds(239, 369, 81, 52);
 		panel.add(label_12);
 
@@ -361,8 +361,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 				switch (menuList.size()) {
 
 				case 1: {
-					System.out.println("1111111111111일");
-
 					contentPane.add(btnMenuDelete1);
 
 					contentPane.add(btnMenuInsert2);
@@ -370,8 +368,6 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 					break;
 				}
 				case 2: {
-					System.out.println("222222222222일");
-
 					contentPane.add(btnMenuDelete1);
 					contentPane.add(btnMenuDelete2);
 
@@ -379,21 +375,16 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 					break;
 				}
 				case 3: {
-					System.out.println("33333333333일");
-
 					contentPane.add(btnMenuDelete1);
 					contentPane.add(btnMenuDelete2);
 					contentPane.add(btnMenuDelete3);
 					break;
 				}
 				default: {
-					System.out.println("default일");
-
 					break;
 				}
 				}
 			} else {
-				System.out.println("000000000000000000일");
 				contentPane.add(btnMenuInsert1);
 				contentPane.add(btnMenuInsert2);
 				contentPane.add(btnMenuInsert3);
@@ -563,7 +554,10 @@ public class ManagerJDialogView extends JDialog implements ActionListener {
 					StoreId = AdminController.SearchStoreId();
 					AdminController.insertMenu(StoreId, menu3);
 
-					JOptionPane.showMessageDialog(null, "추가되었습니다");
+					JOptionPane.showMessageDialog(contentPane, "추가되었습니다");
+					
+					}else {
+						JOptionPane.showMessageDialog(contentPane, "추가되지 않았습니다.");
 					}
 				} else if (labelText.equals("수   정")) {
 					String matKind = aMatchatKindTextField.getText();

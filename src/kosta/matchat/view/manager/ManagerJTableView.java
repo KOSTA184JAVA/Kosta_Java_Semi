@@ -143,8 +143,6 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 			int re= jt.getSelectedRow();
 			Restaurant restaurant =list.get(re);
 			new ManagerJDialogView(this, "수정",restaurant);
-			
-			
 		}else if(obj==delete) {//삭제
 			int re=JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?");		
 			//yes를 클릭했을 경우
@@ -184,6 +182,7 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 				}
 				List<Restaurant> list = UserController.searchByStoreKind(keyWord);
 				if(list!=null && list.size()>0) {
+					dt.setNumRows(0);
 					addRowTable(list);
 					jt.setRowSelectionInterval(0, 0);
 				}
@@ -200,8 +199,6 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 					jt.setRowSelectionInterval(0, 0);
 				}
 			}
-
 		}
-				
 	}
 }
