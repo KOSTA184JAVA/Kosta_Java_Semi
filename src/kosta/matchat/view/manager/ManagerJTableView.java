@@ -169,7 +169,7 @@ public class ManagerJTableView extends JPanel implements ActionListener {
 				if(list!=null && list.size()!=0) {
 					this.addRowTable(list);
 					jt.setRowSelectionInterval(0, 0);  //첫번째 행에 커서 올림
-				}	
+				}
 			}else if(keyField.trim().equals("kind")) {  //종류별 검색창
 				//text박스의 값 입력유무 체크
 				String keyWord = jtf.getText();
