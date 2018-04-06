@@ -2,16 +2,7 @@ package kosta.matchat.view.start;
 public class MainView {
 	public static void main(String[] args) {
 
-//		LoginView logV = new LoginView();
-//		logV.setVisible(true);
-<<<<<<< HEAD
-		new LoginView();
-//		LoginView.contentPane.add(new LoginView());
-//		LoginView.cards.next(LoginView.contentPane);
-=======
-
 			new LoginView();
->>>>>>> branch 'master' of https://github.com/KOSTA184JAVA/Kosta_Java_Semi.git
 
 		// 현수
 //		UserController.joinMember(new Member("test1", "test", "test", "test", "test")); //회원가입
