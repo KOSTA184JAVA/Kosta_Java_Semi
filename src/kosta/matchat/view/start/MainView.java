@@ -9,7 +9,6 @@ public class MainView {
 //		LoginView.contentPane.add(new LoginView());
 //		LoginView.cards.next(LoginView.contentPane);
 
-
 		// 현수
 //		UserController.joinMember(new Member("test1", "test", "test", "test", "test")); //회원가입
 //		UserController.quitMember("test1", "test"); //회원탈퇴
