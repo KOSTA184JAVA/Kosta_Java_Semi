@@ -22,6 +22,7 @@ import javax.swing.table.TableModel;
 import kosta.matchat.controller.UserController;
 import kosta.matchat.model.dto.Restaurant;
 import kosta.matchat.view.start.LoginView;
+import javax.swing.JButton;
 
 public class UserKindSearchListView extends JPanel {
 
@@ -101,6 +102,24 @@ public class UserKindSearchListView extends JPanel {
 		preIcon.setBounds(12, 10, 76, 52);
 		add(preIcon);
 		
+		JButton btnSPSort = new JButton("\uBCC4   \uC810    \uC21C");
+		btnSPSort.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		btnSPSort.setBounds(453, 440, 97, 23);
+		add(btnSPSort);
+		
+		JButton btnDeliverSort = new JButton("\uBC30\uB2EC \uAC00\uB2A5 \uC21C");
+		btnDeliverSort.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		btnDeliverSort.setBounds(580, 440, 101, 23);
+		add(btnDeliverSort);
+		
 		/**
 		 * JTable 위의 DTM에 addRow 하고 View 하기		
 		 */
@@ -113,6 +132,162 @@ public class UserKindSearchListView extends JPanel {
 				JTable t = (JTable)arg0.getSource();
 				if(arg0.getClickCount()==2) {
 					TableModel m = t.getModel();
+      
+      JLabel logo = new JLabel("New label");
+      logo.setIcon(new ImageIcon(UserKindSerachView.class.getResource("/images/logo.png")));
+      logo.setBounds(650, 500, 79, 60);
+      add(logo);
+      
+      JLabel preIcon = new JLabel("");
+      preIcon.addMouseListener(new MouseAdapter() {
+         @Override
+         public void mouseClicked(MouseEvent e) {
+            LoginView.contentPane.add(new UserKindSerachView());
+            LoginView.cards.next(LoginView.contentPane);
+         }
+      });
+      preIcon.setIcon(new ImageIcon(UserKindSerachView.class.getResource("/images/previousIcon.png")));
+      preIcon.setBounds(12, 10, 76, 52);
+      add(preIcon);
+      
+      JButton btnSPSort = new JButton("\uBCC4   \uC810    \uC21C");
+      btnSPSort.addMouseListener(new MouseAdapter() {
+         @Override
+         public void mouseClicked(MouseEvent e) {
+        	 List<Vector<Object>> list = convertRestaurantToVector (UserController.searchByOrderStoreSP(kind));
+        	 addRowTable(list);
+         }
+      });
+      btnSPSort.setBounds(453, 440, 97, 23);
+      add(btnSPSort);
+      
+      JButton btnDeliverSort = new JButton("\uBC30\uB2EC \uAC00\uB2A5 \uC21C");
+      btnDeliverSort.addMouseListener(new MouseAdapter() {
+         @Override
+         public void mouseClicked(MouseEvent e) {
+        	 List<Vector<Object>> list = convertRestaurantToVector (UserController.searchByDeliv(kind));
+        	 addRowTable(list); 
+         }
+      });
+      btnDeliverSort.setBounds(580, 440, 101, 23);
+      add(btnDeliverSort);
+      
+      /**
+       * JTable 위의 DTM에 addRow 하고 View 하기      
+       */
+      viewRowTable(kind);
+      
+      jt.addMouseListener(new MouseAdapter() {
+         
+         @Override
+         public void mouseReleased(MouseEvent arg0) {
+            JTable t = (JTable)arg0.getSource();
+            if(arg0.getClickCount()==2) {
+               TableModel m = t.getModel();
+      
+      JLabel logo = new JLabel("New label");
+      logo.setIcon(new ImageIcon(UserKindSerachView.class.getResource("/images/logo.png")));
+      logo.setBounds(650, 500, 79, 60);
+      add(logo);
+      
+      JLabel preIcon = new JLabel("");
+      preIcon.addMouseListener(new MouseAdapter() {
+         @Override
+         public void mouseClicked(MouseEvent e) {
+            LoginView.contentPane.add(new UserKindSerachView());
+            LoginView.cards.next(LoginView.contentPane);
+         }
+      });
+      preIcon.setIcon(new ImageIcon(UserKindSerachView.class.getResource("/images/previousIcon.png")));
+      preIcon.setBounds(12, 10, 76, 52);
+      add(preIcon);
+      
+      JButton btnSPSort = new JButton("\uBCC4   \uC810    \uC21C");
+      btnSPSort.addMouseListener(new MouseAdapter() {
+         @Override
+         public void mouseClicked(MouseEvent e) {
+        	 List<Vector<Object>> list = convertRestaurantToVector (UserController.searchByOrderStoreSP(kind));
+        	 addRowTable(list);
+         }
+      });
+      btnSPSort.setBounds(453, 440, 97, 23);
+      add(btnSPSort);
+      
+      JButton btnDeliverSort = new JButton("\uBC30\uB2EC \uAC00\uB2A5 \uC21C");
+      btnDeliverSort.addMouseListener(new MouseAdapter() {
+         @Override
+         public void mouseClicked(MouseEvent e) {
+        	 List<Vector<Object>> list = convertRestaurantToVector (UserController.searchByDeliv(kind));
+        	 addRowTable(list); 
+         }
+      });
+      btnDeliverSort.setBounds(580, 440, 101, 23);
+      add(btnDeliverSort);
+      
+      /**
+       * JTable 위의 DTM에 addRow 하고 View 하기      
+       */
+      viewRowTable(kind);
+      
+      jt.addMouseListener(new MouseAdapter() {
+         
+         @Override
+         public void mouseReleased(MouseEvent arg0) {
+            JTable t = (JTable)arg0.getSource();
+            if(arg0.getClickCount()==2) {
+               TableModel m = t.getModel();
+      
+      JLabel logo = new JLabel("New label");
+      logo.setIcon(new ImageIcon(UserKindSerachView.class.getResource("/images/logo.png")));
+      logo.setBounds(650, 500, 79, 60);
+      add(logo);
+      
+      JLabel preIcon = new JLabel("");
+      preIcon.addMouseListener(new MouseAdapter() {
+         @Override
+         public void mouseClicked(MouseEvent e) {
+            LoginView.contentPane.add(new UserKindSerachView());
+            LoginView.cards.next(LoginView.contentPane);
+         }
+      });
+      preIcon.setIcon(new ImageIcon(UserKindSerachView.class.getResource("/images/previousIcon.png")));
+      preIcon.setBounds(12, 10, 76, 52);
+      add(preIcon);
+      
+      JButton btnSPSort = new JButton("\uBCC4   \uC810    \uC21C");
+      btnSPSort.addMouseListener(new MouseAdapter() {
+         @Override
+         public void mouseClicked(MouseEvent e) {
+        	 List<Vector<Object>> list = convertRestaurantToVector (UserController.searchByOrderStoreSP(kind));
+        	 addRowTable(list);
+         }
+      });
+      btnSPSort.setBounds(453, 440, 97, 23);
+      add(btnSPSort);
+      
+      JButton btnDeliverSort = new JButton("\uBC30\uB2EC \uAC00\uB2A5 \uC21C");
+      btnDeliverSort.addMouseListener(new MouseAdapter() {
+         @Override
+         public void mouseClicked(MouseEvent e) {
+        	 List<Vector<Object>> list = convertRestaurantToVector (UserController.searchByDeliv(kind));
+        	 addRowTable(list); 
+         }
+      });
+      btnDeliverSort.setBounds(580, 440, 101, 23);
+      add(btnDeliverSort);
+      
+      /**
+       * JTable 위의 DTM에 addRow 하고 View 하기      
+       */
+      viewRowTable(kind);
+      
+      jt.addMouseListener(new MouseAdapter() {
+         
+         @Override
+         public void mouseReleased(MouseEvent arg0) {
+            JTable t = (JTable)arg0.getSource();
+            if(arg0.getClickCount()==2) {
+               TableModel m = t.getModel();
                     Point pt = arg0.getPoint();
                     int i = t.rowAtPoint(pt);
                     if(i>=0) {

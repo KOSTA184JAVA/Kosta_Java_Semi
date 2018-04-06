@@ -165,15 +165,17 @@ public class StoreInformation extends JPanel {
       
       Menu1Stuff = new JTextField();
       Menu1Stuff.setEditable(false);
-      Menu1Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
+
+      Menu1Stuff.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 11));
       Menu1Stuff.setColumns(10);
       Menu1Stuff.setBounds(420, 279, 159, 21);
       add(Menu1Stuff);
       
-      JButton btnNewButton = new JButton("\u2606\uC990\uACA8\uCC3E\uAE30");
+
+      JButton btnNewButton = new JButton("\u2665\uC990\uACA8\uCC3E\uAE30");
       btnNewButton.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent e) {
-         }
+      	public void actionPerformed(ActionEvent e) {
+      	}
       });
       btnNewButton.addMouseListener(new MouseAdapter() {
          @Override
@@ -283,7 +285,7 @@ public class StoreInformation extends JPanel {
       
       Menu2Price = new JTextField();
       Menu2Price.setEditable(false);
-      Menu2Price.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 12));
+      Menu2Price.setFont(new Font("³ª´®°íµñÄÚµù", Font.PLAIN, 10));
       Menu2Price.setColumns(10);
       Menu2Price.setBounds(420, 319, 160, 21);
       add(Menu2Price);

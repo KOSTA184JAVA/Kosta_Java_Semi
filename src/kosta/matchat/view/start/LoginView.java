@@ -46,30 +46,31 @@ public class LoginView extends JFrame {
 		panLogin.setLayout(null);
 
 		JLabel labelLogin = new JLabel("·Î      ±×      ÀÎ");
-		labelLogin.setBounds(290, 80, 300, 41);
+		labelLogin.setBounds(257, 110, 239, 41);
 		panLogin.add(labelLogin);
 		labelLogin.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 25));
 
 		JLabel labeId = new JLabel("¾Æ ÀÌ µð");
-		labeId.setBounds(270, 180, 80, 30);
+		labeId.setBounds(230, 208, 80, 30);
 		panLogin.add(labeId);
-		labeId.setFont(new Font("³ª´®°íµñ", Font.BOLD, 18));
+		labeId.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 18));
 
 		txtId = new JTextField();
-		txtId.setBounds(350, 175, 200, 40);
+		txtId.setBounds(328, 205, 200, 40);
 		panLogin.add(txtId);
 		txtId.setColumns(10);
 
-		JLabel labelPwd = new JLabel("ºñ ¹Ð ¹ø È£");
-		labelPwd.setBounds(235, 260, 100, 28);
+		JLabel labelPwd = new JLabel("ºñ¹Ð¹øÈ£");
+		labelPwd.setBounds(230, 289, 80, 28);
 		panLogin.add(labelPwd);
 		labelPwd.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 18));
 
 		txtPwd = new JPasswordField();
-		txtPwd.setBounds(350, 255, 200, 40);
+		txtPwd.setBounds(328, 285, 200, 40);
 		panLogin.add(txtPwd);
 
 		JButton btnLogin = new JButton("·Î±×ÀÎ");
+		btnLogin.setBackground(Color.WHITE);
 		btnLogin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -96,14 +97,15 @@ public class LoginView extends JFrame {
 				}
 			}
 		});
-		btnLogin.setBounds(380, 340, 70, 40);
+		btnLogin.setBounds(230, 370, 133, 40);
 		panLogin.add(btnLogin);
-		btnLogin.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 10));
+		btnLogin.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 14));
 
 		JButton btnJoin = new JButton("È¸¿ø°¡ÀÔ");
-		btnJoin.setBounds(460, 340, 80, 40);
+		btnJoin.setBackground(Color.WHITE);
+		btnJoin.setBounds(395, 370, 133, 40);
 		panLogin.add(btnJoin);
-		btnJoin.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 10));
+		btnJoin.setFont(new Font("³ª´®°íµñÄÚµù", Font.BOLD, 14));
 		btnJoin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
